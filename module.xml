@@ -1,0 +1,22 @@
+<module>
+    <rawname>motif</rawname>
+    <name>Google Voice/Chan Motif</name>
+    <publisher>Andrew Nagy</publisher>
+    <license>GPLv2+</license>
+    <type>setup</type>
+    <category>Connectivity</category>
+	<version>2.11.0.alpha2</version>
+    <description>
+        Manage Google Voice Trunks with Chan Motif
+    </description>
+    <changelog></changelog>
+    <depends>
+        <engine>asterisk 11</engine>
+        <module>core</module>
+    </depends>
+    <menuitems>
+        <motif>Google Voice [Motif]</motif>
+    </menuitems>
+    <location></location>
+    <md5sum></md5sum>
+</module>
