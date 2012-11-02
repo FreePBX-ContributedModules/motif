@@ -4,6 +4,7 @@
     <publisher>Andrew Nagy</publisher>
     <license>GPLv2+</license>
     <type>setup</type>
+<repo>unsupported</repo>
     <category>Connectivity</category>
 	<version>2.11.0.alpha9</version>
     <description>
