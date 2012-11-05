@@ -4,13 +4,15 @@
     <publisher>Andrew Nagy</publisher>
     <license>GPLv2+</license>
     <type>setup</type>
-<repo>unsupported</repo>
+    <repo>unsupported</repo>
     <category>Connectivity</category>
-	<version>2.11.0.alpha9</version>
+	<version>2.11.0beta1</version>
     <description>
         Manage Google Voice Trunks with Chan Motif
-    </description>
-    <changelog></changelog>
+    </module>
+    <changelog>
+        *2.11.0beta1* Fixed Multiple Inbound Accounts DID Issue
+    </changelog>
     <depends>
         <engine>asterisk 11</engine>
         <module>core</module>
@@ -18,6 +20,6 @@
     <menuitems>
         <motif>Google Voice [Motif]</motif>
     </menuitems>
-    <location>release/2.11/motif-2.11.0.alpha9.tgz</location>
-    <md5sum>e212d87e54c740a61d8d044984e37c66</md5sum>
+    <location>contributed_modules/release/motif-2.11.0.alpha5.tgz</location>
+    <md5sum>ce59dae911559646ab853dd18686c8b3</md5sum>
 </module>
