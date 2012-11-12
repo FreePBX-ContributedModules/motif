@@ -21,6 +21,6 @@
     <menuitems>
         <motif>Google Voice [Motif]</motif>
     </menuitems>
-    <location>contributed_modules/release/motif-2.11.0.alpha5.tgz</location>
-    <md5sum>ce59dae911559646ab853dd18686c8b3</md5sum>
+    <location>release/2.11/motif-2.11.0beta2.tgz</location>
+    <md5sum>608fb3f0dbbd5ed2ba3e0aceebc6c7db</md5sum>
 </module>
