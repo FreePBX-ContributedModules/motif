@@ -36,8 +36,18 @@ if($action == 'edit') {
             	<td><input type="checkbox" name="trunk" <?php echo isset($form_trunk) && $form_trunk ? 'CHECKED' : ''; ?>></td>
 			</tr>
 			<tr>
-                <td><a href="#" class="info"><?php echo _($type." Routes")?><span><?php echo _("Automatically Inbound Routes for this Account")?></span></a></td>
-            	<td><input type="checkbox" name="route" <?php echo isset($form_route) && $form_route ? 'CHECKED' : ''; ?>></td>
+                <td><a href="#" class="info"><?php echo _($type." Outbound Routes")?><span><?php echo _("Automatically Add Outbound Routes for this Account")?></span></a></td>
+            	<td><input type="checkbox" name="obroute" <?php echo isset($form_obroute) && $form_obroute ? 'CHECKED' : ''; ?>></td>
+			</tr>
+			<!-- not configured
+			<tr>
+                <td><a href="#" class="info"><?php echo _($type. " Inbound Routes")?><span><?php echo _("Automatically Add Inbound Routes for this Account")?></span></a></td>
+            	<td><input type="checkbox" name="ibroute" <?php echo isset($form_ibroute) && $form_ibroute ? 'CHECKED' : ''; ?>></td>
+			</tr>
+			-->
+			<tr>
+                <td><a href="#" class="info"><?php echo _("Send Unanswered to GoogleVoice Voicemail")?><span><?php echo _("Send unanswered calls to google voicemail after 25 seconds<br />Note: You MUST route this to a device that can answer. Example: IVRs and Phone directories can NOT answer")?></span></a></td>
+            	<td><input type="checkbox" name="gvm" <?php echo isset($form_gvm) && $form_gvm ? 'CHECKED' : ''; ?>></td>
 			</tr>
         </table>
 		<br />

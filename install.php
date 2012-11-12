@@ -35,3 +35,22 @@ if($amp_conf["AMPDBENGINE"] == "mysql")  {
 } else {
 	die_freepbx(_("Unknown/Not Supported database type: ".$amp_conf["AMPDBENGINE"]));
 }
+
+out('Updating Route Settings');
+$sql = 'SELECT `id`, `settings` FROM `motif`';
+$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
+
+foreach($accounts as $list) {
+    $data = unserialize($list['settings']);
+    $tmp = array();
+    $new = array();
+    if(isset($data['route'])) {
+        $tmp['obroute'] = $data['route'];
+        $tmp['obroute_number'] = $data['route_number'];
+        unset($data['route']);
+        unset($data['route_number']);
+        $new = serialize(array_merge($data,$tmp));
+        $sql = "UPDATE `motif` SET `settings` = '".mysql_real_escape_string($new)."' WHERE id = " . $list['id'];
+        sql($sql);
+    }
+}

@@ -9,17 +9,17 @@ if($action == 'delete') {
 	$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
 	$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
 	$s = unserialize($a['settings']);
-	
+
 	//If we created a trunk then delete it
 	if(isset($s['trunk_number'])) {
 		core_trunks_del($s['trunk_number']);
 	}
-	
+
 	//If we created a route then delete it
-	if(isset($s['route_number'])) {
-		core_routing_delbyid($s['route_number']);
+	if(isset($s['obroute_number'])) {
+		core_routing_delbyid($s['obroute_number']);
 	}
-	
+
 	//Delete our settings from out own DB
 	$sql = "DELETE FROM `motif` WHERE id = ".mysql_real_escape_string($_REQUEST['id']);
 	sql($sql);
@@ -33,22 +33,25 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$pn = isset($_REQUEST['number']) ? mysql_real_escape_string($_REQUEST['number']) : '';
 		$un = isset($_REQUEST['username']) ? mysql_real_escape_string($_REQUEST['username']) : '';
 		$pw = isset($_REQUEST['password']) ? mysql_real_escape_string($_REQUEST['password']) : '';
-		
+
 		//Add '@gmail.com' if not already appended.
 		$un = preg_match('/@/i',$un) ? $un : $un . '@gmail.com';
-		
+
 		$settings = array();
 		//Check trunk/Routes values
-		$settings['trunk'] = isset($_REQUEST['trunk']) ? true : false;
-		$settings['route'] = isset($_REQUEST['route']) ? true : false;
+		$settings['trunk'] = isset($_REQUEST['trunk']) ? true : null;
+		$settings['ibroute'] = isset($_REQUEST['ibroute']) ? true : null;
+		$settings['obroute'] = isset($_REQUEST['obroute']) ? true : null;
+		$settings['gvm'] = isset($_REQUEST['gvm']) ? true : null;
 		
+
 		//Check to make sure all values are set and not empty
 		if(!empty($pn) && !empty($un) && !empty($pw)) {
 			//Add/Remove Trunk Values
 			//The dial String
 			$dialstring = 'Motif/g'.str_replace('@','',str_replace('.','',$un)).'/$OUTNUM$@voice.google.com';
 			if($settings['trunk'] && $action == 'add') {
-				$trunknum = core_trunks_add('custom', 	$dialstring, '', '', $pn, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $pn, '', 'off', 'r');
+				$trunknum = core_trunks_add('custom', $dialstring, '', '', $pn, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $pn, '', 'off', 'r');
 				$settings['trunk_number'] = $trunknum;
 			} elseif($settings['trunk'] && $action == 'edit') {
 				$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
@@ -69,7 +72,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 					core_trunks_del($s['trunk_number']);
 				}
 			}
-		
+
 			//Add/Remove Route Values
 			$dialpattern[] = array(
 	            'prepend_digits' => '1',
@@ -77,32 +80,52 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 	            'match_pattern_pass' => 'NXXNXXXXXX',
 	            'match_cid' => '',
 	        );
+	        //Replace all non-standard characters for route names.
 			$routename = str_replace('@','',str_replace('.','',$un));;
-			if($settings['route'] && $action == 'add') {
-				if(isset($settings['trunk_number'])) {
-					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
-					$settings['route_number'] = $routenum;
-				}
-			} elseif($settings['route'] && $action == 'edit') {
-				$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
-				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
-				$s = unserialize($a['settings']);
-				if(isset($s['trunk_number']) && isset($s['route_number'])) {
-					core_routing_editbyid($s['route_number'], $routename, '', '', '', '', '', 'default', '', $dialpattern, array($s['trunk_number']));
-					$settings['route_number'] = $s['route_number'];
-				} elseif(isset($settings['trunk_number'])) {
-					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
-					$settings['route_number'] = $routenum;
-				}
-			} elseif(!$settings['route'] && $action == 'edit') {
-				$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
-				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
-				$s = unserialize($a['settings']);
-				if(isset($s['route_number'])) {
-					core_routing_delbyid($s['route_number']);
-				}
+			
+			if($action == 'add') {
+			    //Outbound Routes add section
+			    if($settings['obroute']) {
+			        if(isset($settings['trunk_number'])) {
+    					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
+    					$settings['obroute_number'] = $routenum;
+    				}
+			    }
+			    if($settings['ibroute']) {
+			        
+			    }
+			} elseif($action == 'edit') {
+			    //Outbound Routes add section
+			    if($settings['obroute']) {    			    
+			        $sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+    				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
+    				$s = unserialize($a['settings']);
+    				if(isset($s['trunk_number']) && isset($s['obroute_number'])) {
+    					core_routing_editbyid($s['obroute_number'], $routename, '', '', '', '', '', 'default', '', $dialpattern, array($s['trunk_number']));
+    					$settings['obroute_number'] = $s['obroute_number'];
+    				} elseif(isset($settings['trunk_number'])) {
+    					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
+    					$settings['obroute_number'] = $routenum;
+    				}
+    			//Outbound Routes delete section
+			    } elseif(!$settings['obroute']) {
+			        $sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+    				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
+    				$s = unserialize($a['settings']);
+    				if(isset($s['obroute_number'])) {
+    					core_routing_delbyid($s['obroute_number']);
+    				}
+			    }
+			    
+			    //Inbound Routes add section
+			    if($settings['ibroute']) {
+			        
+			    //Inbound Routes add section
+			    } elseif(!$settings['ibroute']) {
+			        
+		        }
 			}
-		
+
 			//Prepare settings to be stored in the database
 			$settings = serialize($settings);
 
@@ -115,10 +138,10 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			needreload();
 		}
 	}
-	
+
 	$sql = 'SELECT * FROM `motif`';
 	$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
-	
+
 	//If editing then let's get some important data back
 	if($action == 'edit') {
 		$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
@@ -127,19 +150,21 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$form_password = $account['password'];
 		$form_username = $account['username'];
 		$form_number = $account['phonenum'];
-		
+
 		$settings = unserialize($account['settings']);
-		$form_trunk = $settings['trunk'];
-		$form_route = $settings['route'];
+		$form_trunk = isset($settings['trunk']) ? true : false;
+		$form_obroute = isset($settings['obroute']) ? true : false;
+		$form_ibroute = isset($settings['ibroute']) ? true : false;
+		$form_gvm = isset($settings['gvm']) ? true : false;
 		$id = $account['id'];
-		
+
 		$r = $astman->command("xmpp show connections");
 		$status['connected'] = false;
 		$context = str_replace('@','',str_replace('.','',$account['username']));
 		if(preg_match('/\[g'.$context.'\] '.$account['username'].'.* (Connected)/i',$r['data'],$matches)) {
 			$status['connected'] = true;
 		};
-		
+
 		$r = $astman->command("xmpp show buddies");
 		preg_match_all('/Client: g'.$context.'\n(?:.|\n)*/i',$r['data'],$client);
 		preg_match_all('/Buddy:(.*)/i',$client[0][0],$matches);
@@ -148,8 +173,8 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			if(!preg_match('/@public.talk.google.com/i',$data)) {
 				$buddies[] = $data;
 			}
-		}		
-		
+		}
+
 	}
 	include('views/main.php');
 	include('views/edit.php');
@@ -157,7 +182,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 	echo "<h3>This Module Requires Asterisk mod_motif & mod_xmpp to be installed and loaded</h3>";
 }
 
-/*
+/* List of command conversions from jabber to xmpp
 jabber list nodes=xmpp list nodes
 jabber purge nodes=xmpp purge nodes
 jabber delete node=xmpp delete node

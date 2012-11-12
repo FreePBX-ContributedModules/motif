@@ -140,7 +140,9 @@ class motif_conf {
 		$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
 		foreach($accounts as $list) {
+		    $settings = unserialize($list['settings']);
 			$context = str_replace('@','',str_replace('.','',$list['username'])); //Remove special characters for use in contexts. There still might be a char limit though
+			
 			$incontext = "im-".$context;
 			$address = 's'; //Joshua Colp @ Digium: 'It will only accept from the s context'
 
@@ -155,9 +157,15 @@ class motif_conf {
 	        $ext->add($incontext, $address, '', new ext_setvar('CALLERID(name)', '${CALLERID(name):1}'));
 	        $ext->add($incontext, $address, 'notrim', new ext_setvar('CALLERID(number)', '${CALLERID(name)}'));
 
-			$ext->add($incontext, $address, '', new ext_wait('1'));
-	        $ext->add($incontext, $address, '', new ext_answer(''));
-	        $ext->add($incontext, $address, '', new ext_senddtmf('1'));
+
+	        
+	        if(isset($settings['gvm']) && $settings['gvm']) {
+	            $ext->add($incontext, $address, '', new ext_setvar('DIAL_OPTIONS', '${DIAL_OPTIONS}aD(:1)'));
+	        } else {
+	            $ext->add($incontext, $address, '', new ext_wait('1'));
+    	        $ext->add($incontext, $address, '', new ext_answer(''));
+                $ext->add($incontext, $address, '', new ext_senddtmf('1'));
+	        }	        
 
 			$ext->add($incontext, $address, '', new ext_goto('1', $list['phonenum'], 'from-trunk'));
 
