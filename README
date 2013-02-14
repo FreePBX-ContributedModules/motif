@@ -1,6 +1,0 @@
-10-29-2012
--At this time this module only works with ONE google voice account!
--No outbound route creation. You'll have to setup a custom trunk in FreePBX with these rules:
--- Motif/g<accountname>/$OUTNUM$@voice.google.com,,r
----Where <accountname> is the formatted username, with removed '.' & '@'.
----EX: Motif/gandrewnagythe159com/$OUTNUM$@voice.google.com,,r
