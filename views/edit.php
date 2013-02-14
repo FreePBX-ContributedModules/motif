@@ -56,7 +56,8 @@ if($action == 'edit') {
                 <td colspan="2"><h5>Advanced Settings</h5><hr></td>
             </tr>
             <tr>
-                <td colspan="2">None At This Time</td>
+               <td><a href="#" class="info"><?php echo _("Google Voice Status Message")?><span><?php echo _("This is your Google Voice Status Message that buddies will see")?></span></a></td>
+               <td><input type="text" name="statusmessage" value="<?php echo isset($form_statusmessage) ? $form_statusmessage : ''; ?>"></td>
             </tr>
         </table>
 		<br />

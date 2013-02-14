@@ -7,9 +7,9 @@ class motif_conf {
 	//Tell freepbx which files we want to 'control'
 	function get_filename() {
         $files = array(
-			'motif.conf',
+            'motif.conf',
             'xmpp.conf',
-			'rtp.conf',
+            'rtp.conf',
             'extensions_additional.conf'
         );
         return $files;
@@ -27,6 +27,10 @@ class motif_conf {
         if(!file_exists($amp_conf['ASTETCDIR'] . '/xmpp_custom.conf')) {
             touch($amp_conf['ASTETCDIR'] . '/xmpp_custom.conf');
         }
+        
+        if(!file_exists($amp_conf['ASTETCDIR'] . '/rtp_custom.conf')) {
+            touch($amp_conf['ASTETCDIR'] . '/rtp_custom.conf');
+        }
 
 		//Backup all old xmpp & motif.conf files
         if(file_exists($amp_conf['ASTETCDIR'] . '/xmpp.conf') && !file_exists($amp_conf['ASTETCDIR'] . '/xmpp.conf.bak')) {
@@ -35,6 +39,10 @@ class motif_conf {
 
         if(file_exists($amp_conf['ASTETCDIR'] . '/motif.conf') && !file_exists($amp_conf['ASTETCDIR'] . '/motif.conf.bak')) {
             copy($amp_conf['ASTETCDIR'] . '/motif.conf', $amp_conf['ASTETCDIR'] . '/motif.conf.bak');
+        }
+        
+        if(file_exists($amp_conf['ASTETCDIR'] . '/rtp.conf') && !file_exists($amp_conf['ASTETCDIR'] . '/rtp.conf.bak')) {
+            copy($amp_conf['ASTETCDIR'] . '/rtp.conf', $amp_conf['ASTETCDIR'] . '/rtp.conf.bak');
         }
 
 		//Disable gtalk and jabber
@@ -62,9 +70,9 @@ class motif_conf {
             case 'xmpp.conf':
                 return $this->generate_xmpp_conf($version);
                 break;
-			case 'rtp.conf':
-            	return $this->generate_rtp_conf($version);
-            	break;
+            case 'rtp.conf':
+                return $this->generate_rtp_conf($version);
+                break;
             case 'extensions_additional.conf':
                 return $this->generate_extensions_conf($version);
                 break;
@@ -112,8 +120,9 @@ class motif_conf {
 			$output .= "usetls=yes\n";
 			$output .= "usesasl=yes\n";
 			$output .= "status=available\n";
-			$output .= "statusmessage=\"I am available\"\n";
-			$output .= "timeout=5\n";
+            $output .= "statusmessage=\"".$list['statusmessage']."\"\n";
+            $output .= "timeout=5\n\n";
+
 		}
 
 
@@ -121,14 +130,11 @@ class motif_conf {
 	}
 
 	function generate_rtp_conf($ast_version) {
-		global $astman;
+		global $astman,$amp_conf;
 
-		//RTP settings are predefined here. This will upset some people
 		$output = "[general]\n";
-		$output .= ";rtp settings are defined in the chan_motif freepbx module\n";
-		$output .= "rtpstart=10000\n"; //Normal Starting Point
-		$output .= "rtpend=20000\n"; //Normal Ending Point
 		$output .= "icesupport=yes\n"; //icesupport is required for googlevoice: https://wiki.asterisk.org/wiki/display/AST/Calling+using+Google
+        $output .= "#include rtp_custom.conf\n";
 
 		return $output;
 	}

@@ -33,6 +33,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$pn = isset($_REQUEST['number']) ? mysql_real_escape_string($_REQUEST['number']) : '';
 		$un = isset($_REQUEST['username']) ? mysql_real_escape_string($_REQUEST['username']) : '';
 		$pw = isset($_REQUEST['password']) ? mysql_real_escape_string($_REQUEST['password']) : '';
+        $statusmessage = isset($_REQUEST['statusmessage']) ? mysql_real_escape_string($_REQUEST['statusmessage']) : 'I am Available';
 
 		//Add '@gmail.com' if not already appended.
 		$un = preg_match('/@/i',$un) ? $un : $un . '@gmail.com';
@@ -42,8 +43,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$settings['trunk'] = isset($_REQUEST['trunk']) ? true : null;
 		$settings['ibroute'] = isset($_REQUEST['ibroute']) ? true : null;
 		$settings['obroute'] = isset($_REQUEST['obroute']) ? true : null;
-		$settings['gvm'] = isset($_REQUEST['gvm']) ? true : null;
-		
+		$settings['gvm'] = isset($_REQUEST['gvm']) ? true : null;		
 
 		//Check to make sure all values are set and not empty
 		if(!empty($pn) && !empty($un) && !empty($pw)) {
@@ -129,10 +129,12 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			//Prepare settings to be stored in the database
 			$settings = serialize($settings);
 
+            $statusmessage = isset($statusmessage) && !empty($statusmessage) ? $statusmessage : 'I am Available';
+
 			if($action == 'add') {
-				$sql = "INSERT INTO `motif` (`phonenum`, `username`, `password`, `settings`) VALUES ('" . $pn . "', '" . $un . "', '" . $pw . "', '" . $settings . "')";
+                $sql = "INSERT INTO `motif` (`phonenum`, `username`, `password`, `settings`, `statusmessage`) VALUES ('" . $pn . "', '" . $un . "', '" . $pw . "', '" . $settings . "', '" . $statusmessage . "')";
 			} elseif($action == 'edit') {
-				$sql = "UPDATE `motif` SET `phonenum` = '".$pn."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."' WHERE id = " . mysql_real_escape_string($_REQUEST['id']);
+                $sql = "UPDATE `motif` SET `phonenum` = '".$pn."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."', `statusmessage` = '".$statusmessage."' WHERE id = " . mysql_real_escape_string($_REQUEST['id']);
 			}
 			sql($sql);
 			needreload();
@@ -157,6 +159,8 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$form_ibroute = isset($settings['ibroute']) ? true : false;
 		$form_gvm = isset($settings['gvm']) ? true : false;
 		$id = $account['id'];
+        
+        $form_statusmessage = $account['statusmessage'];
 
 		$r = $astman->command("xmpp show connections");
 		$status['connected'] = false;
@@ -192,4 +196,3 @@ jabber set debug=xmpp set debug
 jabber show connections=xmpp show connections
 jabber show buddies=xmpp show buddies
 */
-
