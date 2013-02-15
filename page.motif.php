@@ -78,10 +78,16 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 	            'prepend_digits' => '1',
 	            'match_pattern_prefix' => '',
 	            'match_pattern_pass' => 'NXXNXXXXXX',
-	            'match_cid' => '',
+	            'match_cid' => ''
 	        );
+			$dialpattern[] = array(
+                    'prepend_digits' => '',
+                    'match_pattern_prefix' => '1',
+                    'match_pattern_pass' => 'NXXNXXXXXX',
+                    'match_cid' => ''
+            );      
 	        //Replace all non-standard characters for route names.
-			$routename = str_replace('@','',str_replace('.','',$un));;
+			$routename = str_replace('@','',str_replace('.','',$un));
 			
 			if($action == 'add') {
 			    //Outbound Routes add section
