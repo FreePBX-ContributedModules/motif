@@ -82,8 +82,8 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 	        );
 			$dialpattern[] = array(
                     'prepend_digits' => '',
-                    'match_pattern_prefix' => '1',
-                    'match_pattern_pass' => 'NXXNXXXXXX',
+                    'match_pattern_prefix' => '',
+                    'match_pattern_pass' => '1NXXNXXXXXX',
                     'match_cid' => ''
             );      
 	        //Replace all non-standard characters for route names.
