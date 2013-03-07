@@ -2,6 +2,21 @@
 
 global $amp_conf;
 
+function motif_get_config($engine) {
+	global $db;
+	global $amp_conf;
+	global $ext;  // is this the best way to pass this?
+	global $asterisk_conf;
+	global $core_conf;
+	global $version;
+
+	switch($engine) {
+		case "asterisk":
+			$core_conf->addRtpAdditional('general', array("icesupport" => "yes"));
+			break;
+	}
+}
+
 class motif_conf {
 
 	//Tell freepbx which files we want to 'control'
@@ -9,7 +24,6 @@ class motif_conf {
         $files = array(
             'motif.conf',
             'xmpp.conf',
-            'rtp.conf',
             'extensions_additional.conf'
         );
         return $files;
@@ -27,10 +41,6 @@ class motif_conf {
         if(!file_exists($amp_conf['ASTETCDIR'] . '/xmpp_custom.conf')) {
             touch($amp_conf['ASTETCDIR'] . '/xmpp_custom.conf');
         }
-        
-        if(!file_exists($amp_conf['ASTETCDIR'] . '/rtp_custom.conf')) {
-            touch($amp_conf['ASTETCDIR'] . '/rtp_custom.conf');
-        }
 
 		//Backup all old xmpp & motif.conf files
         if(file_exists($amp_conf['ASTETCDIR'] . '/xmpp.conf') && !file_exists($amp_conf['ASTETCDIR'] . '/xmpp.conf.bak')) {
@@ -39,10 +49,6 @@ class motif_conf {
 
         if(file_exists($amp_conf['ASTETCDIR'] . '/motif.conf') && !file_exists($amp_conf['ASTETCDIR'] . '/motif.conf.bak')) {
             copy($amp_conf['ASTETCDIR'] . '/motif.conf', $amp_conf['ASTETCDIR'] . '/motif.conf.bak');
-        }
-        
-        if(file_exists($amp_conf['ASTETCDIR'] . '/rtp.conf') && !file_exists($amp_conf['ASTETCDIR'] . '/rtp.conf.bak')) {
-            copy($amp_conf['ASTETCDIR'] . '/rtp.conf', $amp_conf['ASTETCDIR'] . '/rtp.conf.bak');
         }
 
 		//Disable gtalk and jabber
@@ -69,9 +75,6 @@ class motif_conf {
                 break;
             case 'xmpp.conf':
                 return $this->generate_xmpp_conf($version);
-                break;
-            case 'rtp.conf':
-                return $this->generate_rtp_conf($version);
                 break;
             case 'extensions_additional.conf':
                 return $this->generate_extensions_conf($version);
@@ -125,16 +128,6 @@ class motif_conf {
 
 		}
 
-
-		return $output;
-	}
-
-	function generate_rtp_conf($ast_version) {
-		global $astman,$amp_conf;
-
-		$output = "[general]\n";
-		$output .= "icesupport=yes\n"; //icesupport is required for googlevoice: https://wiki.asterisk.org/wiki/display/AST/Calling+using+Google
-        $output .= "#include rtp_custom.conf\n";
 
 		return $output;
 	}

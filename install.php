@@ -59,10 +59,3 @@ foreach($accounts as $list) {
 if (!$db->getAll('SHOW COLUMNS FROM motif WHERE FIELD = "statusmessage"')) {
 	sql('ALTER TABLE motif ADD statusmessage varchar( 50 ) NOT NULL default "I am available"');
 }
-
-if(file_exists($amp_conf['ASTETCDIR'].'/rtp.conf') && ((!file_exists($amp_conf['ASTETCDIR'].'/rtp_custom.conf')) || (filesize($amp_conf['ASTETCDIR'].'/rtp_custom.conf') == 0))) {
-    $contents = file_get_contents($amp_conf['ASTETCDIR'].'/rtp.conf');
-    $rtpstart = preg_match('/rtpstart=(.*)/i',$contents,$m) ? $m[1] : '10000';
-    $rtpend = preg_match('/rtpend=(.*)/i',$contents,$m) ? $m[1] : '20000';            
-    file_put_contents($amp_conf['ASTETCDIR'].'/rtp_custom.conf',"rtpstart=".$rtpstart."\nrtpend=".$rtpend."\n");
-}
