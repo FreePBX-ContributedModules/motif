@@ -1,0 +1,24 @@
+[2.11.5]
+ * Setup wrong outbound dial pattern, its clean now (#6355, r15123)
+[2.11.4]
+ * Outbound dial pattern should allow number with 1 as prefix (#6328, r15108)
+[2.11.3]
+ * Remove Beta status (r15088)
+ * Allow users ot change status messages (#6326,r15088)
+ * Fix dangling symlink on rtp.conf and regenerate and restructure how rtp.conf works (#6318,r15088)
+[2.11.0.beta2]
+ * Motif: Redefined routes (r14685)
+ * Check missing ringback tone on outbound (#6067, r14685)
+ * Added route to google voicemail option. (#6066, r14685)
+ * Fix inbound route issue (#6065, r14685)
+[2.11.0.beta1]
+ * Multiple Inbound Call Routing based on DID (r14642)
+ * Added googlevoice username to account list (r14642)
+ * New README file (r14642)
+[2.11.0.alpha9]
+ * Fixing php short tags usage (r14576)
+ * Fixes Multiple account issues (r14574)
+[2.11.0.alpha3]
+ * Fixed multiple trunk/route creation/editing issues (r14572)
+ * Add License and Readme (r14571)
+ * Initial Commit (r14570)
