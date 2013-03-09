@@ -1,5 +1,7 @@
+[2.11.7]
+ * If motif created rtp.conf in the past then remove rtp.conf (#6398)
 [2.11.6]
- * Release control of rtp.conf and rtp.conf settings to core.
+ * Release control of rtp.conf and rtp.conf settings to core. (#6397)
 [2.11.5]
  * Setup wrong outbound dial pattern, its clean now (#6355, r15123)
 [2.11.4]

@@ -59,3 +59,11 @@ foreach($accounts as $list) {
 if (!$db->getAll('SHOW COLUMNS FROM motif WHERE FIELD = "statusmessage"')) {
 	sql('ALTER TABLE motif ADD statusmessage varchar( 50 ) NOT NULL default "I am available"');
 }
+
+if(file_exists($amp_conf['ASTETCDIR'].'/rtp.conf') && !is_link($amp_conf['ASTETCDIR'].'/rtp.conf')) {
+	out('Removing old motif controlled rtp.conf file');
+	$rtp_contents = file_get_contents($amp_conf['ASTETCDIR'].'/rtp.conf');
+	if(preg_match('/rtp settings are defined in the chan_motif freepbx module/i',$rtp_contents)) {
+		unlink($amp_conf['ASTETCDIR'].'/rtp.conf');
+	}
+}
