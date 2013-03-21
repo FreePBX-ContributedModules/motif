@@ -19,8 +19,8 @@ if($amp_conf["AMPDBENGINE"] == "mysql")  {
 	$sql = "CREATE TABLE IF NOT EXISTS `motif` (
 	`id` int(11) NOT NULL AUTO_INCREMENT,
 	`phonenum` varchar( 12 ) NOT NULL ,
-	`username` varchar( 50 ) NOT NULL ,
-	`password` varchar( 50 ) NOT NULL ,
+	`username` varchar( 100 ) NOT NULL ,
+	`password` varchar( 150 ) NOT NULL ,
 	`type` varchar( 50 ) NOT NULL DEFAULT 'googlevoice' ,
 	`settings` blob NOT NULL,
     `statusmessage` varchar( 50 ) NOT NULL,
@@ -61,9 +61,16 @@ if (!$db->getAll('SHOW COLUMNS FROM motif WHERE FIELD = "statusmessage"')) {
 }
 
 if(file_exists($amp_conf['ASTETCDIR'].'/rtp.conf') && !is_link($amp_conf['ASTETCDIR'].'/rtp.conf')) {
-	out('Removing old motif controlled rtp.conf file');
 	$rtp_contents = file_get_contents($amp_conf['ASTETCDIR'].'/rtp.conf');
 	if(preg_match('/rtp settings are defined in the chan_motif freepbx module/i',$rtp_contents)) {
+		out('Removing old motif controlled rtp.conf file');
 		unlink($amp_conf['ASTETCDIR'].'/rtp.conf');
 	}
 }
+
+out("Increase username and password size in database");
+$sql = "ALTER TABLE motif CHANGE username username varchar( 100 ) NOT NULL";
+sql($sql);
+
+$sql = "ALTER TABLE motif CHANGE password password varchar( 150 ) NOT NULL";
+sql($sql);
