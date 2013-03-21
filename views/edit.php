@@ -21,15 +21,15 @@ if($action == 'edit') {
             </tr>
             <tr>
                 <td><a href="#" class="info"><?php echo _("Google Voice Username")?><span><?php echo _("This is your google voice login.<br />If don't you supply '@domain' we will append @gmail.com")?></span></a></td>
-                <td><input type="text" name="username" value="<?php echo isset($form_username) ? $form_username : ''; ?>"></td>
+                <td><input type="text" name="username" maxlength="100" value="<?php echo isset($form_username) ? $form_username : ''; ?>"></td>
             </tr>
             <tr>
                 <td><a href="#" class="info"><?php echo _("Google Voice Password")?><span><?php echo _("This is your Google Voice Password")?></span></a></td>
-            	<td><input type="password" name="password" value="<?php echo isset($form_password) ? $form_password : ''; ?>"></td>
+            	<td><input type="password" name="password" maxlength="150" value="<?php echo isset($form_password) ? $form_password : ''; ?>"></td>
 			</tr>
 			<tr>
                 <td><a href="#" class="info"><?php echo _("Google Voice Phone Number")?><span><?php echo _("This is your Google Voice Phone Number <br />10 Digit Format")?></span></a></td>
-            	<td><input type="text" name="number" value="<?php echo isset($form_number) ? $form_number : ''; ?>"></td>
+            	<td><input type="text" name="number" maxlength="12" value="<?php echo isset($form_number) ? $form_number : ''; ?>"></td>
 			</tr>
 			<tr>
                 <td><a href="#" class="info"><?php echo _($type." Trunk")?><span><?php echo _("Automatically Add this Account as a Trunk")?></span></a></td>
