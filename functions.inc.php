@@ -118,13 +118,14 @@ class motif_conf {
 			$output .= "username=".$list['username']."\n";
 			$output .= "secret=".$list['password']."\n";
 
-			$output .= "priority=1\n";
 			$output .= "port=5222\n";
 			$output .= "usetls=yes\n";
 			$output .= "usesasl=yes\n";
 			$output .= "status=available\n";
             $output .= "statusmessage=\"".$list['statusmessage']."\"\n";
-            $output .= "timeout=5\n\n";
+            $output .= "timeout=5\n";
+			
+			$output .= "priority=".$list['priority']."\n\n";
 
 		}
 

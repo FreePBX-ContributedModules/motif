@@ -59,6 +59,10 @@ if($action == 'edit') {
                <td><a href="#" class="info"><?php echo _("Google Voice Status Message")?><span><?php echo _("This is your Google Voice Status Message that buddies will see")?></span></a></td>
                <td><input type="text" name="statusmessage" value="<?php echo isset($form_statusmessage) ? $form_statusmessage : ''; ?>"></td>
             </tr>
+            <tr>
+               <td><a href="#" class="info"><?php echo _("XMPP Priority")?><span><?php echo _("This is the priority of where google will route an inbound call. A higher number has a higher priority. We believe that:<ul><li>Windows Gtalk client is 20</li><li>GMail is 24</li><li>Pidgin would be 0 or 1</li></ul>The range of acceptable values is -128 to +127. Anything else will be reset to the highest or lowest value.")?></span></a></td>
+               <td><input type="text" name="priority" value="<?php echo isset($form_priority) ? $form_priority : '127'; ?>"></td>
+            </tr>
         </table>
 		<br />
 		<?php if($action == 'edit') { ?>

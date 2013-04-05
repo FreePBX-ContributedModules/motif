@@ -20,7 +20,7 @@ if($action == 'delete') {
 		core_routing_delbyid($s['obroute_number']);
 	}
 
-	//Delete our settings from out own DB
+	//Delete our settings from our own DB
 	$sql = "DELETE FROM `motif` WHERE id = ".mysql_real_escape_string($_REQUEST['id']);
 	sql($sql);
 	$action = 'add';
@@ -33,6 +33,10 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$pn = isset($_REQUEST['number']) ? mysql_real_escape_string($_REQUEST['number']) : '';
 		$un = isset($_REQUEST['username']) ? mysql_real_escape_string($_REQUEST['username']) : '';
 		$pw = isset($_REQUEST['password']) ? mysql_real_escape_string($_REQUEST['password']) : '';
+		$priority = isset($_REQUEST['priority']) ? mysql_real_escape_string($_REQUEST['priority']) : '127';
+		$priority = ($priority > 127) ? 127 : $priority;
+		$priority = ($priority < -128) ? -128 : $priority;
+		
         $statusmessage = isset($_REQUEST['statusmessage']) ? mysql_real_escape_string($_REQUEST['statusmessage']) : 'I am Available';
 
 		//Add '@gmail.com' if not already appended.
@@ -138,9 +142,9 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
             $statusmessage = isset($statusmessage) && !empty($statusmessage) ? $statusmessage : 'I am Available';
 
 			if($action == 'add') {
-                $sql = "INSERT INTO `motif` (`phonenum`, `username`, `password`, `settings`, `statusmessage`) VALUES ('" . $pn . "', '" . $un . "', '" . $pw . "', '" . $settings . "', '" . $statusmessage . "')";
+                $sql = "INSERT INTO `motif` (`phonenum`, `username`, `password`, `settings`, `statusmessage`, `priority`) VALUES ('" . $pn . "', '" . $un . "', '" . $pw . "', '" . $settings . "', '" . $statusmessage . "', '" . $priority . "')";
 			} elseif($action == 'edit') {
-                $sql = "UPDATE `motif` SET `phonenum` = '".$pn."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."', `statusmessage` = '".$statusmessage."' WHERE id = " . mysql_real_escape_string($_REQUEST['id']);
+                $sql = "UPDATE `motif` SET `phonenum` = '".$pn."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."', `statusmessage` = '".$statusmessage."', `priority` = '".$priority."' WHERE id = " . mysql_real_escape_string($_REQUEST['id']);
 			}
 			sql($sql);
 			needreload();
@@ -167,6 +171,8 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$id = $account['id'];
         
         $form_statusmessage = $account['statusmessage'];
+		
+		$form_priority = $account['priority'];
 
 		$r = $astman->command("xmpp show connections");
 		$status['connected'] = false;

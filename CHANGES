@@ -1,3 +1,5 @@
+[2.11.9]
+ * Added ability to change priority and made the default 127. Also added some more uninstall functionalities
 [2.11.8]
  * Increase password length and username length in db (#6435)
 [2.11.7]

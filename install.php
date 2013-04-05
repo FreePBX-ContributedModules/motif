@@ -24,6 +24,7 @@ if($amp_conf["AMPDBENGINE"] == "mysql")  {
 	`type` varchar( 50 ) NOT NULL DEFAULT 'googlevoice' ,
 	`settings` blob NOT NULL,
     `statusmessage` varchar( 50 ) NOT NULL,
+	`priority` int( 4 ) NOT NULL default 127,
 	PRIMARY KEY (`id`)
 )
 ";
@@ -57,6 +58,7 @@ foreach($accounts as $list) {
 }
 
 if (!$db->getAll('SHOW COLUMNS FROM motif WHERE FIELD = "statusmessage"')) {
+	out("Adding status message field");
 	sql('ALTER TABLE motif ADD statusmessage varchar( 50 ) NOT NULL default "I am available"');
 }
 
@@ -74,3 +76,8 @@ sql($sql);
 
 $sql = "ALTER TABLE motif CHANGE password password varchar( 150 ) NOT NULL";
 sql($sql);
+
+if (!$db->getAll('SHOW COLUMNS FROM motif WHERE FIELD = "priority"')) {
+	out("Adding Priority field");
+	sql('ALTER TABLE motif ADD priority int( 4 ) NOT NULL default 127');
+}
