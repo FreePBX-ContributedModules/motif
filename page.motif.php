@@ -195,7 +195,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 	include('views/main.php');
 	include('views/edit.php');
 } else {
-	echo "<h3>This Module Requires Asterisk mod_motif & mod_xmpp to be installed and loaded</h3>";
+	echo "<h3>This module requires Asterisk chan_motif & res_xmpp to be installed and loaded</h3>";
 }
 
 /* List of command conversions from jabber to xmpp

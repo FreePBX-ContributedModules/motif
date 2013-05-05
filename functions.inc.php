@@ -34,6 +34,10 @@ class motif_conf {
         global $version,$amp_conf,$astman;
 
 		//Create all custom files
+        if(!file_exists($amp_conf['ASTETCDIR'] . '/xmpp_general_custom.conf')) {
+            touch($amp_conf['ASTETCDIR'] . '/xmpp_general_custom.conf');
+        }
+
         if(!file_exists($amp_conf['ASTETCDIR'] . '/motif_custom.conf')) {
             touch($amp_conf['ASTETCDIR'] . '/motif_custom.conf');
         }
@@ -89,15 +93,16 @@ class motif_conf {
 		$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
 		//Clear output for motif file
-        $output = '';
+                $output = '';
 		foreach($accounts as $list) {
 			$context = str_replace('@','',str_replace('.','',$list['username'])); //Remove special characters for use in contexts. There still might be a char limit though
 			$output .= "[g".$context."]\n"; //Add contexts for each 'line'
 			$output .= "context=im-".$context."\n";
 			$output .= "disallow=all\n";
 			$output .= "allow=ulaw\n";
-			$output .= "connection=g".$context."\n";
+			$output .= "connection=g".$context."\n\n";
 		}
+		$output .= "#include => motif_custom.conf\n";
 		return $output;
 	}
 
@@ -107,7 +112,9 @@ class motif_conf {
 		$sql = 'SELECT * FROM `motif`';
 		$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
-		$output = "[general]\n";
+		$output = "[general]\n\n";
+		$output .= "#include => xmpp_general_custom.conf\n\n";
+
 		foreach($accounts as $list) {
 			$context = str_replace('@','',str_replace('.','',$list['username'])); //Remove special characters for use in contexts. There still might be a char limit though
 
@@ -122,13 +129,13 @@ class motif_conf {
 			$output .= "usetls=yes\n";
 			$output .= "usesasl=yes\n";
 			$output .= "status=available\n";
-            $output .= "statusmessage=\"".$list['statusmessage']."\"\n";
-            $output .= "timeout=5\n";
-			
+			$output .= "statusmessage=\"".$list['statusmessage']."\"\n";
+			$output .= "timeout=5\n";
 			$output .= "priority=".$list['priority']."\n\n";
 
 		}
 
+		$output .= "#include => xmpp_custom.conf\n";
 
 		return $output;
 	}

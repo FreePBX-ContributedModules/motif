@@ -1,5 +1,5 @@
 <?php
-echo "<h2>"._("Google Voice [Motif]")."</h2>";
+echo "<h2>"._("Google Voice (Motif)")."</h2>";
 
 $type = $action == 'add' ? 'Add' : 'Edit';
 
@@ -20,33 +20,33 @@ if($action == 'edit') {
                 <td colspan="2"><h5>Typical Settings</h5><hr></td>
             </tr>
             <tr>
-                <td><a href="#" class="info"><?php echo _("Google Voice Username")?><span><?php echo _("This is your google voice login.<br />If don't you supply '@domain' we will append @gmail.com")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _("Google Voice Username")?>:<span><?php echo _("This is your google voice login.<br />If don't you supply '@domain' we will append @gmail.com")?></span></a></td>
                 <td><input type="text" name="username" maxlength="100" value="<?php echo isset($form_username) ? $form_username : ''; ?>"></td>
             </tr>
             <tr>
-                <td><a href="#" class="info"><?php echo _("Google Voice Password")?><span><?php echo _("This is your Google Voice Password")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _("Google Voice Password")?>:<span><?php echo _("This is your Google Voice Password")?></span></a></td>
             	<td><input type="password" name="password" maxlength="150" value="<?php echo isset($form_password) ? $form_password : ''; ?>"></td>
 			</tr>
 			<tr>
-                <td><a href="#" class="info"><?php echo _("Google Voice Phone Number")?><span><?php echo _("This is your Google Voice Phone Number <br />10 Digit Format")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _("Google Voice Phone Number")?>:<span><?php echo _("This is your Google Voice Phone Number <br />10 Digit Format")?></span></a></td>
             	<td><input type="text" name="number" maxlength="12" value="<?php echo isset($form_number) ? $form_number : ''; ?>"></td>
 			</tr>
 			<tr>
-                <td><a href="#" class="info"><?php echo _($type." Trunk")?><span><?php echo _("Automatically Add this Account as a Trunk")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _($type." Trunk")?>:<span><?php echo _("Automatically Add this Account as a Trunk")?></span></a></td>
             	<td><input type="checkbox" name="trunk" <?php echo isset($form_trunk) && $form_trunk ? 'CHECKED' : ''; ?>></td>
 			</tr>
 			<tr>
-                <td><a href="#" class="info"><?php echo _($type." Outbound Routes")?><span><?php echo _("Automatically Add Outbound Routes for this Account")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _($type." Outbound Routes")?>:<span><?php echo _("Automatically Add Outbound Route for this Account")?></span></a></td>
             	<td><input type="checkbox" name="obroute" <?php echo isset($form_obroute) && $form_obroute ? 'CHECKED' : ''; ?>></td>
 			</tr>
 			<!-- not configured
 			<tr>
-                <td><a href="#" class="info"><?php echo _($type. " Inbound Routes")?><span><?php echo _("Automatically Add Inbound Routes for this Account")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _($type. " Inbound Routes")?>:<span><?php echo _("Automatically Add Inbound Routes for this Account")?></span></a></td>
             	<td><input type="checkbox" name="ibroute" <?php echo isset($form_ibroute) && $form_ibroute ? 'CHECKED' : ''; ?>></td>
 			</tr>
 			-->
 			<tr>
-                <td><a href="#" class="info"><?php echo _("Send Unanswered to GoogleVoice Voicemail")?><span><?php echo _("Send unanswered calls to google voicemail after 25 seconds<br />Note: You MUST route this to a device that can answer. Example: IVRs and Phone directories can NOT answer")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _("Send Unanswered to Google Voicemail")?>:<span><?php echo _("Send unanswered calls to Google voicemail after 25 seconds<br />Note: You MUST route this to a device that can answer. Example: IVRs and Phone directories can NOT answer")?></span></a></td>
             	<td><input type="checkbox" name="gvm" <?php echo isset($form_gvm) && $form_gvm ? 'CHECKED' : ''; ?>></td>
 			</tr>
         </table>
@@ -56,11 +56,11 @@ if($action == 'edit') {
                 <td colspan="2"><h5>Advanced Settings</h5><hr></td>
             </tr>
             <tr>
-               <td><a href="#" class="info"><?php echo _("Google Voice Status Message")?><span><?php echo _("This is your Google Voice Status Message that buddies will see")?></span></a></td>
+               <td><a href="#" class="info"><?php echo _("Google Voice Status Message")?>:<span><?php echo _("This is your Google Voice Status Message that buddies will see")?></span></a></td>
                <td><input type="text" name="statusmessage" value="<?php echo isset($form_statusmessage) ? $form_statusmessage : ''; ?>"></td>
             </tr>
             <tr>
-               <td><a href="#" class="info"><?php echo _("XMPP Priority")?><span><?php echo _("This is the priority of where google will route an inbound call. A higher number has a higher priority. We believe that:<ul><li>Windows Gtalk client is 20</li><li>GMail is 24</li><li>Pidgin would be 0 or 1</li></ul>The range of acceptable values is -128 to +127. Anything else will be reset to the highest or lowest value.")?></span></a></td>
+               <td><a href="#" class="info"><?php echo _("XMPP Priority")?>:<span><?php echo _("This is the priority of where google will route an inbound call. A higher number has a higher priority. We believe that:<ul><li>Windows Gtalk client is 20</li><li>GMail is 24</li><li>Pidgin would be 0 or 1</li></ul>The range of acceptable values is -128 to +127. Anything else will be reset to the highest or lowest value.")?></span></a></td></td>
                <td><input type="text" name="priority" value="<?php echo isset($form_priority) ? $form_priority : '127'; ?>"></td>
             </tr>
         </table>
