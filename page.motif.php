@@ -150,7 +150,9 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			needreload();
 		}
 	}
-
+	
+	$form_statusmessage = isset($form_statusmessage) ? $form_statusmessage : 'I am Available';
+	
 	$sql = 'SELECT * FROM `motif`';
 	$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
