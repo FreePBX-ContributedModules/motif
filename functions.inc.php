@@ -102,7 +102,7 @@ class motif_conf {
 			$output .= "allow=ulaw\n";
 			$output .= "connection=g".$context."\n\n";
 		}
-		$output .= "#include => motif_custom.conf\n";
+		$output .= "#include motif_custom.conf\n";
 		return $output;
 	}
 
@@ -113,7 +113,7 @@ class motif_conf {
 		$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
 		$output = "[general]\n\n";
-		$output .= "#include => xmpp_general_custom.conf\n\n";
+		$output .= "#include xmpp_general_custom.conf\n\n";
 
 		foreach($accounts as $list) {
 			$context = str_replace('@','',str_replace('.','',$list['username'])); //Remove special characters for use in contexts. There still might be a char limit though
@@ -135,7 +135,7 @@ class motif_conf {
 
 		}
 
-		$output .= "#include => xmpp_custom.conf\n";
+		$output .= "#include xmpp_custom.conf\n";
 
 		return $output;
 	}
