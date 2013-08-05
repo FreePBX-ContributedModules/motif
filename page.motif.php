@@ -183,8 +183,9 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			$status['connected'] = true;
 		};
 
-		$r = $astman->command("xmpp show buddies");
-		preg_match_all('/Client: g'.$context.'\n(?:.|\n)*/i',$r['data'],$client);
+		//$r = $astman->command("xmpp show buddies");
+		//preg_match_all('/Client: g'.$context.'\n(?:.|\n)*/i',$r['data'],$client);
+		/*
 		preg_match_all('/Buddy:(.*)/i',$client[0][0],$matches);
 		$buddies = array();
 		foreach($matches[1] as $data) {
@@ -192,6 +193,8 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 				$buddies[] = $data;
 			}
 		}
+		*/
+		$buddies = array('Removed for Debugging Purposes');
 
 	}
 	include('views/main.php');
