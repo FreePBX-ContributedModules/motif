@@ -5,7 +5,7 @@ $type = $action == 'add' ? 'Add' : 'Edit';
 
 if($action == 'edit') { 
 	echo "<h2>Account: ".$form_number."</h2>"; 
-	echo "<a href='config.php?display=motif&action=delete&id=".$id."'><img src='images/user_delete.png' /> Delete Account ".$form_number."</a>";
+	echo "<a href='config.php?display=motif&action=delete&id=".$id."'><img src='images/user_delete.png' /> ".('Delete Account')." ".$form_number."</a>";
 }
 ?>
 <script>
@@ -17,7 +17,7 @@ if($action == 'edit') {
 	<?php if($action == 'edit') { echo '<input type="hidden" name="id" value="'.$id.'">'; } ?>
         <table>
             <tr>
-                <td colspan="2"><h5>Typical Settings</h5><hr></td>
+                <td colspan="2"><h5><?php echo _("Typical Settings")?></h5><hr></td>
             </tr>
             <tr>
                 <td><a href="#" class="info"><?php echo _("Google Voice Username")?>:<span><?php echo _("This is your google voice login.<br />If don't you supply '@domain' we will append @gmail.com")?></span></a></td>
@@ -53,7 +53,7 @@ if($action == 'edit') {
 		<br />
         <table>
             <tr>
-                <td colspan="2"><h5>Advanced Settings</h5><hr></td>
+                <td colspan="2"><h5><?php echo _("Advanced Settings")?></h5><hr></td>
             </tr>
             <tr>
                <td><a href="#" class="info"><?php echo _("Google Voice Status Message")?>:<span><?php echo _("This is your Google Voice Status Message that buddies will see")?></span></a></td>
@@ -68,14 +68,14 @@ if($action == 'edit') {
 		<?php if($action == 'edit') { ?>
         <table>
             <tr>
-                <td colspan="2"><h5>Detailed Status</h5><hr></td>
+                <td colspan="2"><h5><?php echo _("Detailed Status")?></h5><hr></td>
             </tr>
             <tr>
-                <td><u>Status:</u></td>
-				<td><?php if($status['connected']) { ?><div style="background-color:green; color:white; height: 20px; width: 80px; text-align: center">Connected</div><?php } else { ?><div style="background-color:red; color:white; height: 20px; width: 80px; text-align: center">Disconnected</div><?php } ?></td>
+                <td><u><?php echo _("Status")?>:</u></td>
+				<td><?php if($status['connected']) { ?><div style="background-color:green; color:white; height: 20px; width: 80px; text-align: center"><?php echo _("Connected")?></div><?php } else { ?><div style="background-color:red; color:white; height: 20px; width: 80px; text-align: center"><?php echo _("Disconnected")?></div><?php } ?></td>
             </tr>
 			<tr>
-				<td colspan="2"><u>Buddies:</u></td>
+				<td colspan="2"><u><?php echo _("Buddies")?>:</u></td>
 			</tr>
 			<tr>
 				<td colspan="2">
