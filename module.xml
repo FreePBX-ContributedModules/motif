@@ -9,7 +9,7 @@
     <description>
         Manage Google Voice Trunks with Chan Motif
     </description>
-    <changelog></changelog>
+    <changelog/>
     <depends>
         <engine>asterisk 11</engine>
         <module>core</module>
@@ -19,4 +19,4 @@
     </menuitems>
     <location>contributed_modules/release/motif-2.11.0.alpha3.tgz</location>
     <md5sum>0abc055b732a0019848c63667c97f9fd</md5sum>
-</module>
+<supported><version>2.11</version></supported></module>
