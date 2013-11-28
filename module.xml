@@ -29,4 +29,4 @@
     </menuitems>
     <location>release/2.11/motif-2.11.8.tgz</location>
     <md5sum>adc61188a7d91346d7c9a9c68145a704</md5sum>
-</module>
+<supported><version>2.11</version></supported></module>
