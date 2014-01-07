@@ -26,7 +26,7 @@
     </changelog>
     <depends>
         <engine>asterisk 11</engine>
-        <module>core ge 2.11.0.0beta2.4</module>
+        <module>core ge 12.0</module>
     </depends>
     <menuitems>
         <motif>Google Voice (Motif)</motif>
