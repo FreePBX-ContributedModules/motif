@@ -63,6 +63,8 @@ if($action == 'edit') {
                <td><a href="#" class="info"><?php echo _("XMPP Priority")?>:<span><?php echo _("This is the priority of where google will route an inbound call. A higher number has a higher priority. We believe that:<ul><li>Windows Gtalk client is 20</li><li>GMail is 24</li><li>Pidgin would be 0 or 1</li></ul>The range of acceptable values is -128 to +127. Anything else will be reset to the highest or lowest value.")?></span></a></td></td>
                <td><input type="text" name="priority" value="<?php echo isset($form_priority) ? $form_priority : '127'; ?>"></td>
             </tr>
+				<td><a href="#" class="info"><?php echo _("Always Answer (IVR Mode)")?><span><?php echo _("Add a stealth greeting so Google Voice is forced to pass the call when you want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The PBX will always answer, however if the PBX goes offline then GoogleVoice Voicemail will pick the call up.")?></span></a></td>
+				<td><input type="checkbox" name="greeting" <?php echo isset($form_greeting) && $form_greeting ? 'CHECKED' : ''; ?>></td>
         </table>
 		<br />
 		<?php if($action == 'edit') { ?>

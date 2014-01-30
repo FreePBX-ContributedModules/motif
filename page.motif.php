@@ -47,7 +47,8 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$settings['trunk'] = isset($_REQUEST['trunk']) ? true : null;
 		$settings['ibroute'] = isset($_REQUEST['ibroute']) ? true : null;
 		$settings['obroute'] = isset($_REQUEST['obroute']) ? true : null;
-		$settings['gvm'] = isset($_REQUEST['gvm']) ? true : null;		
+		$settings['gvm'] = isset($_REQUEST['gvm']) ? true : null;
+		$settings['greeting'] = isset($_REQUEST['greeting']) ? true : null;
 
 		//Check to make sure all values are set and not empty
 		if(!empty($pn) && !empty($un) && !empty($pw)) {
@@ -170,6 +171,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$form_obroute = isset($settings['obroute']) ? true : false;
 		$form_ibroute = isset($settings['ibroute']) ? true : false;
 		$form_gvm = isset($settings['gvm']) ? true : false;
+		$form_greeting = isset($settings['greeting']) ? true : false;
 		$id = $account['id'];
         
         $form_statusmessage = $account['statusmessage'];
