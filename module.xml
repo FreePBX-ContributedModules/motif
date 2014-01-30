@@ -6,11 +6,12 @@
     <type>setup</type>
     <repo>unsupported</repo>
     <category>Connectivity</category>
-	<version>2.11.12</version>
+	<version>12.0.0</version>
     <description>
         Manage Google Voice Trunks with Chan Motif
     </description>
     <changelog>
+		*12.0.0* Move RTP to sipsettings and require that
 		*2.11.12* Removed Buddy Listing as it was causing an issue
 		*2.11.11* Fixes to includes
 		*2.11.10* Additions and fixes by drmessano
@@ -31,6 +32,9 @@
     <menuitems>
         <motif>Google Voice (Motif)</motif>
     </menuitems>
+	<supported>
+		<version>12.0</version>
+	</supported>
     <location>release/2.11/motif-2.11.12.tgz</location>
     <md5sum>e698acba592a53e354dad35df116dcef</md5sum>
 </module>
