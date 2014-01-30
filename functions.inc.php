@@ -161,10 +161,15 @@ class motif_conf {
 	        
 	        if(isset($settings['gvm']) && $settings['gvm']) {
 	            $ext->add($incontext, $address, '', new ext_setvar('DIAL_OPTIONS', '${DIAL_OPTIONS}aD(:1)'));
+				if(isset($settings['greeting']) && $settings['greeting']) {
+					$ext->add($incontext, $address, '', new ext_answer(''));
+					$ext->add($incontext, $address, '', new ext_playback('hello') );
+					$ext->add($incontext, $address, '', new ext_senddtmf('1'));
+				}
 	        } else {
-	            $ext->add($incontext, $address, '', new ext_wait('1'));
-    	        $ext->add($incontext, $address, '', new ext_answer(''));
-                $ext->add($incontext, $address, '', new ext_senddtmf('1'));
+				$ext->add($incontext, $address, '', new ext_wait('1'));
+				$ext->add($incontext, $address, '', new ext_answer(''));
+				$ext->add($incontext, $address, '', new ext_senddtmf('1'));
 	        }	        
 
 			$ext->add($incontext, $address, '', new ext_goto('1', $list['phonenum'], 'from-trunk'));
