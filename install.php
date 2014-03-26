@@ -52,7 +52,7 @@ foreach($accounts as $list) {
         unset($data['route']);
         unset($data['route_number']);
         $new = serialize(array_merge($data,$tmp));
-        $sql = "UPDATE `motif` SET `settings` = '".mysql_real_escape_string($new)."' WHERE id = " . $list['id'];
+        $sql = "UPDATE `motif` SET `settings` = '".$db->escapeSimple($new)."' WHERE id = " . $list['id'];
         sql($sql);
     }
 }

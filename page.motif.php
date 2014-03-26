@@ -6,7 +6,7 @@ global $astman;
 
 if($action == 'delete') {
 	//Get settings from DB and see if we created a trunk
-	$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+	$sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
 	$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
 	$s = unserialize($a['settings']);
 
@@ -21,7 +21,7 @@ if($action == 'delete') {
 	}
 
 	//Delete our settings from our own DB
-	$sql = "DELETE FROM `motif` WHERE id = ".mysql_real_escape_string($_REQUEST['id']);
+	$sql = "DELETE FROM `motif` WHERE id = ".$db->escapeSimple($_REQUEST['id']);
 	sql($sql);
 	$action = 'add';
 	needreload();
@@ -30,14 +30,14 @@ if($action == 'delete') {
 //Check to see if Asterisk is running along with chan_motif and res_xmpp
 if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->mod_loaded('xmpp')) {
 	if(isset($_REQUEST['username'])) {
-		$pn = isset($_REQUEST['number']) ? mysql_real_escape_string($_REQUEST['number']) : '';
-		$un = isset($_REQUEST['username']) ? mysql_real_escape_string($_REQUEST['username']) : '';
-		$pw = isset($_REQUEST['password']) ? mysql_real_escape_string($_REQUEST['password']) : '';
-		$priority = isset($_REQUEST['priority']) ? mysql_real_escape_string($_REQUEST['priority']) : '127';
+		$pn = isset($_REQUEST['number']) ? $db->escapeSimple($_REQUEST['number']) : '';
+		$un = isset($_REQUEST['username']) ? $db->escapeSimple($_REQUEST['username']) : '';
+		$pw = isset($_REQUEST['password']) ? $db->escapeSimple($_REQUEST['password']) : '';
+		$priority = isset($_REQUEST['priority']) ? $db->escapeSimple($_REQUEST['priority']) : '127';
 		$priority = ($priority > 127) ? 127 : $priority;
 		$priority = ($priority < -128) ? -128 : $priority;
 		
-        $statusmessage = isset($_REQUEST['statusmessage']) ? mysql_real_escape_string($_REQUEST['statusmessage']) : 'I am Available';
+        $statusmessage = isset($_REQUEST['statusmessage']) ? $db->escapeSimple($_REQUEST['statusmessage']) : 'I am Available';
 
 		//Add '@gmail.com' if not already appended.
 		$un = preg_match('/@/i',$un) ? $un : $un . '@gmail.com';
@@ -59,7 +59,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 				$trunknum = core_trunks_add('custom', $dialstring, '', '', $pn, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $pn, '', 'off', 'r');
 				$settings['trunk_number'] = $trunknum;
 			} elseif($settings['trunk'] && $action == 'edit') {
-				$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+				$sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
 				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
 				$s = unserialize($a['settings']);
 				if(isset($s['trunk_number']) && core_trunks_getTrunkTrunkName($s['trunk_number'])) {
@@ -70,7 +70,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 					$settings['trunk_number'] = $trunknum;
 				}
 			} elseif(!$settings['trunk'] && $action == 'edit') {
-				$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+				$sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
 				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
 				$s = unserialize($a['settings']);
 				if(isset($s['trunk_number'])) {
@@ -108,7 +108,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			} elseif($action == 'edit') {
 			    //Outbound Routes add section
 			    if($settings['obroute']) {    			    
-			        $sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+			        $sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
     				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
     				$s = unserialize($a['settings']);
     				if(isset($s['trunk_number']) && isset($s['obroute_number'])) {
@@ -120,7 +120,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
     				}
     			//Outbound Routes delete section
 			    } elseif(!$settings['obroute']) {
-			        $sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+			        $sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
     				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
     				$s = unserialize($a['settings']);
     				if(isset($s['obroute_number'])) {
@@ -145,7 +145,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			if($action == 'add') {
                 $sql = "INSERT INTO `motif` (`phonenum`, `username`, `password`, `settings`, `statusmessage`, `priority`) VALUES ('" . $pn . "', '" . $un . "', '" . $pw . "', '" . $settings . "', '" . $statusmessage . "', '" . $priority . "')";
 			} elseif($action == 'edit') {
-                $sql = "UPDATE `motif` SET `phonenum` = '".$pn."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."', `statusmessage` = '".$statusmessage."', `priority` = '".$priority."' WHERE id = " . mysql_real_escape_string($_REQUEST['id']);
+                $sql = "UPDATE `motif` SET `phonenum` = '".$pn."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."', `statusmessage` = '".$statusmessage."', `priority` = '".$priority."' WHERE id = " . $db->escapeSimple($_REQUEST['id']);
 			}
 			sql($sql);
 			needreload();
@@ -159,7 +159,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 
 	//If editing then let's get some important data back
 	if($action == 'edit') {
-		$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($_REQUEST['id']);
+		$sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
 		$account = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
 		//print_r($account);
 		$form_password = $account['password'];
