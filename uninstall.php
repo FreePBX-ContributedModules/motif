@@ -19,7 +19,7 @@ $accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
 foreach($accounts as $list) {
 	//Get settings from DB and see if we created a trunk
-	$sql = 'SELECT * FROM `motif` WHERE `id` = '.mysql_real_escape_string($list['id']);
+	$sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($list['id']);
 	$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
 	$s = unserialize($a['settings']);
 
@@ -34,7 +34,7 @@ foreach($accounts as $list) {
 	}
 
 	//Delete our settings from our own DB
-	$sql = "DELETE FROM `motif` WHERE id = ".mysql_real_escape_string($list['id']);
+	$sql = "DELETE FROM `motif` WHERE id = ".$db->escapeSimple($list['id']);
 	sql($sql);
 }
 
