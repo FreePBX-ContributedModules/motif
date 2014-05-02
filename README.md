@@ -1,7 +1,6 @@
-# MOTIF (GoogleVoice) FreePBX Module #
+# MOTIF FreePBX Module #
 
 ### Issue Reporting ###
-Issues can be reported here on github or http://www.freepbx.org/trac/newticket
-
+Issues can be reported here on github or http://issues.freepbx.org/browse/FREEPBX/
 #### Notes ####
 This Module was designed by the FreePBX team.

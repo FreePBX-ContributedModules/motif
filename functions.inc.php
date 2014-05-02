@@ -120,7 +120,7 @@ class motif_conf {
 
 			$output .= "[g".$context."]\n";
 			$output .= "type=client\n";
-			$output .= "serverhost=talk.google.com\n";
+			$output .= "serverhost=".$list['server']."\n";
 
 			$output .= "username=".$list['username']."\n";
 			$output .= "secret=".$list['password']."\n";
@@ -153,7 +153,7 @@ class motif_conf {
 			$incontext = "im-".$context;
 			$address = 's'; //Joshua Colp @ Digium: 'It will only accept from the s context'
 
-			$ext->add($incontext, $address, '1', new ext_noop('Receiving GoogleVoice on DID: '.$list['phonenum']));
+			$ext->add($incontext, $address, '1', new ext_noop('Receiving chan_motif on DID: '.$list['phonenum']));
 
 			$ext->add($incontext, $address, '', new ext_noop('${EXTEN}'));
 

@@ -31,6 +31,7 @@ if($action == 'delete') {
 if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->mod_loaded('xmpp')) {
 	if(isset($_REQUEST['username'])) {
 		$pn = isset($_REQUEST['number']) ? $db->escapeSimple($_REQUEST['number']) : '';
+		$srv = isset($_REQUEST['server']) ? $db->escapeSimple($_REQUEST['server']) : '';
 		$un = isset($_REQUEST['username']) ? $db->escapeSimple($_REQUEST['username']) : '';
 		$pw = isset($_REQUEST['password']) ? $db->escapeSimple($_REQUEST['password']) : '';
 		$priority = isset($_REQUEST['priority']) ? $db->escapeSimple($_REQUEST['priority']) : '127';
@@ -39,8 +40,9 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		
         $statusmessage = isset($_REQUEST['statusmessage']) ? $db->escapeSimple($_REQUEST['statusmessage']) : 'I am Available';
 
+		//Not any more
 		//Add '@gmail.com' if not already appended.
-		$un = preg_match('/@/i',$un) ? $un : $un . '@gmail.com';
+		//$un = preg_match('/@/i',$un) ? $un : $un . '@gmail.com';
 
 		$settings = array();
 		//Check trunk/Routes values
@@ -54,7 +56,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		if(!empty($pn) && !empty($un) && !empty($pw)) {
 			//Add/Remove Trunk Values
 			//The dial String
-			$dialstring = 'Motif/g'.str_replace('@','',str_replace('.','',$un)).'/$OUTNUM$@voice.google.com';
+			$dialstring = 'Motif/g'.str_replace('@','',str_replace('.','',$un)).'/$OUTNUM$@'. $srv;
 			if($settings['trunk'] && $action == 'add') {
 				$trunknum = core_trunks_add('custom', $dialstring, '', '', $pn, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $pn, '', 'off', 'r');
 				$settings['trunk_number'] = $trunknum;
@@ -143,9 +145,9 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
             $statusmessage = isset($statusmessage) && !empty($statusmessage) ? $statusmessage : 'I am Available';
 
 			if($action == 'add') {
-                $sql = "INSERT INTO `motif` (`phonenum`, `username`, `password`, `settings`, `statusmessage`, `priority`) VALUES ('" . $pn . "', '" . $un . "', '" . $pw . "', '" . $settings . "', '" . $statusmessage . "', '" . $priority . "')";
+                $sql = "INSERT INTO `motif` (`phonenum`, `server`,`username`, `password`, `settings`, `statusmessage`, `priority`) VALUES ('" . $pn . "','" . $srv . "', '" . $un . "', '" . $pw . "', '" . $settings . "', '" . $statusmessage . "', '" . $priority . "')";
 			} elseif($action == 'edit') {
-                $sql = "UPDATE `motif` SET `phonenum` = '".$pn."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."', `statusmessage` = '".$statusmessage."', `priority` = '".$priority."' WHERE id = " . $db->escapeSimple($_REQUEST['id']);
+                $sql = "UPDATE `motif` SET `phonenum` = '".$pn."',`server` = '".$srv."', `username` = '".$un."', `password` = '".$pw."', `settings` = '".$settings."', `statusmessage` = '".$statusmessage."', `priority` = '".$priority."' WHERE id = " . $db->escapeSimple($_REQUEST['id']);
 			}
 			sql($sql);
 			needreload();
@@ -162,6 +164,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
 		$account = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
 		//print_r($account);
+		$form_server = $account['server'];
 		$form_password = $account['password'];
 		$form_username = $account['username'];
 		$form_number = $account['phonenum'];

@@ -1,3 +1,5 @@
+[2.11.15]
+* Remove google voice specific stuff
 [2.11.9]
  * Added ability to change priority and made the default 127. Also added some more uninstall functionalities
 [2.11.8]

@@ -1,5 +1,5 @@
 <?php
-echo "<h2>"._("Google Voice (Motif)")."</h2>";
+echo "<h2>"._("Motif")."</h2>";
 
 $type = $action == 'add' ? 'Add' : 'Edit';
 
@@ -20,15 +20,19 @@ if($action == 'edit') {
                 <td colspan="2"><h5><?php echo _("Typical Settings")?></h5><hr></td>
             </tr>
             <tr>
-                <td><a href="#" class="info"><?php echo _("Google Voice Username")?>:<span><?php echo _("This is your google voice login.<br />If don't you supply '@domain' we will append @gmail.com")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _("Server")?>:<span><?php echo _("This is the server you wish to connect to.")?></span></a></td>
+                <td><input type="text" name="server" maxlength="100" value="<?php echo isset($form_server) ? $form_server : ''; ?>"></td>
+            </tr>
+            <tr>
+                <td><a href="#" class="info"><?php echo _("Username")?>:<span><?php echo _("This your login.<br /> If your server requires a @domain.com please include it")?></span></a></td>
                 <td><input type="text" name="username" maxlength="100" value="<?php echo isset($form_username) ? $form_username : ''; ?>"></td>
             </tr>
             <tr>
-                <td><a href="#" class="info"><?php echo _("Google Voice Password")?>:<span><?php echo _("This is your Google Voice Password")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _("Google Voice Password")?>:<span><?php echo _("This is your account Password")?></span></a></td>
             	<td><input type="password" name="password" maxlength="150" value="<?php echo isset($form_password) ? $form_password : ''; ?>"></td>
 			</tr>
 			<tr>
-                <td><a href="#" class="info"><?php echo _("Google Voice Phone Number")?>:<span><?php echo _("This is your Google Voice Phone Number <br />10 Digit Format")?></span></a></td>
+                <td><a href="#" class="info"><?php echo _("Phone Number")?>:<span><?php echo _("This is your Phone Number <br />10 Digit Format")?></span></a></td>
             	<td><input type="text" name="number" maxlength="12" value="<?php echo isset($form_number) ? $form_number : ''; ?>"></td>
 			</tr>
 			<tr>
@@ -45,12 +49,16 @@ if($action == 'edit') {
             	<td><input type="checkbox" name="ibroute" <?php echo isset($form_ibroute) && $form_ibroute ? 'CHECKED' : ''; ?>></td>
 			</tr>
 			-->
+			<!--
 			<tr>
                 <td><a href="#" class="info"><?php echo _("Send Unanswered to Google Voicemail")?>:<span><?php echo _("Send unanswered calls to Google voicemail after 25 seconds<br />Note: You MUST route this to a device that can answer. Example: IVRs and Phone directories can NOT answer")?></span></a></td>
             	<td><input type="checkbox" name="gvm" <?php echo isset($form_gvm) && $form_gvm ? 'CHECKED' : ''; ?>></td>
 			</tr>
+			-->
         </table>
 		<br />
+		<!--
+		 <?php //not sure if this is needed on not google voice servers. ?>
         <table>
             <tr>
                 <td colspan="2"><h5><?php echo _("Advanced Settings")?></h5><hr></td>
@@ -66,6 +74,7 @@ if($action == 'edit') {
 				<td><a href="#" class="info"><?php echo _("Always Answer (IVR Mode)")?><span><?php echo _("Add a stealth greeting so Google Voice is forced to pass the call when you want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The PBX will always answer, however if the PBX goes offline then GoogleVoice Voicemail will pick the call up.")?></span></a></td>
 				<td><input type="checkbox" name="greeting" <?php echo isset($form_greeting) && $form_greeting ? 'CHECKED' : ''; ?>></td>
         </table>
+        -->
 		<br />
 		<?php if($action == 'edit') { ?>
         <table>

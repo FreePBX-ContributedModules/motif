@@ -30,9 +30,16 @@ if($amp_conf["AMPDBENGINE"] == "mysql")  {
 ";
 	$check = $db->query($sql);
 	if(DB::IsError($check)) {
-		die_freepbx(_("Can not create Google Voice/Motif table"));
+		die_freepbx(_("Can not create Motif table"));
 	} else {
-		out("Database table for Google Voice/Motif installed");
+		out("Database table for Motif installed");
+	}
+	$sql = "ALTER TABLE motif ADD server VARCHAR(100) DEFAULT NULL"
+	$check = $db->query($sql);
+	if(DB::IsError($check)) {
+		die_freepbx(_("Can not update Motif table"));
+	} else {
+		out("Database table for Motif updated");
 	}
 } else {
 	die_freepbx(_("Unknown/Not Supported database type: ".$amp_conf["AMPDBENGINE"]));
@@ -53,6 +60,15 @@ foreach($accounts as $list) {
         unset($data['route_number']);
         $new = serialize(array_merge($data,$tmp));
         $sql = "UPDATE `motif` SET `settings` = '".$db->escapeSimple($new)."' WHERE id = " . $list['id'];
+        sql($sql);
+    }
+}
+
+foreach($accounts as $data) {
+
+    if($data['type'] == 'googlevoice') {
+		$server = 'talk.google.com';
+        $sql = "UPDATE `motif` SET `server` = '."$server".' WHERE id = " . $data['id'];
         sql($sql);
     }
 }
