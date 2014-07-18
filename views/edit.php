@@ -3,8 +3,8 @@ echo "<h2>"._("Google Voice (Motif)")."</h2>";
 
 $type = $action == 'add' ? 'Add' : 'Edit';
 
-if($action == 'edit') { 
-	echo "<h2>Account: ".$form_number."</h2>"; 
+if($action == 'edit') {
+	echo "<h2>Account: ".$form_number."</h2>";
 	echo "<a href='config.php?display=motif&action=delete&id=".$id."'><img src='images/user_delete.png' /> ".('Delete Account')." ".$form_number."</a>";
 }
 ?>
@@ -13,7 +13,7 @@ if($action == 'edit') {
 		return true;
 	}
 </script>
-    <form autocomplete="off" name="editM" action="<?php $_SERVER['PHP_SELF'] ?>" method="post" onsubmit="return editM_onsubmit();">
+    <form autocomplete="off" name="editM" action="" method="post" onsubmit="return editM_onsubmit();">
 	<?php if($action == 'edit') { echo '<input type="hidden" name="id" value="'.$id.'">'; } ?>
         <table>
             <tr>
