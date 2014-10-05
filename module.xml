@@ -1,16 +1,18 @@
 <module>
     <rawname>motif</rawname>
     <name>Google Voice/Chan Motif</name>
-    <publisher>Schmoozecom.com</publisher>
-    <license>GPLv2+</license>
-    <type>setup</type>
+    	<publisher>Schmooze Com Inc</publisher>
+	<license>GPLv3+</license>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<type>setup</type>
     <repo>unsupported</repo>
     <category>Connectivity</category>
-	<version>12.0.2</version>
+	<version>12.0.3</version>
     <description>
         Manage Google Voice Trunks with Chan Motif
     </description>
     <changelog>
+		*12.0.3* Licensing
 		*12.0.2* Database Abstraction Fixes
 		*12.0.1* Stealth Greeting for IVRs
 		*12.0.0* Move RTP to sipsettings and require that
