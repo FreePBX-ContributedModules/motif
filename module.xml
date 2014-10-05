@@ -3,7 +3,7 @@
     <name>Google Voice/Chan Motif</name>
 	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
-	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>>
+	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
     <type>setup</type>
     <repo>unsupported</repo>
     <category>Connectivity</category>
@@ -12,6 +12,7 @@
         Manage Google Voice Trunks with Chan Motif
     </description>
     <changelog>
+	*2.11.17* Bad XML
       *2.11.16* FREEPBX-8079 add notice for when people upgrade to 12 but havent compeleted the upgrade steps
     	*2.11.15* Add license file
 		*2.11.14* Database Abstraction Fixes
