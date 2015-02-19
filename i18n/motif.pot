@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2015-02-11 18:01-0500\n"
+"POT-Creation-Date: 2015-02-18 20:12-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,23 +17,23 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: /usr/src/freepbx/motif/views/edit.php:44
+#: views/edit.php:44
 msgid " Inbound Routes"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:39
+#: views/edit.php:39
 msgid " Outbound Routes"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:35
+#: views/edit.php:35
 msgid " Trunk"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/main.php:4
+#: views/main.php:4
 msgid "Add Google Voice Account"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:66
+#: views/edit.php:66
 msgid ""
 "Add a stealth greeting so Google Voice is forced to pass the call when you "
 "want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The "
@@ -41,82 +41,95 @@ msgid ""
 "Voicemail will pick the call up."
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:56
+#: views/edit.php:56
 msgid "Advanced Settings"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:66
+#: views/edit.php:66
 msgid "Always Answer (IVR Mode)"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:44
+#: views/edit.php:44
 msgid "Automatically Add Inbound Routes for this Account"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:39
+#: views/edit.php:39
 msgid "Automatically Add Outbound Route for this Account"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:35
+#: views/edit.php:35
 msgid "Automatically Add this Account as a Trunk"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:80
+#: views/edit.php:80
 msgid "Buddies"
 msgstr ""
 
-#: /usr/src/freepbx/motif/install.php:33
+#: install.php:33
 msgid "Can not create Google Voice/Motif table"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:77
+#: views/edit.php:77
 msgid "Connected"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:73
+#: motif.i18n.php:4
+msgid "Connectivity"
+msgstr ""
+
+#: views/edit.php:73
 msgid "Detailed Status"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:77
+#: views/edit.php:77
 msgid "Disconnected"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:2
+#: motif.i18n.php:6
+#: views/edit.php:2
 msgid "Google Voice (Motif)"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:27
+#: views/edit.php:27
 msgid "Google Voice Password"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:31
+#: views/edit.php:31
 msgid "Google Voice Phone Number"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:59
+#: views/edit.php:59
 msgid "Google Voice Status Message"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:23
+#: views/edit.php:23
 msgid "Google Voice Username"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:49
+#: motif.i18n.php:3
+msgid "Google Voice/Chan Motif"
+msgstr ""
+
+#: motif.i18n.php:5
+msgid "Manage Google Voice Trunks with Chan Motif"
+msgstr ""
+
+#: views/edit.php:49
 msgid "Send Unanswered to Google Voicemail"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:49
+#: views/edit.php:49
 msgid ""
 "Send unanswered calls to Google voicemail after 25 seconds<br />Note: You "
 "MUST route this to a device that can answer. Example: IVRs and Phone "
 "directories can NOT answer"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:76
+#: views/edit.php:76
 msgid "Status"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:63
+#: views/edit.php:63
 msgid ""
 "This is the priority of where google will route an inbound call. A higher "
 "number has a higher priority. We believe that:<ul><li>Windows Gtalk client "
@@ -125,32 +138,32 @@ msgid ""
 "highest or lowest value."
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:27
+#: views/edit.php:27
 msgid "This is your Google Voice Password"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:31
+#: views/edit.php:31
 msgid "This is your Google Voice Phone Number <br />10 Digit Format"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:59
+#: views/edit.php:59
 msgid "This is your Google Voice Status Message that buddies will see"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:23
+#: views/edit.php:23
 msgid ""
 "This is your google voice login.<br />If don't you supply '@domain' we will "
 "append @gmail.com"
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:20
+#: views/edit.php:20
 msgid "Typical Settings"
 msgstr ""
 
-#: /usr/src/freepbx/motif/install.php:38
+#: install.php:38
 msgid "Unknown/Not Supported database type: "
 msgstr ""
 
-#: /usr/src/freepbx/motif/views/edit.php:63
+#: views/edit.php:63
 msgid "XMPP Priority"
 msgstr ""
