@@ -21,7 +21,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2015-02-18 20:12-0500\n"
-"PO-Revision-Date: 2015-03-22 01:28+0200\n"
+"PO-Revision-Date: 2015-03-22 01:32+0200\n"
 "Last-Translator: Ernesto <ecasas@sangoma.com>\n"
 "Language-Team: Spanish "
 "<http://weblate.freepbx.org/projects/freepbx/motif/es/>\n"
@@ -106,7 +106,7 @@ msgstr "Desconectado"
 
 #: motif.i18n.php:6 views/edit.php:2
 msgid "Google Voice (Motif)"
-msgstr "Google Voice (Motif)"
+msgstr "Google Voz (Motif)"
 
 #: views/edit.php:27
 msgid "Google Voice Password"
@@ -159,10 +159,10 @@ msgid ""
 "highest or lowest value."
 msgstr ""
 "Esta es la prioridad a donde google dirigirá una llamada entrante. Un número "
-"más alto tiene una prioridad más alta. Creemos que: <ul> <li> cliente de "
-"Windows Gtalk es 20</ li><li> GMail es 24 </ li> <li> Pidgin sería 0 o 1</ "
-"li></ ul> La gama de valores aceptables es -128 a +127. Cualquier otra cosa "
-"se restablecerá al valor más alto o más bajo."
+"más alto tiene una prioridad más alta. Creemos que: <ul><li>cliente de "
+"Windows Gtalk es 20</li><li>GMail es 24 </li><li>Pidgin sería 0 o 1</li></ul>"
+"La gama de valores aceptables es -128 a +127. Cualquier otra cosa se "
+"restablecerá al valor más alto o más bajo."
 
 #: views/edit.php:27
 msgid "This is your Google Voice Password"
