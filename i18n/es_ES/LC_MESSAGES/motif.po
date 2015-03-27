@@ -13,6 +13,7 @@ msgstr ""
 "PO-Revision-Date: 2015-02-18 20:12-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -20,19 +21,19 @@ msgstr ""
 
 #: views/edit.php:44
 msgid " Inbound Routes"
-msgstr ""
+msgstr " Rutas de Entrada"
 
 #: views/edit.php:39
 msgid " Outbound Routes"
-msgstr ""
+msgstr " Rutas de Salida"
 
 #: views/edit.php:35
 msgid " Trunk"
-msgstr ""
+msgstr " Troncal"
 
 #: views/main.php:4
 msgid "Add Google Voice Account"
-msgstr ""
+msgstr "Agregar cuenta de Google Talk"
 
 #: views/edit.php:66
 msgid ""
@@ -41,82 +42,86 @@ msgid ""
 "PBX will always answer, however if the PBX goes offline then GoogleVoice "
 "Voicemail will pick the call up."
 msgstr ""
+"Añadir un saludo de manera que  Google Voice se vea forzado a pasar la "
+"llamada cuando desea que las llamadas no contestadas vayan a GoogleVoice "
+"Voicemail (arriba). ADVERTENCIA: La central responderá siempre, sin embargo, "
+"si la central se desconecta entonces GoogleVoice Voicemail tomará la llamada."
 
 #: views/edit.php:56
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Configuración Avanzada"
 
 #: views/edit.php:66
 msgid "Always Answer (IVR Mode)"
-msgstr ""
+msgstr "Contestar Siempre (Modo IVR)"
 
 #: views/edit.php:44
 msgid "Automatically Add Inbound Routes for this Account"
-msgstr ""
+msgstr "Agregar Rutas Entrantes automáticamente a esta cuenta"
 
 #: views/edit.php:39
 msgid "Automatically Add Outbound Route for this Account"
-msgstr ""
+msgstr "Agregar Automáticamente rutas Salientes a esta cuenta"
 
 #: views/edit.php:35
 msgid "Automatically Add this Account as a Trunk"
-msgstr ""
+msgstr "Agregar automáticamente esta cuenta como un Troncal"
 
 #: views/edit.php:80
 msgid "Buddies"
-msgstr ""
+msgstr "Amigos"
 
 #: install.php:33
 msgid "Can not create Google Voice/Motif table"
-msgstr ""
+msgstr "No se puede crear Google Voice /Motif table"
 
 #: views/edit.php:77
 msgid "Connected"
-msgstr ""
+msgstr "Conectado"
 
 #: motif.i18n.php:4
 msgid "Connectivity"
-msgstr ""
+msgstr "Conectividad"
 
 #: views/edit.php:73
 msgid "Detailed Status"
-msgstr ""
+msgstr "Estado detallado"
 
 #: views/edit.php:77
 msgid "Disconnected"
-msgstr ""
+msgstr "Desconectado"
 
 #: motif.i18n.php:6 views/edit.php:2
 msgid "Google Voice (Motif)"
-msgstr ""
+msgstr "Google Voz (Motif)"
 
 #: views/edit.php:27
 msgid "Google Voice Password"
-msgstr ""
+msgstr "Contraseña de Google Voice"
 
 #: views/edit.php:31
 msgid "Google Voice Phone Number"
-msgstr ""
+msgstr "Numero de teléfono de Google Voice"
 
 #: views/edit.php:59
 msgid "Google Voice Status Message"
-msgstr ""
+msgstr "Mensaje de estado de Google Voice"
 
 #: views/edit.php:23
 msgid "Google Voice Username"
-msgstr ""
+msgstr "Nombre de Usuario de Google Voice"
 
 #: motif.i18n.php:3
 msgid "Google Voice/Chan Motif"
-msgstr ""
+msgstr "Google Voice / Chan Motif"
 
 #: motif.i18n.php:5
 msgid "Manage Google Voice Trunks with Chan Motif"
-msgstr ""
+msgstr "Gestione Google Voice Trunks con Chan Motif"
 
 #: views/edit.php:49
 msgid "Send Unanswered to Google Voicemail"
-msgstr ""
+msgstr "Enviar no contestadas a Google Voice"
 
 #: views/edit.php:49
 msgid ""
@@ -124,10 +129,13 @@ msgid ""
 "MUST route this to a device that can answer. Example: IVRs and Phone "
 "directories can NOT answer"
 msgstr ""
+"Enviar llamadas no contestadas a Google Voicemail después de 25 segundos <br "
+"/> Nota: Debe rutear a un dispositivo que puede responder. Ejemplo: IVR y "
+"directorios de teléfono no puede contestar"
 
 #: views/edit.php:76
 msgid "Status"
-msgstr ""
+msgstr "Estado"
 
 #: views/edit.php:63
 msgid ""
@@ -137,33 +145,41 @@ msgid ""
 "of acceptable values is -128 to +127. Anything else will be reset to the "
 "highest or lowest value."
 msgstr ""
+"Esta es la prioridad a donde google dirigirá una llamada entrante. Un número "
+"más alto tiene una prioridad más alta. Creemos que: <ul><li>cliente de "
+"Windows Gtalk es 20</li><li>GMail es 24 </li><li>Pidgin sería 0 o 1</li></ul>"
+"La gama de valores aceptables es -128 a +127. Cualquier otra cosa se "
+"restablecerá al valor más alto o más bajo."
 
 #: views/edit.php:27
 msgid "This is your Google Voice Password"
-msgstr ""
+msgstr "Esta es su contraseña de Google Voice"
 
 #: views/edit.php:31
 msgid "This is your Google Voice Phone Number <br />10 Digit Format"
 msgstr ""
+"Este es su numero e teléfono de Google Voice <br />Formato de 10 Dígitos"
 
 #: views/edit.php:59
 msgid "This is your Google Voice Status Message that buddies will see"
-msgstr ""
+msgstr "Este es el mensaje de estado de sus Amigos de  Google Voice van a ver"
 
 #: views/edit.php:23
 msgid ""
 "This is your google voice login.<br />If don't you supply '@domain' we will "
 "append @gmail.com"
 msgstr ""
+"Este es un login de google voice. <br />Si no provee un '@dominio' nosotros "
+"agregaremos @gmail.com"
 
 #: views/edit.php:20
 msgid "Typical Settings"
-msgstr ""
+msgstr "Configuración típica"
 
 #: install.php:38
 msgid "Unknown/Not Supported database type: "
-msgstr ""
+msgstr "Desconocido / tipo de base de datos no soportados: "
 
 #: views/edit.php:63
 msgid "XMPP Priority"
-msgstr ""
+msgstr "Prioridad XMPP"
