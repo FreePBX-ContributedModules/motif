@@ -1,17 +1,18 @@
 <module>
-    <rawname>motif</rawname>
-    <name>Google Voice/Chan Motif</name>
-    	<publisher>Schmooze Com Inc</publisher>
+	<rawname>motif</rawname>
+	<name>Google Voice/Chan Motif</name>
+	<publisher>Schmooze Com Inc</publisher>
 	<license>GPLv3+</license>
 	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<type>setup</type>
-    <repo>unsupported</repo>
-    <category>Connectivity</category>
-	<version>12.0.3</version>
-    <description>
-        Manage Google Voice Trunks with Chan Motif
-    </description>
-    <changelog>
+	<repo>unsupported</repo>
+	<category>Connectivity</category>
+	<version>12.0.4</version>
+	<description>
+		Manage Google Voice Trunks with Chan Motif
+	</description>
+	<changelog>
+		*12.0.4* FREEPBX-9211 No DID in CDR on incoming Google Voice Calls
 		*12.0.3* Licensing
 		*12.0.2* Database Abstraction Fixes
 		*12.0.1* Stealth Greeting for IVRs
@@ -23,22 +24,22 @@
 		*2.11.8* Fixes #6435 increase password length and username length in db
 		*2.11.7* Remove rtp.conf if motif created it, fixes #6397, #6398
 		*2.11.6* Removes rtp controlled settings, re #6397
-        *2.11.5* Fixes #6355
-        *2.11.4* Fixes #6328 outbound routes
-        *2.11.1* Remove beta status. Fixes #6326, #6318
-        *2.11.0beta2* Redefined routes. Added route to google voicemail option. Fixes #6065, #6066, #6067
-        *2.11.0beta1* Fixed Multiple Inbound Accounts DID Issue
-    </changelog>
-    <depends>
-        <engine>asterisk 11</engine>
-        <module>sipsettings ge 12.0</module>
-    </depends>
-    <menuitems>
-        <motif>Google Voice (Motif)</motif>
-    </menuitems>
+		*2.11.5* Fixes #6355
+		*2.11.4* Fixes #6328 outbound routes
+		*2.11.1* Remove beta status. Fixes #6326, #6318
+		*2.11.0beta2* Redefined routes. Added route to google voicemail option. Fixes #6065, #6066, #6067
+		*2.11.0beta1* Fixed Multiple Inbound Accounts DID Issue
+	</changelog>
+	<depends>
+		<engine>asterisk 11</engine>
+		<module>sipsettings ge 12.0</module>
+	</depends>
+	<menuitems>
+		<motif>Google Voice (Motif)</motif>
+	</menuitems>
 	<supported>
 		<version>12.0</version>
 	</supported>
-    <location>release/2.11/motif-2.11.12.tgz</location>
-    <md5sum>e698acba592a53e354dad35df116dcef</md5sum>
+	<location>release/2.11/motif-2.11.12.tgz</location>
+	<md5sum>e698acba592a53e354dad35df116dcef</md5sum>
 </module>

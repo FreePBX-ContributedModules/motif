@@ -28,6 +28,7 @@ function motif_get_config($engine) {
 			$ext->add($incontext, $address, '', new ext_setvar('CALLERID(name)', '${CALLERID(name):2}'));
 			$ext->add($incontext, $address, 'nextstop', new ext_gotoif('$["${CALLERID(name):0:1}" != "+"]', 'notrim'));
 			$ext->add($incontext, $address, '', new ext_setvar('CALLERID(name)', '${CALLERID(name):1}'));
+			$ext->add($incontext, $address, '', new ext_setvar('CDR(did)', $list['phonenum']));
 			$ext->add($incontext, $address, 'notrim', new ext_setvar('CALLERID(number)', '${CALLERID(name)}'));
 
 
