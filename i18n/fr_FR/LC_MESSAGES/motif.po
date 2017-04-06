@@ -1,0 +1,160 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for motif
+# Copyright (C) 2008-2015 Sangoma, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-11 13:01-0400\n"
+"PO-Revision-Date: 2016-01-17 00:31+0200\n"
+"Last-Translator: Nicolas <forums@riendeau.org>\n"
+"Language-Team: French "
+"<http://weblate.freepbx.org/projects/freepbx/motif/fr_FR/>\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Generator: Weblate 2.2-dev\n"
+
+#: views/edit.php:44
+msgid " Inbound Routes"
+msgstr " Routes entrantes"
+
+#: views/edit.php:39
+msgid " Outbound Routes"
+msgstr " Routes sortantes"
+
+#: views/edit.php:35
+msgid " Trunk"
+msgstr " Jonction"
+
+#: views/main.php:4
+msgid "Add Google Voice Account"
+msgstr "Ajouter un compte Google Voice"
+
+#: views/edit.php:66
+msgid ""
+"Add a stealth greeting so Google Voice is forced to pass the call when you "
+"want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The "
+"PBX will always answer, however if the PBX goes offline then GoogleVoice "
+"Voicemail will pick the call up."
+msgstr ""
+
+#: views/edit.php:56
+msgid "Advanced Settings"
+msgstr ""
+
+#: views/edit.php:66
+msgid "Always Answer (IVR Mode)"
+msgstr "Toujours répondre (Mode IVR)"
+
+#: views/edit.php:44
+msgid "Automatically Add Inbound Routes for this Account"
+msgstr "Ajouter automatiquement les routes entrantes pour ce compte"
+
+#: views/edit.php:39
+msgid "Automatically Add Outbound Route for this Account"
+msgstr "Ajouter automatiquement les routes sortantes pour ce compte"
+
+#: views/edit.php:35
+msgid "Automatically Add this Account as a Trunk"
+msgstr "Automatiquement ajouter ce compte comme jonction"
+
+#: views/edit.php:80
+msgid "Buddies"
+msgstr "Ami(e)s"
+
+#: install.php:33
+msgid "Can not create Google Voice/Motif table"
+msgstr "Impossible de créer la table Google Voice/Motif"
+
+#: views/edit.php:77
+msgid "Connected"
+msgstr "Connecté"
+
+#: views/edit.php:73
+msgid "Detailed Status"
+msgstr "Statut détaillé"
+
+#: views/edit.php:77
+msgid "Disconnected"
+msgstr "Déconnecté"
+
+#: views/edit.php:2
+msgid "Google Voice (Motif)"
+msgstr "Google Voice (Motif)"
+
+#: views/edit.php:27
+msgid "Google Voice Password"
+msgstr "Mot de passe de Google Voice"
+
+#: views/edit.php:31
+msgid "Google Voice Phone Number"
+msgstr "Numéro de téléphone de Google Voice"
+
+#: views/edit.php:59
+msgid "Google Voice Status Message"
+msgstr "Message de statut de Google Voice"
+
+#: views/edit.php:23
+msgid "Google Voice Username"
+msgstr "Code d'usager Google Voice"
+
+#: views/edit.php:49
+msgid "Send Unanswered to Google Voicemail"
+msgstr ""
+
+#: views/edit.php:49
+msgid ""
+"Send unanswered calls to Google voicemail after 25 seconds<br />Note: You "
+"MUST route this to a device that can answer. Example: IVRs and Phone "
+"directories can NOT answer"
+msgstr ""
+
+#: views/edit.php:76
+msgid "Status"
+msgstr "Statut"
+
+#: views/edit.php:63
+msgid ""
+"This is the priority of where google will route an inbound call. A higher "
+"number has a higher priority. We believe that:<ul><li>Windows Gtalk client "
+"is 20</li><li>GMail is 24</li><li>Pidgin would be 0 or 1</li></ul>The range "
+"of acceptable values is -128 to +127. Anything else will be reset to the "
+"highest or lowest value."
+msgstr ""
+
+#: views/edit.php:27
+msgid "This is your Google Voice Password"
+msgstr "Ceci est votre mot de passe Google Voice"
+
+#: views/edit.php:31
+msgid "This is your Google Voice Phone Number <br />10 Digit Format"
+msgstr ""
+
+#: views/edit.php:59
+msgid "This is your Google Voice Status Message that buddies will see"
+msgstr ""
+
+#: views/edit.php:23
+msgid ""
+"This is your google voice login.<br />If don't you supply '@domain' we will "
+"append @gmail.com"
+msgstr ""
+
+#: views/edit.php:20
+msgid "Typical Settings"
+msgstr ""
+
+#: install.php:38
+msgid "Unknown/Not Supported database type: "
+msgstr ""
+
+#: views/edit.php:63
+msgid "XMPP Priority"
+msgstr "Priorité XMPP"
