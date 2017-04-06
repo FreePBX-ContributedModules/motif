@@ -23,7 +23,7 @@ function motif_get_config($engine) {
 
 			$ext->add($incontext, $address, '', new ext_noop('${EXTEN}'));
 
-			$ext->add($incontext, $address, '', new ext_setvar('CALLERID(name)', '${CUT(CALLERID(name),@,1)}'));
+			$ext->add($incontext, $address, '', new ext_setvar('CALLERID(name)', '${CUT(CALLERID(name),!,1)}'));
 			$ext->add($incontext, $address, '', new ext_gotoif('$["${CALLERID(name):0:2}" != "+1"]', 'nextstop'));
 			$ext->add($incontext, $address, '', new ext_setvar('CALLERID(name)', '${CALLERID(name):2}'));
 			$ext->add($incontext, $address, 'nextstop', new ext_gotoif('$["${CALLERID(name):0:1}" != "+"]', 'notrim'));
