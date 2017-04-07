@@ -7,11 +7,12 @@
 	<type>setup</type>
 	<repo>unsupported</repo>
 	<category>Connectivity</category>
-	<version>12.0.4.1</version>
+	<version>12.0.4.2</version>
 	<description>
 		Manage Google Voice Trunks with Chan Motif
 	</description>
 	<changelog>
+		*12.0.4.2* Thanks google
 		*12.0.4.1* Support ! replacement of @
 		*12.0.4* FREEPBX-9211 No DID in CDR on incoming Google Voice Calls
 		*12.0.3* Licensing
