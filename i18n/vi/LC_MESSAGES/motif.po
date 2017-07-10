@@ -10,29 +10,32 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-06 13:29-0400\n"
-"PO-Revision-Date: 2017-04-06 13:29-0400\n"
-"Last-Translator: Automatically generated\n"
-"Language-Team: none\n"
+"PO-Revision-Date: 2017-07-10 16:41+0200\n"
+"Last-Translator: PETER <ftek@ymail.com>\n"
+"Language-Team: Vietnamese "
+"<http://weblate.freepbx.org/projects/freepbx/motif/vi/>\n"
+"Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Weblate 2.4\n"
 
 #: views/edit.php:44
 msgid " Inbound Routes"
-msgstr ""
+msgstr " Các tuyến đến"
 
 #: views/edit.php:39
 msgid " Outbound Routes"
-msgstr ""
+msgstr " Các tuyến đi"
 
 #: views/edit.php:35
 msgid " Trunk"
-msgstr ""
+msgstr " Trung kế"
 
 #: views/main.php:4
 msgid "Add Google Voice Account"
-msgstr ""
+msgstr "Thêm tài khoản Google Voice"
 
 #: views/edit.php:66
 msgid ""
@@ -44,23 +47,23 @@ msgstr ""
 
 #: views/edit.php:56
 msgid "Advanced Settings"
-msgstr ""
+msgstr "Cài đặt nâng cao"
 
 #: views/edit.php:66
 msgid "Always Answer (IVR Mode)"
-msgstr ""
+msgstr "Luôn luôn trả lời ( Chế độ IVR)"
 
 #: views/edit.php:44
 msgid "Automatically Add Inbound Routes for this Account"
-msgstr ""
+msgstr "Tự động thêm các tuyến đến cho tài khoản này"
 
 #: views/edit.php:39
 msgid "Automatically Add Outbound Route for this Account"
-msgstr ""
+msgstr "Tự động thêm tuyến ra cho tài khoản này"
 
 #: views/edit.php:35
 msgid "Automatically Add this Account as a Trunk"
-msgstr ""
+msgstr "Tự động thêm tài khoản này giống như một trung kế"
 
 #: views/edit.php:80
 msgid "Buddies"
@@ -68,43 +71,43 @@ msgstr ""
 
 #: install.php:33
 msgid "Can not create Google Voice/Motif table"
-msgstr ""
+msgstr "Không thể tạo Google Voice/ Bảng Motif"
 
 #: views/edit.php:77
 msgid "Connected"
-msgstr ""
+msgstr "Đã kết nối"
 
 #: motif.i18n.php:6
 msgid "Connectivity"
-msgstr ""
+msgstr "Khả năng kết nối"
 
 #: views/edit.php:73
 msgid "Detailed Status"
-msgstr ""
+msgstr "Các tình trạng chi tiết"
 
 #: views/edit.php:77
 msgid "Disconnected"
-msgstr ""
+msgstr "Đã ngắt kết nối"
 
 #: motif.i18n.php:10 views/edit.php:2
 msgid "Google Voice (Motif)"
-msgstr ""
+msgstr "Google Voice (Motif)"
 
 #: views/edit.php:27
 msgid "Google Voice Password"
-msgstr ""
+msgstr "Mật khẩu Google Voice"
 
 #: views/edit.php:31
 msgid "Google Voice Phone Number"
-msgstr ""
+msgstr "Số điện thoại Google Voice"
 
 #: views/edit.php:59
 msgid "Google Voice Status Message"
-msgstr ""
+msgstr "Thông điệp báo tình trạng Google Voice"
 
 #: views/edit.php:23
 msgid "Google Voice Username"
-msgstr ""
+msgstr "Tên người dùng Google Voice"
 
 #: motif.i18n.php:4
 msgid "Google Voice/Chan Motif"
@@ -112,7 +115,7 @@ msgstr ""
 
 #: motif.i18n.php:8
 msgid "Manage Google Voice Trunks with Chan Motif"
-msgstr ""
+msgstr "Quản lý các trung kế Google Voice với Chan Motif"
 
 #: views/edit.php:49
 msgid "Send Unanswered to Google Voicemail"
@@ -140,11 +143,11 @@ msgstr ""
 
 #: views/edit.php:27
 msgid "This is your Google Voice Password"
-msgstr ""
+msgstr "Đầy là mật khẩu Google Voice"
 
 #: views/edit.php:31
 msgid "This is your Google Voice Phone Number <br />10 Digit Format"
-msgstr ""
+msgstr "Đây là số điện thoại Google Voice của bạn <br />10  Định dạng chữ số"
 
 #: views/edit.php:59
 msgid "This is your Google Voice Status Message that buddies will see"
@@ -155,15 +158,17 @@ msgid ""
 "This is your google voice login.<br />If don't you supply '@domain' we will "
 "append @gmail.com"
 msgstr ""
+"Đầy là đăng nhập google voice của bạn.<br /> Nếu bạn không cung cấp  '@"
+"domain' chúng tôi sẽ đính kèm @gmail.com"
 
 #: views/edit.php:20
 msgid "Typical Settings"
-msgstr ""
+msgstr "Các cài đặt điển hình"
 
 #: install.php:38
 msgid "Unknown/Not Supported database type: "
-msgstr ""
+msgstr "Kiểu dữ liệu không xác định/ không được hỗ trợ: "
 
 #: views/edit.php:63
 msgid "XMPP Priority"
-msgstr ""
+msgstr "XMPP ưu tiên"
