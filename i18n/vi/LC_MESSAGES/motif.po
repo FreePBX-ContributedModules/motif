@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-06 13:29-0400\n"
-"PO-Revision-Date: 2017-07-10 16:41+0200\n"
+"PO-Revision-Date: 2017-07-10 21:46+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/motif/vi/>\n"
@@ -44,6 +44,10 @@ msgid ""
 "PBX will always answer, however if the PBX goes offline then GoogleVoice "
 "Voicemail will pick the call up."
 msgstr ""
+"Thêm một lời chào ẩn để Google Voice buộc phải bỏ qua cuộc gọi khi bạn các "
+"cuộc gọi đã không được đến thư thoại Google Voice ( ở trên). CẢNH BÁO: PBX "
+"sẽ luôn trả lời, tuy nhiên nếu PBX đi ngoại tuyến thì GoogleVoice Voicemail "
+"sẽ nhận cuộc gọi."
 
 #: views/edit.php:56
 msgid "Advanced Settings"
@@ -91,7 +95,7 @@ msgstr "Đã ngắt kết nối"
 
 #: motif.i18n.php:10 views/edit.php:2
 msgid "Google Voice (Motif)"
-msgstr "Google Voice (Motif)"
+msgstr "Dịch vụ Google Voice (Motif)"
 
 #: views/edit.php:27
 msgid "Google Voice Password"
@@ -111,7 +115,7 @@ msgstr "Tên người dùng Google Voice"
 
 #: motif.i18n.php:4
 msgid "Google Voice/Chan Motif"
-msgstr ""
+msgstr "Google Voice/Chan Motif"
 
 #: motif.i18n.php:8
 msgid "Manage Google Voice Trunks with Chan Motif"
@@ -119,7 +123,7 @@ msgstr "Quản lý các trung kế Google Voice với Chan Motif"
 
 #: views/edit.php:49
 msgid "Send Unanswered to Google Voicemail"
-msgstr ""
+msgstr "Gửi một cuộc gọi không được trả lời tới Google Voicemail"
 
 #: views/edit.php:49
 msgid ""
@@ -127,10 +131,13 @@ msgid ""
 "MUST route this to a device that can answer. Example: IVRs and Phone "
 "directories can NOT answer"
 msgstr ""
+"Gửi các cuộc gọi đã không được trả lời tới thư thoại Google sau 25 giây<br />"
+"Lưu ý: Bạn PHẢI định tuyến các cuộc gọi này tới một thiết bị có thể trả lời. "
+"Ví dụ: các IVR và các danh bạ điện thoại KHÔNG thể trả lời"
 
 #: views/edit.php:76
 msgid "Status"
-msgstr ""
+msgstr "Tình trạng"
 
 #: views/edit.php:63
 msgid ""
@@ -152,6 +159,8 @@ msgstr "Đây là số điện thoại Google Voice của bạn <br />10  Địn
 #: views/edit.php:59
 msgid "This is your Google Voice Status Message that buddies will see"
 msgstr ""
+"Đây là tin nhắn thông báo tình trạng của Google Voice mà các buddies sẽ nhìn "
+"thấy"
 
 #: views/edit.php:23
 msgid ""
