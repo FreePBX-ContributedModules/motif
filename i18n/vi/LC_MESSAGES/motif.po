@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-04-06 13:29-0400\n"
-"PO-Revision-Date: 2017-07-10 21:46+0200\n"
+"PO-Revision-Date: 2017-07-11 07:47+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese "
 "<http://weblate.freepbx.org/projects/freepbx/motif/vi/>\n"
@@ -71,7 +71,7 @@ msgstr "Tự động thêm tài khoản này giống như một trung kế"
 
 #: views/edit.php:80
 msgid "Buddies"
-msgstr ""
+msgstr "Các buddy"
 
 #: install.php:33
 msgid "Can not create Google Voice/Motif table"
@@ -147,6 +147,11 @@ msgid ""
 "of acceptable values is -128 to +127. Anything else will be reset to the "
 "highest or lowest value."
 msgstr ""
+"Đây là ưu tiên cho nơi mà google sẽ định tuyến một cuộc gọi đến. Một số cao "
+"hơn sõ có quyền ưu tiên cao hơn. Chúng tôi tin rằng::<ul><li>khách hàng "
+"Window Gtalk là 20</li><li>Gmail là 24</li><li>Pidgin sẽ là 0 hoặc "
+"1</li></ul>. Khoảng giá trí có thể chấp nhận dduowwcj là từ -128 đến +127. "
+"Bất kỳ điều gì khác sẽ được cài đặt lại đến giá trị cao nhất hoặc thấp nhất."
 
 #: views/edit.php:27
 msgid "This is your Google Voice Password"
