@@ -89,7 +89,7 @@ class Motif implements \BMO {
 
 	}
 
-	public function restore() {
+	public function restore($backup) {
 
 	}
 

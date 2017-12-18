@@ -7,11 +7,12 @@
 	<type>setup</type>
 	<repo>unsupported</repo>
 	<category>Connectivity</category>
-	<version>13.0.2</version>
+	<version>13.0.3</version>
 	<description>
 		Manage Google Voice Trunks with Chan Motif
 	</description>
 	<changelog>
+		*13.0.3* Fix issue in PBX less than 15
 		*13.0.2* Packaging of ver 13.0.2
 		*13.0.1* Support for OAuth
 	</changelog>
