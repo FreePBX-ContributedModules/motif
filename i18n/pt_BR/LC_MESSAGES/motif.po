@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-17 22:24-0500\n"
+"POT-Creation-Date: 2017-12-18 13:29-0500\n"
 "PO-Revision-Date: 2016-12-13 02:13+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
@@ -70,6 +70,10 @@ msgstr ""
 msgid "Configure Trunk"
 msgstr ""
 
+#: views/account.php:323
+msgid "Connected"
+msgstr "Conectado"
+
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr ""
@@ -82,7 +86,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: views/account.php:322
+#: views/account.php:323
 msgid "Disconnected"
 msgstr "Desconectado"
 
@@ -157,11 +161,11 @@ msgstr ""
 "segundos <br/> Nota: Você DEVE encaminhar isso para um dispositivo que possa "
 "responder. Exemplo: URAs e telefones não podem responder"
 
-#: views/account.php:317
+#: views/account.php:318
 msgid "Status"
 msgstr "Status"
 
-#: views/account.php:331
+#: views/account.php:332
 msgid "Status of your account"
 msgstr ""
 
@@ -254,9 +258,6 @@ msgstr ""
 
 #~ msgid "Can not create Google Voice/Motif table"
 #~ msgstr "Não é possível criar a tabela Google Voice/Motif"
-
-#~ msgid "Connected"
-#~ msgstr "Conectado"
 
 #~ msgid "Detailed Status"
 #~ msgstr "Status Detalhado"

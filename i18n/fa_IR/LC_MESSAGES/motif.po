@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-17 22:24-0500\n"
+"POT-Creation-Date: 2017-12-18 13:29-0500\n"
 "PO-Revision-Date: 2016-04-14 14:15+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
@@ -69,6 +69,10 @@ msgstr ""
 msgid "Configure Trunk"
 msgstr ""
 
+#: views/account.php:323
+msgid "Connected"
+msgstr "وصل شده"
+
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr ""
@@ -81,7 +85,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: views/account.php:322
+#: views/account.php:323
 msgid "Disconnected"
 msgstr "قطع ارتباط"
 
@@ -156,11 +160,11 @@ msgstr ""
 "این ارتباط را به وسیله ای که پاسخگو باشد متصل کنید. به طور مثال: منوهای صوتی "
 "و مجموعه تلفن ها نمیتواند باشد"
 
-#: views/account.php:317
+#: views/account.php:318
 msgid "Status"
 msgstr "وضعیت"
 
-#: views/account.php:331
+#: views/account.php:332
 msgid "Status of your account"
 msgstr ""
 
@@ -252,9 +256,6 @@ msgstr ""
 
 #~ msgid "Can not create Google Voice/Motif table"
 #~ msgstr "نمیتوان جدول صدا/Motif گوگل را ایجاد کرد"
-
-#~ msgid "Connected"
-#~ msgstr "وصل شده"
 
 #~ msgid "Detailed Status"
 #~ msgstr "جزییات وضعیت"

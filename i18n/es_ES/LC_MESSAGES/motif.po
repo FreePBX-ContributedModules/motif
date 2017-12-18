@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-17 22:24-0500\n"
+"POT-Creation-Date: 2017-12-18 13:29-0500\n"
 "PO-Revision-Date: 2015-02-18 20:12-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -67,6 +67,10 @@ msgstr ""
 msgid "Configure Trunk"
 msgstr ""
 
+#: views/account.php:323
+msgid "Connected"
+msgstr "Conectado"
+
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr "Conectividad"
@@ -79,7 +83,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: views/account.php:322
+#: views/account.php:323
 msgid "Disconnected"
 msgstr "Desconectado"
 
@@ -154,11 +158,11 @@ msgstr ""
 "<br /> Nota: Debe rutear a un dispositivo que puede responder. Ejemplo: IVR "
 "y directorios de teléfono no puede contestar"
 
-#: views/account.php:317
+#: views/account.php:318
 msgid "Status"
 msgstr "Estado"
 
-#: views/account.php:331
+#: views/account.php:332
 msgid "Status of your account"
 msgstr ""
 
@@ -251,9 +255,6 @@ msgstr ""
 
 #~ msgid "Can not create Google Voice/Motif table"
 #~ msgstr "No se puede crear Google Voice /Motif table"
-
-#~ msgid "Connected"
-#~ msgstr "Conectado"
 
 #~ msgid "Detailed Status"
 #~ msgstr "Estado detallado"

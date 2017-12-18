@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-17 22:24-0500\n"
+"POT-Creation-Date: 2017-12-18 13:29-0500\n"
 "PO-Revision-Date: 2017-07-11 07:47+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/motif/"
@@ -69,6 +69,10 @@ msgstr ""
 msgid "Configure Trunk"
 msgstr ""
 
+#: views/account.php:323
+msgid "Connected"
+msgstr "Đã kết nối"
+
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr "Khả năng kết nối"
@@ -81,7 +85,7 @@ msgstr ""
 msgid "Delete"
 msgstr ""
 
-#: views/account.php:322
+#: views/account.php:323
 msgid "Disconnected"
 msgstr "Đã ngắt kết nối"
 
@@ -156,11 +160,11 @@ msgstr ""
 ">Lưu ý: Bạn PHẢI định tuyến các cuộc gọi này tới một thiết bị có thể trả "
 "lời. Ví dụ: các IVR và các danh bạ điện thoại KHÔNG thể trả lời"
 
-#: views/account.php:317
+#: views/account.php:318
 msgid "Status"
 msgstr "Tình trạng"
 
-#: views/account.php:331
+#: views/account.php:332
 msgid "Status of your account"
 msgstr ""
 
@@ -254,9 +258,6 @@ msgstr ""
 
 #~ msgid "Can not create Google Voice/Motif table"
 #~ msgstr "Không thể tạo Google Voice/ Bảng Motif"
-
-#~ msgid "Connected"
-#~ msgstr "Đã kết nối"
 
 #~ msgid "Detailed Status"
 #~ msgstr "Các tình trạng chi tiết"
