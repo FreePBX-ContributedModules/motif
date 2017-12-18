@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-17 22:11-0500\n"
+"POT-Creation-Date: 2017-12-17 22:24-0500\n"
 "PO-Revision-Date: 2017-07-11 07:47+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
 "Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/motif/"
@@ -88,6 +88,10 @@ msgstr "Đã ngắt kết nối"
 #: motif.i18n.php:10
 msgid "Google Voice (Motif)"
 msgstr "Dịch vụ Google Voice (Motif)"
+
+#: views/account.php:2
+msgid "Google Voice Account"
+msgstr ""
 
 #: views/account.php:107
 msgid "Google Voice OAuth Client ID"
@@ -178,7 +182,18 @@ msgstr ""
 "ul>. Khoảng giá trí có thể chấp nhận dduowwcj là từ -128 đến +127. Bất kỳ "
 "điều gì khác sẽ được cài đặt lại đến giá trị cao nhất hoặc thấp nhất."
 
-#: views/account.php:97 views/account.php:119 views/account.php:141
+#: views/account.php:119
+msgid "This is your Google Voice OAuth 2 Client ID"
+msgstr ""
+
+#: views/account.php:97
+msgid "This is your Google Voice OAuth 2 Refresh Token"
+msgstr ""
+
+#: views/account.php:141
+msgid "This is your Google Voice OAuth 2 Secret"
+msgstr ""
+
 #: views/account.php:163
 msgid "This is your Google Voice Password"
 msgstr "Đầy là mật khẩu Google Voice"

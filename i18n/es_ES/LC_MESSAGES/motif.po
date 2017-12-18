@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-17 22:11-0500\n"
+"POT-Creation-Date: 2017-12-17 22:24-0500\n"
 "PO-Revision-Date: 2015-02-18 20:12-0500\n"
 "Last-Translator: Automatically generated\n"
 "Language-Team: none\n"
@@ -86,6 +86,10 @@ msgstr "Desconectado"
 #: motif.i18n.php:10
 msgid "Google Voice (Motif)"
 msgstr "Google Voz (Motif)"
+
+#: views/account.php:2
+msgid "Google Voice Account"
+msgstr ""
 
 #: views/account.php:107
 msgid "Google Voice OAuth Client ID"
@@ -176,7 +180,18 @@ msgstr ""
 "ul>La gama de valores aceptables es -128 a +127. Cualquier otra cosa se "
 "restablecerá al valor más alto o más bajo."
 
-#: views/account.php:97 views/account.php:119 views/account.php:141
+#: views/account.php:119
+msgid "This is your Google Voice OAuth 2 Client ID"
+msgstr ""
+
+#: views/account.php:97
+msgid "This is your Google Voice OAuth 2 Refresh Token"
+msgstr ""
+
+#: views/account.php:141
+msgid "This is your Google Voice OAuth 2 Secret"
+msgstr ""
+
 #: views/account.php:163
 msgid "This is your Google Voice Password"
 msgstr "Esta es su contraseña de Google Voice"

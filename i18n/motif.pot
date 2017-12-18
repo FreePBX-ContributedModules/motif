@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-17 22:11-0500\n"
+"POT-Creation-Date: 2017-12-17 22:24-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -84,6 +84,10 @@ msgstr ""
 
 #: motif.i18n.php:10
 msgid "Google Voice (Motif)"
+msgstr ""
+
+#: views/account.php:2
+msgid "Google Voice Account"
 msgstr ""
 
 #: views/account.php:107
@@ -169,9 +173,18 @@ msgid ""
 "highest or lowest value."
 msgstr ""
 
-#: views/account.php:97
 #: views/account.php:119
+msgid "This is your Google Voice OAuth 2 Client ID"
+msgstr ""
+
+#: views/account.php:97
+msgid "This is your Google Voice OAuth 2 Refresh Token"
+msgstr ""
+
 #: views/account.php:141
+msgid "This is your Google Voice OAuth 2 Secret"
+msgstr ""
+
 #: views/account.php:163
 msgid "This is your Google Voice Password"
 msgstr ""
