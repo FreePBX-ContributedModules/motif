@@ -9,12 +9,11 @@ function motif_get_config($engine) {
 		FreePBX::create()->Sipsettings->setConfig('icesupport', 'yes');
 
 
-		$sql = 'SELECT * FROM `motif`';
-		$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
+		$accounts = FreePBX::Motif()->getAllAccounts();
 
 		foreach($accounts as $list) {
-			$settings = unserialize($list['settings']);
-			$context = str_replace('@','',str_replace('.','',$list['username'])); //Remove special characters for use in contexts. There still might be a char limit though
+			$settings = $list['settings'];
+			$context = $list['context']; //Remove special characters for use in contexts. There still might be a char limit though
 
 			$incontext = "im-".$context;
 			$address = 's'; //Joshua Colp @ Digium: 'It will only accept from the s context'
@@ -124,15 +123,12 @@ class motif_conf {
 		}
 
 		function generate_motif_conf($ast_version) {
-			global $astman;
-
-			$sql = 'SELECT * FROM `motif`';
-			$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
+			$accounts = FreePBX::Motif()->getAllAccounts();
 
 			//Clear output for motif file
 			$output = '';
 			foreach($accounts as $list) {
-				$context = str_replace('@','',str_replace('.','',$list['username'])); //Remove special characters for use in contexts. There still might be a char limit though
+				$context = $list['context']; //Remove special characters for use in contexts. There still might be a char limit though
 				$output .= "[g".$context."]\n"; //Add contexts for each 'line'
 				$output .= "context=im-".$context."\n";
 				$output .= "disallow=all\n";
@@ -144,23 +140,27 @@ class motif_conf {
 		}
 
 		function generate_xmpp_conf($ast_version) {
-			global $astman,$db;
-
-			$sql = 'SELECT * FROM `motif`';
-			$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
+			$accounts = FreePBX::Motif()->getAllAccounts();
 
 			$output = "[general]\n\n";
 			$output .= "#include xmpp_general_custom.conf\n\n";
 
 			foreach($accounts as $list) {
-				$context = str_replace('@','',str_replace('.','',$list['username'])); //Remove special characters for use in contexts. There still might be a char limit though
+				$context = $list['context']; //Remove special characters for use in contexts. There still might be a char limit though
 
 				$output .= "[g".$context."]\n";
 				$output .= "type=client\n";
 				$output .= "serverhost=talk.google.com\n";
 
 				$output .= "username=".$list['username']."\n";
-				$output .= "secret=".$list['password']."\n";
+
+				if($list['authmode'] == 'plaintext') {
+					$output .= "secret=".$list['password']."\n";
+				} else {
+					$output .= "refresh_token=".$list['refresh_token']."\n";
+					$output .= "oauth_clientid=".$list['oauth_clientid']."\n";
+					$output .= "oauth_secret=".$list['oauth_secret']."\n";
+				}
 
 				$output .= "port=5222\n";
 				$output .= "usetls=yes\n";
