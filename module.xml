@@ -7,41 +7,21 @@
 	<type>setup</type>
 	<repo>unsupported</repo>
 	<category>Connectivity</category>
-	<version>12.0.4.2</version>
+	<version>13.0.1</version>
 	<description>
 		Manage Google Voice Trunks with Chan Motif
 	</description>
 	<changelog>
-		*12.0.4.2* Thanks google
-		*12.0.4.1* Support ! replacement of @
-		*12.0.4* FREEPBX-9211 No DID in CDR on incoming Google Voice Calls
-		*12.0.3* Licensing
-		*12.0.2* Database Abstraction Fixes
-		*12.0.1* Stealth Greeting for IVRs
-		*12.0.0* Move RTP to sipsettings and require that
-		*2.11.12* Removed Buddy Listing as it was causing an issue
-		*2.11.11* Fixes to includes
-		*2.11.10* Additions and fixes by drmessano
-		*2.11.9* Added ability to change priority and made the default 127. Also added some more uninstall functionalities
-		*2.11.8* Fixes #6435 increase password length and username length in db
-		*2.11.7* Remove rtp.conf if motif created it, fixes #6397, #6398
-		*2.11.6* Removes rtp controlled settings, re #6397
-		*2.11.5* Fixes #6355
-		*2.11.4* Fixes #6328 outbound routes
-		*2.11.1* Remove beta status. Fixes #6326, #6318
-		*2.11.0beta2* Redefined routes. Added route to google voicemail option. Fixes #6065, #6066, #6067
-		*2.11.0beta1* Fixed Multiple Inbound Accounts DID Issue
+		*13.0.1* Support for OAuth
 	</changelog>
 	<depends>
-		<engine>asterisk 11</engine>
-		<module>sipsettings ge 12.0</module>
+		<engine>asterisk 13</engine>
+		<module>sipsettings</module>
 	</depends>
 	<menuitems>
 		<motif>Google Voice (Motif)</motif>
 	</menuitems>
 	<supported>
-		<version>12.0</version>
+		<version>13.0</version>
 	</supported>
-	<location>release/2.11/motif-2.11.12.tgz</location>
-	<md5sum>e698acba592a53e354dad35df116dcef</md5sum>
 </module>

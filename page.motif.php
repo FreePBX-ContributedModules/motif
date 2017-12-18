@@ -1,4 +1,6 @@
 <?php
+echo FreePBX::Motif()->showPage();
+return;
 if (!defined('FREEPBX_IS_AUTH')) { die('No direct script access allowed'); }
 isset($_REQUEST['action']) ? $action = $_REQUEST['action'] : $action = 'add';
 
@@ -36,7 +38,7 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$priority = isset($_REQUEST['priority']) ? $db->escapeSimple($_REQUEST['priority']) : '127';
 		$priority = ($priority > 127) ? 127 : $priority;
 		$priority = ($priority < -128) ? -128 : $priority;
-		
+
         $statusmessage = isset($_REQUEST['statusmessage']) ? $db->escapeSimple($_REQUEST['statusmessage']) : 'I am Available';
 
 		//Add '@gmail.com' if not already appended.
@@ -90,10 +92,10 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
                     'match_pattern_prefix' => '',
                     'match_pattern_pass' => '1NXXNXXXXXX',
                     'match_cid' => ''
-            );      
+            );
 	        //Replace all non-standard characters for route names.
 			$routename = str_replace('@','',str_replace('.','',$un));
-			
+
 			if($action == 'add') {
 			    //Outbound Routes add section
 			    if($settings['obroute']) {
@@ -103,11 +105,11 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
     				}
 			    }
 			    if($settings['ibroute']) {
-			        
+
 			    }
 			} elseif($action == 'edit') {
 			    //Outbound Routes add section
-			    if($settings['obroute']) {    			    
+			    if($settings['obroute']) {
 			        $sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
     				$a = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
     				$s = unserialize($a['settings']);
@@ -127,13 +129,13 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
     					core_routing_delbyid($s['obroute_number']);
     				}
 			    }
-			    
+
 			    //Inbound Routes add section
 			    if($settings['ibroute']) {
-			        
+
 			    //Inbound Routes add section
 			    } elseif(!$settings['ibroute']) {
-			        
+
 		        }
 			}
 
@@ -151,9 +153,9 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			needreload();
 		}
 	}
-	
+
 	$form_statusmessage = isset($form_statusmessage) ? $form_statusmessage : 'I am Available';
-	
+
 	$sql = 'SELECT * FROM `motif`';
 	$accounts = sql($sql, 'getAll', DB_FETCHMODE_ASSOC);
 
@@ -173,9 +175,9 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 		$form_gvm = isset($settings['gvm']) ? true : false;
 		$form_greeting = isset($settings['greeting']) ? true : false;
 		$id = $account['id'];
-        
+
         $form_statusmessage = $account['statusmessage'];
-		
+
 		$form_priority = $account['priority'];
 
 		$r = $astman->command("xmpp show connections");
