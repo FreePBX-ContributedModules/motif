@@ -1,7 +1,7 @@
 function motifactions(value, row, index) {
 	var html = '<a href="?display=motif&amp;action=showaccount&amp;account='+row.id+'"><i class="fa fa-edit"></i></a>';
 
-	html += '<a class="clickable"><i class="fa fa-trash-o" data-id="'+row.id+'"></i></a>';
+	html += '<a href="?display=motif&amp;action=delete&amp;account='+row.id+'"><i class="fa fa-trash-o"></i></a>';
 
 	return html;
 }

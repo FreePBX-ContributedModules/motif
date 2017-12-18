@@ -194,6 +194,9 @@ class Motif implements \BMO {
 				$this->saveAccount($_POST);
 			}
 		}
+		if($page == 'motif' && !empty($_GET['action']) && $_GET['action'] == 'delete') {
+			$this->deleteAccount($_GET['account']);
+		}
 	}
 
 	/**
@@ -219,6 +222,15 @@ class Motif implements \BMO {
 		}
 	}
 
+	public function deleteAccount($id) {
+		$sql = "DELETE FROM motif WHERE `id` = :id";
+		$sth = $this->db->prepare($sql);
+		$sth->execute(array(
+			":id" => $id
+		));
+		needreload();
+	}
+
 	public function saveAccount($data) {
 		$sql = "INSERT INTO `motif` (`authmode`,`phonenum`, `username`, `password`, `settings`, `statusmessage`, `priority`, `refresh_token`, `oauth_secret`, `oauth_clientid`) VALUES (:authmode, :phonenum, :username, :password, :settings, :statusmessage, :priority, :refresh_token, :oauth_secret, :oauth_clientid)";
 		$sth = $this->db->prepare($sql);
@@ -241,6 +253,7 @@ class Motif implements \BMO {
 			":oauth_secret" => $data['oauth_secret'],
 			":oauth_clientid" => $data['oauth_clientid']
 		));
+		needreload();
 	}
 
 	public function updateAccount($id, $data) {
@@ -266,6 +279,7 @@ class Motif implements \BMO {
 			":oauth_secret" => $data['oauth_secret'],
 			":oauth_clientid" => $data['oauth_clientid']
 		));
+		needreload();
 	}
 
 	public function getAllAccounts() {
