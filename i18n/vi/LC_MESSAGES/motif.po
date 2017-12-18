@@ -9,11 +9,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 13:29-0400\n"
+"POT-Creation-Date: 2017-12-17 22:11-0500\n"
 "PO-Revision-Date: 2017-07-11 07:47+0200\n"
 "Last-Translator: PETER <ftek@ymail.com>\n"
-"Language-Team: Vietnamese "
-"<http://weblate.freepbx.org/projects/freepbx/motif/vi/>\n"
+"Language-Team: Vietnamese <http://weblate.freepbx.org/projects/freepbx/motif/"
+"vi/>\n"
 "Language: vi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -21,23 +21,15 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: views/edit.php:44
-msgid " Inbound Routes"
-msgstr " Các tuyến đến"
+#: views/grid.php:15 views/rnav.php:12
+msgid "Action"
+msgstr ""
 
-#: views/edit.php:39
-msgid " Outbound Routes"
-msgstr " Các tuyến đi"
+#: views/grid.php:3 views/rnav.php:3
+msgid "Add"
+msgstr ""
 
-#: views/edit.php:35
-msgid " Trunk"
-msgstr " Trung kế"
-
-#: views/main.php:4
-msgid "Add Google Voice Account"
-msgstr "Thêm tài khoản Google Voice"
-
-#: views/edit.php:66
+#: views/account.php:263
 msgid ""
 "Add a stealth greeting so Google Voice is forced to pass the call when you "
 "want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The "
@@ -49,67 +41,79 @@ msgstr ""
 "sẽ luôn trả lời, tuy nhiên nếu PBX đi ngoại tuyến thì GoogleVoice Voicemail "
 "sẽ nhận cuộc gọi."
 
-#: views/edit.php:56
-msgid "Advanced Settings"
-msgstr "Cài đặt nâng cao"
-
-#: views/edit.php:66
+#: views/account.php:248
 msgid "Always Answer (IVR Mode)"
 msgstr "Luôn luôn trả lời ( Chế độ IVR)"
 
-#: views/edit.php:44
-msgid "Automatically Add Inbound Routes for this Account"
-msgstr "Tự động thêm các tuyến đến cho tài khoản này"
+#: views/account.php:60
+msgid "Authentication Mode"
+msgstr ""
 
-#: views/edit.php:39
+#: views/account.php:75
+msgid "Authentication Mode to Use for Google"
+msgstr ""
+
+#: views/account.php:213
 msgid "Automatically Add Outbound Route for this Account"
 msgstr "Tự động thêm tuyến ra cho tài khoản này"
 
-#: views/edit.php:35
+#: views/account.php:188
 msgid "Automatically Add this Account as a Trunk"
 msgstr "Tự động thêm tài khoản này giống như một trung kế"
 
-#: views/edit.php:80
-msgid "Buddies"
-msgstr "Các buddy"
+#: views/account.php:198
+msgid "Configure Outbound Routes"
+msgstr ""
 
-#: install.php:33
-msgid "Can not create Google Voice/Motif table"
-msgstr "Không thể tạo Google Voice/ Bảng Motif"
-
-#: views/edit.php:77
-msgid "Connected"
-msgstr "Đã kết nối"
+#: views/account.php:173
+msgid "Configure Trunk"
+msgstr ""
 
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr "Khả năng kết nối"
 
-#: views/edit.php:73
-msgid "Detailed Status"
-msgstr "Các tình trạng chi tiết"
+#: views/grid.php:13 views/rnav.php:10
+msgid "DID"
+msgstr ""
 
-#: views/edit.php:77
+#: Motif.class.php:175 views/grid.php:6
+msgid "Delete"
+msgstr ""
+
+#: views/account.php:322
 msgid "Disconnected"
 msgstr "Đã ngắt kết nối"
 
-#: motif.i18n.php:10 views/edit.php:2
+#: motif.i18n.php:10
 msgid "Google Voice (Motif)"
 msgstr "Dịch vụ Google Voice (Motif)"
 
-#: views/edit.php:27
+#: views/account.php:107
+msgid "Google Voice OAuth Client ID"
+msgstr ""
+
+#: views/account.php:129
+msgid "Google Voice OAuth Secret"
+msgstr ""
+
+#: views/account.php:151
 msgid "Google Voice Password"
 msgstr "Mật khẩu Google Voice"
 
-#: views/edit.php:31
+#: views/account.php:16
 msgid "Google Voice Phone Number"
 msgstr "Số điện thoại Google Voice"
 
-#: views/edit.php:59
+#: views/account.php:85
+msgid "Google Voice Refresh Token"
+msgstr ""
+
+#: views/account.php:273
 msgid "Google Voice Status Message"
 msgstr "Thông điệp báo tình trạng Google Voice"
 
-#: views/edit.php:23
+#: views/account.php:38
 msgid "Google Voice Username"
 msgstr "Tên người dùng Google Voice"
 
@@ -121,25 +125,46 @@ msgstr "Google Voice/Chan Motif"
 msgid "Manage Google Voice Trunks with Chan Motif"
 msgstr "Quản lý các trung kế Google Voice với Chan Motif"
 
-#: views/edit.php:49
-msgid "Send Unanswered to Google Voicemail"
-msgstr "Gửi một cuộc gọi không được trả lời tới Google Voicemail"
+#: views/account.php:180 views/account.php:205 views/account.php:230
+#: views/account.php:255
+msgid "No"
+msgstr ""
 
-#: views/edit.php:49
+#: views/account.php:67
+msgid "OAuth 2"
+msgstr ""
+
+#: views/account.php:65
+msgid "Plain Text"
+msgstr ""
+
+#: Motif.class.php:181
+msgid "Reset"
+msgstr ""
+
+#: views/account.php:238
 msgid ""
 "Send unanswered calls to Google voicemail after 25 seconds<br />Note: You "
 "MUST route this to a device that can answer. Example: IVRs and Phone "
 "directories can NOT answer"
 msgstr ""
-"Gửi các cuộc gọi đã không được trả lời tới thư thoại Google sau 25 giây<br />"
-"Lưu ý: Bạn PHẢI định tuyến các cuộc gọi này tới một thiết bị có thể trả lời. "
-"Ví dụ: các IVR và các danh bạ điện thoại KHÔNG thể trả lời"
+"Gửi các cuộc gọi đã không được trả lời tới thư thoại Google sau 25 giây<br /"
+">Lưu ý: Bạn PHẢI định tuyến các cuộc gọi này tới một thiết bị có thể trả "
+"lời. Ví dụ: các IVR và các danh bạ điện thoại KHÔNG thể trả lời"
 
-#: views/edit.php:76
+#: views/account.php:317
 msgid "Status"
 msgstr "Tình trạng"
 
-#: views/edit.php:63
+#: views/account.php:331
+msgid "Status of your account"
+msgstr ""
+
+#: Motif.class.php:170
+msgid "Submit"
+msgstr ""
+
+#: views/account.php:307
 msgid ""
 "This is the priority of where google will route an inbound call. A higher "
 "number has a higher priority. We believe that:<ul><li>Windows Gtalk client "
@@ -149,40 +174,90 @@ msgid ""
 msgstr ""
 "Đây là ưu tiên cho nơi mà google sẽ định tuyến một cuộc gọi đến. Một số cao "
 "hơn sõ có quyền ưu tiên cao hơn. Chúng tôi tin rằng::<ul><li>khách hàng "
-"Window Gtalk là 20</li><li>Gmail là 24</li><li>Pidgin sẽ là 0 hoặc "
-"1</li></ul>. Khoảng giá trí có thể chấp nhận dduowwcj là từ -128 đến +127. "
-"Bất kỳ điều gì khác sẽ được cài đặt lại đến giá trị cao nhất hoặc thấp nhất."
+"Window Gtalk là 20</li><li>Gmail là 24</li><li>Pidgin sẽ là 0 hoặc 1</li></"
+"ul>. Khoảng giá trí có thể chấp nhận dduowwcj là từ -128 đến +127. Bất kỳ "
+"điều gì khác sẽ được cài đặt lại đến giá trị cao nhất hoặc thấp nhất."
 
-#: views/edit.php:27
+#: views/account.php:97 views/account.php:119 views/account.php:141
+#: views/account.php:163
 msgid "This is your Google Voice Password"
 msgstr "Đầy là mật khẩu Google Voice"
 
-#: views/edit.php:31
+#: views/account.php:28
 msgid "This is your Google Voice Phone Number <br />10 Digit Format"
 msgstr "Đây là số điện thoại Google Voice của bạn <br />10  Định dạng chữ số"
 
-#: views/edit.php:59
+#: views/account.php:285
 msgid "This is your Google Voice Status Message that buddies will see"
 msgstr ""
 "Đây là tin nhắn thông báo tình trạng của Google Voice mà các buddies sẽ nhìn "
 "thấy"
 
-#: views/edit.php:23
+#: views/account.php:50
 msgid ""
-"This is your google voice login.<br />If don't you supply '@domain' we will "
+"This is your google voice login. If don't you supply '@domain' we will "
 "append @gmail.com"
 msgstr ""
-"Đầy là đăng nhập google voice của bạn.<br /> Nếu bạn không cung cấp  '@"
-"domain' chúng tôi sẽ đính kèm @gmail.com"
 
-#: views/edit.php:20
-msgid "Typical Settings"
-msgstr "Các cài đặt điển hình"
+#: views/account.php:223
+msgid "Use Google Voicemail"
+msgstr ""
 
-#: install.php:38
-msgid "Unknown/Not Supported database type: "
-msgstr "Kiểu dữ liệu không xác định/ không được hỗ trợ: "
+#: views/grid.php:14 views/rnav.php:11
+msgid "Username"
+msgstr ""
 
-#: views/edit.php:63
+#: views/account.php:295
 msgid "XMPP Priority"
 msgstr "XMPP ưu tiên"
+
+#: views/account.php:178 views/account.php:203 views/account.php:228
+#: views/account.php:253
+msgid "Yes"
+msgstr ""
+
+#~ msgid " Inbound Routes"
+#~ msgstr " Các tuyến đến"
+
+#~ msgid " Outbound Routes"
+#~ msgstr " Các tuyến đi"
+
+#~ msgid " Trunk"
+#~ msgstr " Trung kế"
+
+#~ msgid "Add Google Voice Account"
+#~ msgstr "Thêm tài khoản Google Voice"
+
+#~ msgid "Advanced Settings"
+#~ msgstr "Cài đặt nâng cao"
+
+#~ msgid "Automatically Add Inbound Routes for this Account"
+#~ msgstr "Tự động thêm các tuyến đến cho tài khoản này"
+
+#~ msgid "Buddies"
+#~ msgstr "Các buddy"
+
+#~ msgid "Can not create Google Voice/Motif table"
+#~ msgstr "Không thể tạo Google Voice/ Bảng Motif"
+
+#~ msgid "Connected"
+#~ msgstr "Đã kết nối"
+
+#~ msgid "Detailed Status"
+#~ msgstr "Các tình trạng chi tiết"
+
+#~ msgid "Send Unanswered to Google Voicemail"
+#~ msgstr "Gửi một cuộc gọi không được trả lời tới Google Voicemail"
+
+#~ msgid ""
+#~ "This is your google voice login.<br />If don't you supply '@domain' we "
+#~ "will append @gmail.com"
+#~ msgstr ""
+#~ "Đầy là đăng nhập google voice của bạn.<br /> Nếu bạn không cung cấp  "
+#~ "'@domain' chúng tôi sẽ đính kèm @gmail.com"
+
+#~ msgid "Typical Settings"
+#~ msgstr "Các cài đặt điển hình"
+
+#~ msgid "Unknown/Not Supported database type: "
+#~ msgstr "Kiểu dữ liệu không xác định/ không được hỗ trợ: "

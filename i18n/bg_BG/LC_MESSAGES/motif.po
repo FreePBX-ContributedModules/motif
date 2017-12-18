@@ -20,35 +20,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 13:29-0400\n"
+"POT-Creation-Date: 2017-12-17 22:11-0500\n"
 "PO-Revision-Date: 2014-07-22 15:48+0200\n"
 "Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/motif/bg/"
 ">\n"
+"Language: bg\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: bg\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 1.10-dev\n"
 
-#: views/edit.php:44
-msgid " Inbound Routes"
+#: views/grid.php:15 views/rnav.php:12
+msgid "Action"
 msgstr ""
 
-#: views/edit.php:39
-msgid " Outbound Routes"
+#: views/grid.php:3 views/rnav.php:3
+msgid "Add"
 msgstr ""
 
-#: views/edit.php:35
-msgid " Trunk"
-msgstr ""
-
-#: views/main.php:4
-msgid "Add Google Voice Account"
-msgstr ""
-
-#: views/edit.php:66
+#: views/account.php:263
 msgid ""
 "Add a stealth greeting so Google Voice is forced to pass the call when you "
 "want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The "
@@ -56,67 +48,79 @@ msgid ""
 "Voicemail will pick the call up."
 msgstr ""
 
-#: views/edit.php:56
-msgid "Advanced Settings"
-msgstr ""
-
-#: views/edit.php:66
+#: views/account.php:248
 msgid "Always Answer (IVR Mode)"
 msgstr ""
 
-#: views/edit.php:44
-msgid "Automatically Add Inbound Routes for this Account"
+#: views/account.php:60
+msgid "Authentication Mode"
 msgstr ""
 
-#: views/edit.php:39
+#: views/account.php:75
+msgid "Authentication Mode to Use for Google"
+msgstr ""
+
+#: views/account.php:213
 msgid "Automatically Add Outbound Route for this Account"
 msgstr ""
 
-#: views/edit.php:35
+#: views/account.php:188
 msgid "Automatically Add this Account as a Trunk"
 msgstr ""
 
-#: views/edit.php:80
-msgid "Buddies"
+#: views/account.php:198
+msgid "Configure Outbound Routes"
 msgstr ""
 
-#: install.php:33
-msgid "Can not create Google Voice/Motif table"
-msgstr "Не може да се създаде таблица Google Voice/Motif"
-
-#: views/edit.php:77
-msgid "Connected"
+#: views/account.php:173
+msgid "Configure Trunk"
 msgstr ""
 
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr "Свързване"
 
-#: views/edit.php:73
-msgid "Detailed Status"
+#: views/grid.php:13 views/rnav.php:10
+msgid "DID"
 msgstr ""
 
-#: views/edit.php:77
+#: Motif.class.php:175 views/grid.php:6
+msgid "Delete"
+msgstr ""
+
+#: views/account.php:322
 msgid "Disconnected"
 msgstr ""
 
-#: motif.i18n.php:10 views/edit.php:2
+#: motif.i18n.php:10
 msgid "Google Voice (Motif)"
 msgstr "Google Voice (Motif)"
 
-#: views/edit.php:27
+#: views/account.php:107
+msgid "Google Voice OAuth Client ID"
+msgstr ""
+
+#: views/account.php:129
+msgid "Google Voice OAuth Secret"
+msgstr ""
+
+#: views/account.php:151
 msgid "Google Voice Password"
 msgstr ""
 
-#: views/edit.php:31
+#: views/account.php:16
 msgid "Google Voice Phone Number"
 msgstr ""
 
-#: views/edit.php:59
+#: views/account.php:85
+msgid "Google Voice Refresh Token"
+msgstr ""
+
+#: views/account.php:273
 msgid "Google Voice Status Message"
 msgstr ""
 
-#: views/edit.php:23
+#: views/account.php:38
 msgid "Google Voice Username"
 msgstr ""
 
@@ -128,22 +132,43 @@ msgstr "Google Voice/Chan Motif"
 msgid "Manage Google Voice Trunks with Chan Motif"
 msgstr "Управлява Google Voice Външни Линии с Chan Motif"
 
-#: views/edit.php:49
-msgid "Send Unanswered to Google Voicemail"
+#: views/account.php:180 views/account.php:205 views/account.php:230
+#: views/account.php:255
+msgid "No"
 msgstr ""
 
-#: views/edit.php:49
+#: views/account.php:67
+msgid "OAuth 2"
+msgstr ""
+
+#: views/account.php:65
+msgid "Plain Text"
+msgstr ""
+
+#: Motif.class.php:181
+msgid "Reset"
+msgstr ""
+
+#: views/account.php:238
 msgid ""
 "Send unanswered calls to Google voicemail after 25 seconds<br />Note: You "
 "MUST route this to a device that can answer. Example: IVRs and Phone "
 "directories can NOT answer"
 msgstr ""
 
-#: views/edit.php:76
+#: views/account.php:317
 msgid "Status"
 msgstr ""
 
-#: views/edit.php:63
+#: views/account.php:331
+msgid "Status of your account"
+msgstr ""
+
+#: Motif.class.php:170
+msgid "Submit"
+msgstr ""
+
+#: views/account.php:307
 msgid ""
 "This is the priority of where google will route an inbound call. A higher "
 "number has a higher priority. We believe that:<ul><li>Windows Gtalk client "
@@ -152,32 +177,44 @@ msgid ""
 "highest or lowest value."
 msgstr ""
 
-#: views/edit.php:27
+#: views/account.php:97 views/account.php:119 views/account.php:141
+#: views/account.php:163
 msgid "This is your Google Voice Password"
 msgstr ""
 
-#: views/edit.php:31
+#: views/account.php:28
 msgid "This is your Google Voice Phone Number <br />10 Digit Format"
 msgstr ""
 
-#: views/edit.php:59
+#: views/account.php:285
 msgid "This is your Google Voice Status Message that buddies will see"
 msgstr ""
 
-#: views/edit.php:23
+#: views/account.php:50
 msgid ""
-"This is your google voice login.<br />If don't you supply '@domain' we will "
+"This is your google voice login. If don't you supply '@domain' we will "
 "append @gmail.com"
 msgstr ""
 
-#: views/edit.php:20
-msgid "Typical Settings"
+#: views/account.php:223
+msgid "Use Google Voicemail"
 msgstr ""
 
-#: install.php:38
-msgid "Unknown/Not Supported database type: "
-msgstr "Непознат/Неподдържан вид на база данни: "
+#: views/grid.php:14 views/rnav.php:11
+msgid "Username"
+msgstr ""
 
-#: views/edit.php:63
+#: views/account.php:295
 msgid "XMPP Priority"
 msgstr ""
+
+#: views/account.php:178 views/account.php:203 views/account.php:228
+#: views/account.php:253
+msgid "Yes"
+msgstr ""
+
+#~ msgid "Can not create Google Voice/Motif table"
+#~ msgstr "Не може да се създаде таблица Google Voice/Motif"
+
+#~ msgid "Unknown/Not Supported database type: "
+#~ msgstr "Непознат/Неподдържан вид на база данни: "

@@ -9,35 +9,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 13:29-0400\n"
+"POT-Creation-Date: 2017-12-17 22:11-0500\n"
 "PO-Revision-Date: 2016-04-14 14:15+0200\n"
 "Last-Translator: Media <mousavi.media@gmail.com>\n"
 "Language-Team: Persian (Iran) <http://weblate.freepbx.org/projects/freepbx/"
 "motif/fa_IR/>\n"
+"Language: fa_IR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fa_IR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: views/edit.php:44
-msgid " Inbound Routes"
-msgstr " مسیرهای ورودی"
+#: views/grid.php:15 views/rnav.php:12
+msgid "Action"
+msgstr ""
 
-#: views/edit.php:39
-msgid " Outbound Routes"
-msgstr " مسیرهای خروجی"
+#: views/grid.php:3 views/rnav.php:3
+msgid "Add"
+msgstr ""
 
-#: views/edit.php:35
-msgid " Trunk"
-msgstr " ترانک"
-
-#: views/main.php:4
-msgid "Add Google Voice Account"
-msgstr "افزودن حساب گوگل"
-
-#: views/edit.php:66
+#: views/account.php:263
 msgid ""
 "Add a stealth greeting so Google Voice is forced to pass the call when you "
 "want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The "
@@ -49,67 +41,79 @@ msgstr ""
 "PBX will always answer, however if the PBX goes offline then GoogleVoice "
 "Voicemail will pick the call up."
 
-#: views/edit.php:56
-msgid "Advanced Settings"
-msgstr "تنظیمات پیشرفته"
-
-#: views/edit.php:66
+#: views/account.php:248
 msgid "Always Answer (IVR Mode)"
 msgstr "پاسخ همیشگی (حالت منو صوتی)"
 
-#: views/edit.php:44
-msgid "Automatically Add Inbound Routes for this Account"
-msgstr "افزودن خودکار مسیرهای ورودی برای این حساب"
+#: views/account.php:60
+msgid "Authentication Mode"
+msgstr ""
 
-#: views/edit.php:39
+#: views/account.php:75
+msgid "Authentication Mode to Use for Google"
+msgstr ""
+
+#: views/account.php:213
 msgid "Automatically Add Outbound Route for this Account"
 msgstr "افزودن خودکار مسیرهای خروجی برای این حساب"
 
-#: views/edit.php:35
+#: views/account.php:188
 msgid "Automatically Add this Account as a Trunk"
 msgstr "افزودن خودکار این حساب به عنوان ترانک"
 
-#: views/edit.php:80
-msgid "Buddies"
-msgstr "دوستان"
+#: views/account.php:198
+msgid "Configure Outbound Routes"
+msgstr ""
 
-#: install.php:33
-msgid "Can not create Google Voice/Motif table"
-msgstr "نمیتوان جدول صدا/Motif گوگل را ایجاد کرد"
-
-#: views/edit.php:77
-msgid "Connected"
-msgstr "وصل شده"
+#: views/account.php:173
+msgid "Configure Trunk"
+msgstr ""
 
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr ""
 
-#: views/edit.php:73
-msgid "Detailed Status"
-msgstr "جزییات وضعیت"
+#: views/grid.php:13 views/rnav.php:10
+msgid "DID"
+msgstr ""
 
-#: views/edit.php:77
+#: Motif.class.php:175 views/grid.php:6
+msgid "Delete"
+msgstr ""
+
+#: views/account.php:322
 msgid "Disconnected"
 msgstr "قطع ارتباط"
 
-#: motif.i18n.php:10 views/edit.php:2
+#: motif.i18n.php:10
 msgid "Google Voice (Motif)"
 msgstr "صوت گوگل (Motif)"
 
-#: views/edit.php:27
+#: views/account.php:107
+msgid "Google Voice OAuth Client ID"
+msgstr ""
+
+#: views/account.php:129
+msgid "Google Voice OAuth Secret"
+msgstr ""
+
+#: views/account.php:151
 msgid "Google Voice Password"
 msgstr "کلمه عبور صوت گوگل"
 
-#: views/edit.php:31
+#: views/account.php:16
 msgid "Google Voice Phone Number"
 msgstr "شماره تلفن صوت گوگل"
 
-#: views/edit.php:59
+#: views/account.php:85
+msgid "Google Voice Refresh Token"
+msgstr ""
+
+#: views/account.php:273
 msgid "Google Voice Status Message"
 msgstr "وضعیت پیام صوت گوگل"
 
-#: views/edit.php:23
+#: views/account.php:38
 msgid "Google Voice Username"
 msgstr "نام کاربری صوت گوگل"
 
@@ -121,11 +125,24 @@ msgstr ""
 msgid "Manage Google Voice Trunks with Chan Motif"
 msgstr ""
 
-#: views/edit.php:49
-msgid "Send Unanswered to Google Voicemail"
-msgstr "ارسال پاسخ داده نشده به ایمیل صوتی گوگل"
+#: views/account.php:180 views/account.php:205 views/account.php:230
+#: views/account.php:255
+msgid "No"
+msgstr ""
 
-#: views/edit.php:49
+#: views/account.php:67
+msgid "OAuth 2"
+msgstr ""
+
+#: views/account.php:65
+msgid "Plain Text"
+msgstr ""
+
+#: Motif.class.php:181
+msgid "Reset"
+msgstr ""
+
+#: views/account.php:238
 msgid ""
 "Send unanswered calls to Google voicemail after 25 seconds<br />Note: You "
 "MUST route this to a device that can answer. Example: IVRs and Phone "
@@ -135,11 +152,19 @@ msgstr ""
 "این ارتباط را به وسیله ای که پاسخگو باشد متصل کنید. به طور مثال: منوهای صوتی "
 "و مجموعه تلفن ها نمیتواند باشد"
 
-#: views/edit.php:76
+#: views/account.php:317
 msgid "Status"
 msgstr "وضعیت"
 
-#: views/edit.php:63
+#: views/account.php:331
+msgid "Status of your account"
+msgstr ""
+
+#: Motif.class.php:170
+msgid "Submit"
+msgstr ""
+
+#: views/account.php:307
 msgid ""
 "This is the priority of where google will route an inbound call. A higher "
 "number has a higher priority. We believe that:<ul><li>Windows Gtalk client "
@@ -153,34 +178,84 @@ msgstr ""
 "of acceptable values is -128 to +127. Anything else will be reset to the "
 "highest or lowest value."
 
-#: views/edit.php:27
+#: views/account.php:97 views/account.php:119 views/account.php:141
+#: views/account.php:163
 msgid "This is your Google Voice Password"
 msgstr "این کلمه عبور گوگل صوتی شماست"
 
-#: views/edit.php:31
+#: views/account.php:28
 msgid "This is your Google Voice Phone Number <br />10 Digit Format"
 msgstr "این شماره تلفن گوگل صوتی شماست <br /> شماره 10 رقمی"
 
-#: views/edit.php:59
+#: views/account.php:285
 msgid "This is your Google Voice Status Message that buddies will see"
 msgstr "این پیام وضعیت گوگل صوتی شماست که دوستان آن را میبینند"
 
-#: views/edit.php:23
+#: views/account.php:50
 msgid ""
-"This is your google voice login.<br />If don't you supply '@domain' we will "
+"This is your google voice login. If don't you supply '@domain' we will "
 "append @gmail.com"
 msgstr ""
-"این مشخصات ورود گوگل صوتی شماست.<br /> اگر برای دامین شخصی شما تعریف نشده "
-"باشد ما از @gmail.com استفاده میکنیم"
 
-#: views/edit.php:20
-msgid "Typical Settings"
-msgstr "تنظیمات عمومی"
+#: views/account.php:223
+msgid "Use Google Voicemail"
+msgstr ""
 
-#: install.php:38
-msgid "Unknown/Not Supported database type: "
-msgstr "نوع بانک اطلاعاتی ناشناخته/پشتیبانی نشده: "
+#: views/grid.php:14 views/rnav.php:11
+msgid "Username"
+msgstr ""
 
-#: views/edit.php:63
+#: views/account.php:295
 msgid "XMPP Priority"
 msgstr "اولویت XMPP"
+
+#: views/account.php:178 views/account.php:203 views/account.php:228
+#: views/account.php:253
+msgid "Yes"
+msgstr ""
+
+#~ msgid " Inbound Routes"
+#~ msgstr " مسیرهای ورودی"
+
+#~ msgid " Outbound Routes"
+#~ msgstr " مسیرهای خروجی"
+
+#~ msgid " Trunk"
+#~ msgstr " ترانک"
+
+#~ msgid "Add Google Voice Account"
+#~ msgstr "افزودن حساب گوگل"
+
+#~ msgid "Advanced Settings"
+#~ msgstr "تنظیمات پیشرفته"
+
+#~ msgid "Automatically Add Inbound Routes for this Account"
+#~ msgstr "افزودن خودکار مسیرهای ورودی برای این حساب"
+
+#~ msgid "Buddies"
+#~ msgstr "دوستان"
+
+#~ msgid "Can not create Google Voice/Motif table"
+#~ msgstr "نمیتوان جدول صدا/Motif گوگل را ایجاد کرد"
+
+#~ msgid "Connected"
+#~ msgstr "وصل شده"
+
+#~ msgid "Detailed Status"
+#~ msgstr "جزییات وضعیت"
+
+#~ msgid "Send Unanswered to Google Voicemail"
+#~ msgstr "ارسال پاسخ داده نشده به ایمیل صوتی گوگل"
+
+#~ msgid ""
+#~ "This is your google voice login.<br />If don't you supply '@domain' we "
+#~ "will append @gmail.com"
+#~ msgstr ""
+#~ "این مشخصات ورود گوگل صوتی شماست.<br /> اگر برای دامین شخصی شما تعریف نشده "
+#~ "باشد ما از @gmail.com استفاده میکنیم"
+
+#~ msgid "Typical Settings"
+#~ msgstr "تنظیمات عمومی"
+
+#~ msgid "Unknown/Not Supported database type: "
+#~ msgstr "نوع بانک اطلاعاتی ناشناخته/پشتیبانی نشده: "

@@ -9,35 +9,27 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-06 13:29-0400\n"
+"POT-Creation-Date: 2017-12-17 22:11-0500\n"
 "PO-Revision-Date: 2016-12-13 02:13+0200\n"
 "Last-Translator: Alexander <alexander.schley@paranagua.pr.gov.br>\n"
 "Language-Team: Portuguese (Brazil) <http://weblate.freepbx.org/projects/"
 "freepbx/motif/pt_BR/>\n"
+"Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pt_BR\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Generator: Weblate 2.4\n"
 
-#: views/edit.php:44
-msgid " Inbound Routes"
-msgstr " Rotas de Entrada"
+#: views/grid.php:15 views/rnav.php:12
+msgid "Action"
+msgstr ""
 
-#: views/edit.php:39
-msgid " Outbound Routes"
-msgstr " Rotas de Saída"
+#: views/grid.php:3 views/rnav.php:3
+msgid "Add"
+msgstr ""
 
-#: views/edit.php:35
-msgid " Trunk"
-msgstr " Tronco"
-
-#: views/main.php:4
-msgid "Add Google Voice Account"
-msgstr "Adicionar conta do Google Talk"
-
-#: views/edit.php:66
+#: views/account.php:263
 msgid ""
 "Add a stealth greeting so Google Voice is forced to pass the call when you "
 "want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The "
@@ -50,67 +42,79 @@ msgstr ""
 "entanto, se o PBX ficar offline, o correio de voz do Google Voice receberá a "
 "chamada."
 
-#: views/edit.php:56
-msgid "Advanced Settings"
-msgstr "Configurações Avançadas"
-
-#: views/edit.php:66
+#: views/account.php:248
 msgid "Always Answer (IVR Mode)"
 msgstr "Sempre Responder (Modo URA)"
 
-#: views/edit.php:44
-msgid "Automatically Add Inbound Routes for this Account"
-msgstr "Adicionar Rotas de Entrada Automaticamente para esta Conta"
+#: views/account.php:60
+msgid "Authentication Mode"
+msgstr ""
 
-#: views/edit.php:39
+#: views/account.php:75
+msgid "Authentication Mode to Use for Google"
+msgstr ""
+
+#: views/account.php:213
 msgid "Automatically Add Outbound Route for this Account"
 msgstr "Adicionar Rotas de Saída Automaticamente para esta Conta"
 
-#: views/edit.php:35
+#: views/account.php:188
 msgid "Automatically Add this Account as a Trunk"
 msgstr "Adicionar esta Conta Automaticamente como um Tronco"
 
-#: views/edit.php:80
-msgid "Buddies"
-msgstr "Amigos"
+#: views/account.php:198
+msgid "Configure Outbound Routes"
+msgstr ""
 
-#: install.php:33
-msgid "Can not create Google Voice/Motif table"
-msgstr "Não é possível criar a tabela Google Voice/Motif"
-
-#: views/edit.php:77
-msgid "Connected"
-msgstr "Conectado"
+#: views/account.php:173
+msgid "Configure Trunk"
+msgstr ""
 
 #: motif.i18n.php:6
 msgid "Connectivity"
 msgstr ""
 
-#: views/edit.php:73
-msgid "Detailed Status"
-msgstr "Status Detalhado"
+#: views/grid.php:13 views/rnav.php:10
+msgid "DID"
+msgstr ""
 
-#: views/edit.php:77
+#: Motif.class.php:175 views/grid.php:6
+msgid "Delete"
+msgstr ""
+
+#: views/account.php:322
 msgid "Disconnected"
 msgstr "Desconectado"
 
-#: motif.i18n.php:10 views/edit.php:2
+#: motif.i18n.php:10
 msgid "Google Voice (Motif)"
 msgstr "Google Voice (Motif)"
 
-#: views/edit.php:27
+#: views/account.php:107
+msgid "Google Voice OAuth Client ID"
+msgstr ""
+
+#: views/account.php:129
+msgid "Google Voice OAuth Secret"
+msgstr ""
+
+#: views/account.php:151
 msgid "Google Voice Password"
 msgstr "Senha do Google Voice"
 
-#: views/edit.php:31
+#: views/account.php:16
 msgid "Google Voice Phone Number"
 msgstr "Número do Telefone do Google Voice"
 
-#: views/edit.php:59
+#: views/account.php:85
+msgid "Google Voice Refresh Token"
+msgstr ""
+
+#: views/account.php:273
 msgid "Google Voice Status Message"
 msgstr "Mensagem de Status do Google Voice"
 
-#: views/edit.php:23
+#: views/account.php:38
 msgid "Google Voice Username"
 msgstr "Nome de Usuário do Google Voice"
 
@@ -122,11 +126,24 @@ msgstr ""
 msgid "Manage Google Voice Trunks with Chan Motif"
 msgstr ""
 
-#: views/edit.php:49
-msgid "Send Unanswered to Google Voicemail"
-msgstr "Enviar não respondidas para Correio de Voz Google Voice"
+#: views/account.php:180 views/account.php:205 views/account.php:230
+#: views/account.php:255
+msgid "No"
+msgstr ""
 
-#: views/edit.php:49
+#: views/account.php:67
+msgid "OAuth 2"
+msgstr ""
+
+#: views/account.php:65
+msgid "Plain Text"
+msgstr ""
+
+#: Motif.class.php:181
+msgid "Reset"
+msgstr ""
+
+#: views/account.php:238
 msgid ""
 "Send unanswered calls to Google voicemail after 25 seconds<br />Note: You "
 "MUST route this to a device that can answer. Example: IVRs and Phone "
@@ -136,11 +153,19 @@ msgstr ""
 "segundos <br/> Nota: Você DEVE encaminhar isso para um dispositivo que possa "
 "responder. Exemplo: URAs e telefones não podem responder"
 
-#: views/edit.php:76
+#: views/account.php:317
 msgid "Status"
 msgstr "Status"
 
-#: views/edit.php:63
+#: views/account.php:331
+msgid "Status of your account"
+msgstr ""
+
+#: Motif.class.php:170
+msgid "Submit"
+msgstr ""
+
+#: views/account.php:307
 msgid ""
 "This is the priority of where google will route an inbound call. A higher "
 "number has a higher priority. We believe that:<ul><li>Windows Gtalk client "
@@ -154,35 +179,85 @@ msgstr ""
 "1</li></ul> Valores de -128 a +127. Qualquer outra coisa será redefinida "
 "para o valor mais alto ou mais baixo."
 
-#: views/edit.php:27
+#: views/account.php:97 views/account.php:119 views/account.php:141
+#: views/account.php:163
 msgid "This is your Google Voice Password"
 msgstr "Esta é a sua senha do Google Voice"
 
-#: views/edit.php:31
+#: views/account.php:28
 msgid "This is your Google Voice Phone Number <br />10 Digit Format"
 msgstr ""
 "Este é o seu número de telefone do Google Voice <br/>Formato de 10 dígitos"
 
-#: views/edit.php:59
+#: views/account.php:285
 msgid "This is your Google Voice Status Message that buddies will see"
 msgstr "Esta é a mensagem de status do Google Voice que os amigos verão"
 
-#: views/edit.php:23
+#: views/account.php:50
 msgid ""
-"This is your google voice login.<br />If don't you supply '@domain' we will "
+"This is your google voice login. If don't you supply '@domain' we will "
 "append @gmail.com"
 msgstr ""
-"Este é o seu login do google voice. <br/>Se você não fornecer um '@domínio', "
-"acrescentaremos @gmail.com"
 
-#: views/edit.php:20
-msgid "Typical Settings"
-msgstr "Configurações Típicas"
+#: views/account.php:223
+msgid "Use Google Voicemail"
+msgstr ""
 
-#: install.php:38
-msgid "Unknown/Not Supported database type: "
-msgstr "Tipo de banco de dados desconhecido/não suportado: "
+#: views/grid.php:14 views/rnav.php:11
+msgid "Username"
+msgstr ""
 
-#: views/edit.php:63
+#: views/account.php:295
 msgid "XMPP Priority"
 msgstr "Prioridade XMPP"
+
+#: views/account.php:178 views/account.php:203 views/account.php:228
+#: views/account.php:253
+msgid "Yes"
+msgstr ""
+
+#~ msgid " Inbound Routes"
+#~ msgstr " Rotas de Entrada"
+
+#~ msgid " Outbound Routes"
+#~ msgstr " Rotas de Saída"
+
+#~ msgid " Trunk"
+#~ msgstr " Tronco"
+
+#~ msgid "Add Google Voice Account"
+#~ msgstr "Adicionar conta do Google Talk"
+
+#~ msgid "Advanced Settings"
+#~ msgstr "Configurações Avançadas"
+
+#~ msgid "Automatically Add Inbound Routes for this Account"
+#~ msgstr "Adicionar Rotas de Entrada Automaticamente para esta Conta"
+
+#~ msgid "Buddies"
+#~ msgstr "Amigos"
+
+#~ msgid "Can not create Google Voice/Motif table"
+#~ msgstr "Não é possível criar a tabela Google Voice/Motif"
+
+#~ msgid "Connected"
+#~ msgstr "Conectado"
+
+#~ msgid "Detailed Status"
+#~ msgstr "Status Detalhado"
+
+#~ msgid "Send Unanswered to Google Voicemail"
+#~ msgstr "Enviar não respondidas para Correio de Voz Google Voice"
+
+#~ msgid ""
+#~ "This is your google voice login.<br />If don't you supply '@domain' we "
+#~ "will append @gmail.com"
+#~ msgstr ""
+#~ "Este é o seu login do google voice. <br/>Se você não fornecer um "
+#~ "'@domínio', acrescentaremos @gmail.com"
+
+#~ msgid "Typical Settings"
+#~ msgstr "Configurações Típicas"
+
+#~ msgid "Unknown/Not Supported database type: "
+#~ msgstr "Tipo de banco de dados desconhecido/não suportado: "
