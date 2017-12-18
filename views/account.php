@@ -1,5 +1,5 @@
 <div class="container-fluid">
-	<h1>Update Existing Certificate</h1>
+	<h1><?php echo _("Google Voice Account")?></h1>
 	<div class="display full-border">
 		<div class="row">
 			<div class="col-sm-12">
@@ -94,7 +94,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<span id="refresh_token-help" class="help-block fpbx-help-block"><?php echo _("This is your Google Voice Password")?></span>
+										<span id="refresh_token-help" class="help-block fpbx-help-block"><?php echo _("This is your Google Voice OAuth 2 Refresh Token")?></span>
 									</div>
 								</div>
 							</div>
@@ -116,7 +116,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<span id="oauth_clientid-help" class="help-block fpbx-help-block"><?php echo _("This is your Google Voice Password")?></span>
+										<span id="oauth_clientid-help" class="help-block fpbx-help-block"><?php echo _("This is your Google Voice OAuth 2 Client ID")?></span>
 									</div>
 								</div>
 							</div>
@@ -138,7 +138,7 @@
 								</div>
 								<div class="row">
 									<div class="col-md-12">
-										<span id="oauth_secret-help" class="help-block fpbx-help-block"><?php echo _("This is your Google Voice Password")?></span>
+										<span id="oauth_secret-help" class="help-block fpbx-help-block"><?php echo _("This is your Google Voice OAuth 2 Secret")?></span>
 									</div>
 								</div>
 							</div>
