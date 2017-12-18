@@ -308,30 +308,32 @@
 									</div>
 								</div>
 							</div>
-							<div class="element-container">
-								<div class="row">
-									<div class="col-md-12">
-										<div class="row">
-											<div class="form-group">
-												<div class="col-md-3">
-													<label class="control-label" for="status"><?php echo _("Status")?></label>
-													<i class="fa fa-question-circle fpbx-help-icon" data-for="status"></i>
-												</div>
-												<div class="col-md-9">
-													<span class="label label-default">
-														<?php echo _("Disconnected")?>
-													</span>
+							<?php if(isset($id)) {?>
+								<div class="element-container">
+									<div class="row">
+										<div class="col-md-12">
+											<div class="row">
+												<div class="form-group">
+													<div class="col-md-3">
+														<label class="control-label" for="status"><?php echo _("Status")?></label>
+														<i class="fa fa-question-circle fpbx-help-icon" data-for="status"></i>
+													</div>
+													<div class="col-md-9">
+														<span class="label label-<?php echo ($connected) ? 'success' : 'warning'?>">
+															<?php echo ($connected) ? _('Connected') : _('Disconnected')?>
+														</span>
+													</div>
 												</div>
 											</div>
 										</div>
 									</div>
-								</div>
-								<div class="row">
-									<div class="col-md-12">
-										<span id="status-help" class="help-block fpbx-help-block"><?php echo _("Status of your account")?></span>
+									<div class="row">
+										<div class="col-md-12">
+											<span id="status-help" class="help-block fpbx-help-block"><?php echo _("Status of your account")?></span>
+										</div>
 									</div>
 								</div>
-							</div>
+							<?php } ?>
 						</form>
 					</div>
 				</div>

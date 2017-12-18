@@ -297,6 +297,7 @@ class Motif implements \BMO {
 	}
 
 	public function getAccountByID($id) {
+		$astman = $this->freepbx->astman;
 		$sql = "SELECT * FROM `motif` WHERE `id` = :id";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(":id" => $id));
@@ -304,7 +305,13 @@ class Motif implements \BMO {
 		if(empty($out)) {
 			return array();
 		}
-		$out['context'] = str_replace(array('@','.'),'',$out['username']);
+		$r = $astman->command("xmpp show connections");
+		$out['connected'] = false;
+		$context = str_replace(array('@','.'),'',$out['username']);
+		if(preg_match('/\[g'.$context.'\] '.$out['username'].'.* (Connected)/i',$r['data'],$matches)) {
+			$out['connected'] = true;
+		};
+		$out['context'] = $context;
 		$out['settings'] = unserialize($out['settings']);
 		return $out;
 	}
