@@ -14,7 +14,7 @@ class Motif implements \BMO {
 			array (
 				'type' => 'integer',
 				'autoincrement' => true,
-				'primarykey' => true,
+				'primaryKey' => true,
 			),
 			'phonenum' =>
 			array (
@@ -77,7 +77,7 @@ class Motif implements \BMO {
 
 		$indexes = array (
 		);
-		$table->modify($cols, $indexes);
+		$out = $table->modify($cols, $indexes);
 		unset($table);
 	}
 
