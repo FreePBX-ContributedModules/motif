@@ -1,0 +1,216 @@
+# This file is part of FreePBX.
+#
+# For licensing information, please see the file named LICENSE located in the module directory
+#
+# FreePBX language template for motif
+# Copyright (C) 2008-2017 Sangoma Technologies, Inc.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-12-17 22:24-0500\n"
+"PO-Revision-Date: 2017-12-17 22:24-0500\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: none\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: views/grid.php:15 views/rnav.php:12
+msgid "Action"
+msgstr ""
+
+#: views/grid.php:3 views/rnav.php:3
+msgid "Add"
+msgstr ""
+
+#: views/account.php:263
+msgid ""
+"Add a stealth greeting so Google Voice is forced to pass the call when you "
+"want unanswered calls to go to GoogleVoice Voicemail (above). WARNING: The "
+"PBX will always answer, however if the PBX goes offline then GoogleVoice "
+"Voicemail will pick the call up."
+msgstr ""
+
+#: views/account.php:248
+msgid "Always Answer (IVR Mode)"
+msgstr ""
+
+#: views/account.php:60
+msgid "Authentication Mode"
+msgstr ""
+
+#: views/account.php:75
+msgid "Authentication Mode to Use for Google"
+msgstr ""
+
+#: views/account.php:213
+msgid "Automatically Add Outbound Route for this Account"
+msgstr ""
+
+#: views/account.php:188
+msgid "Automatically Add this Account as a Trunk"
+msgstr ""
+
+#: views/account.php:198
+msgid "Configure Outbound Routes"
+msgstr ""
+
+#: views/account.php:173
+msgid "Configure Trunk"
+msgstr ""
+
+#: motif.i18n.php:6
+msgid "Connectivity"
+msgstr ""
+
+#: views/grid.php:13 views/rnav.php:10
+msgid "DID"
+msgstr ""
+
+#: Motif.class.php:175 views/grid.php:6
+msgid "Delete"
+msgstr ""
+
+#: views/account.php:322
+msgid "Disconnected"
+msgstr ""
+
+#: motif.i18n.php:10
+msgid "Google Voice (Motif)"
+msgstr ""
+
+#: views/account.php:2
+msgid "Google Voice Account"
+msgstr ""
+
+#: views/account.php:107
+msgid "Google Voice OAuth Client ID"
+msgstr ""
+
+#: views/account.php:129
+msgid "Google Voice OAuth Secret"
+msgstr ""
+
+#: views/account.php:151
+msgid "Google Voice Password"
+msgstr ""
+
+#: views/account.php:16
+msgid "Google Voice Phone Number"
+msgstr ""
+
+#: views/account.php:85
+msgid "Google Voice Refresh Token"
+msgstr ""
+
+#: views/account.php:273
+msgid "Google Voice Status Message"
+msgstr ""
+
+#: views/account.php:38
+msgid "Google Voice Username"
+msgstr ""
+
+#: motif.i18n.php:4
+msgid "Google Voice/Chan Motif"
+msgstr ""
+
+#: motif.i18n.php:8
+msgid "Manage Google Voice Trunks with Chan Motif"
+msgstr ""
+
+#: views/account.php:180 views/account.php:205 views/account.php:230
+#: views/account.php:255
+msgid "No"
+msgstr ""
+
+#: views/account.php:67
+msgid "OAuth 2"
+msgstr ""
+
+#: views/account.php:65
+msgid "Plain Text"
+msgstr ""
+
+#: Motif.class.php:181
+msgid "Reset"
+msgstr ""
+
+#: views/account.php:238
+msgid ""
+"Send unanswered calls to Google voicemail after 25 seconds<br />Note: You "
+"MUST route this to a device that can answer. Example: IVRs and Phone "
+"directories can NOT answer"
+msgstr ""
+
+#: views/account.php:317
+msgid "Status"
+msgstr ""
+
+#: views/account.php:331
+msgid "Status of your account"
+msgstr ""
+
+#: Motif.class.php:170
+msgid "Submit"
+msgstr ""
+
+#: views/account.php:307
+msgid ""
+"This is the priority of where google will route an inbound call. A higher "
+"number has a higher priority. We believe that:<ul><li>Windows Gtalk client "
+"is 20</li><li>GMail is 24</li><li>Pidgin would be 0 or 1</li></ul>The range "
+"of acceptable values is -128 to +127. Anything else will be reset to the "
+"highest or lowest value."
+msgstr ""
+
+#: views/account.php:119
+msgid "This is your Google Voice OAuth 2 Client ID"
+msgstr ""
+
+#: views/account.php:97
+msgid "This is your Google Voice OAuth 2 Refresh Token"
+msgstr ""
+
+#: views/account.php:141
+msgid "This is your Google Voice OAuth 2 Secret"
+msgstr ""
+
+#: views/account.php:163
+msgid "This is your Google Voice Password"
+msgstr ""
+
+#: views/account.php:28
+msgid "This is your Google Voice Phone Number <br />10 Digit Format"
+msgstr ""
+
+#: views/account.php:285
+msgid "This is your Google Voice Status Message that buddies will see"
+msgstr ""
+
+#: views/account.php:50
+msgid ""
+"This is your google voice login. If don't you supply '@domain' we will "
+"append @gmail.com"
+msgstr ""
+
+#: views/account.php:223
+msgid "Use Google Voicemail"
+msgstr ""
+
+#: views/grid.php:14 views/rnav.php:11
+msgid "Username"
+msgstr ""
+
+#: views/account.php:295
+msgid "XMPP Priority"
+msgstr ""
+
+#: views/account.php:178 views/account.php:203 views/account.php:228
+#: views/account.php:253
+msgid "Yes"
+msgstr ""
