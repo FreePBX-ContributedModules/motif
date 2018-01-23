@@ -112,9 +112,9 @@ class Motif implements \BMO {
 			'oauth_secret' => '',
 			'oauth_clientid' => '',
 			'settings' => array(
-				'trunk' => false,
+				'trunk' => true,
 				'ibroute' => false,
-				'obroute' => false,
+				'obroute' => true,
 				'gvm' => false,
 				'greeting' => false
 			),
@@ -223,6 +223,18 @@ class Motif implements \BMO {
 	}
 
 	public function deleteAccount($id) {
+		$this->freepbx->Modules->loadFunctionsInc('core');
+		$account = $this->getAccountByID($id);
+
+		if(isset($account['settings']['trunk_number']) && $this->freepbx->Core->getTrunkTech($account['settings']['trunk_number'])) {
+			$this->freepbx->Core->deleteTrunk($account['settings']['trunk_number']);
+		}
+
+		//If we created a route then delete it
+		if(isset($account['settings']['obroute_number']) && $this->freepbx->Core->getRouteByID($account['settings']['obroute_number'])) {
+			core_routing_delbyid($account['settings']['obroute_number']);
+		}
+
 		$sql = "DELETE FROM motif WHERE `id` = :id";
 		$sth = $this->db->prepare($sql);
 		$sth->execute(array(
@@ -234,19 +246,21 @@ class Motif implements \BMO {
 	public function saveAccount($data) {
 		$sql = "INSERT INTO `motif` (`authmode`,`phonenum`, `username`, `password`, `settings`, `statusmessage`, `priority`, `refresh_token`, `oauth_secret`, `oauth_clientid`) VALUES (:authmode, :phonenum, :username, :password, :settings, :statusmessage, :priority, :refresh_token, :oauth_secret, :oauth_clientid)";
 		$sth = $this->db->prepare($sql);
-		$settings = serialize(array(
+		$settings = array(
 			"trunk" => $data['trunk'] == 'yes' ? true : false,
 			"ibroute" => false,
 			"obroute" => $data['obroute'] == 'yes' ? true : false,
 			"gvm" => $data['gvm'] == 'yes' ? true : false,
 			"greeting" => $data['greeting'] == 'yes' ? true : false,
-		));
+		);
+		$settings = $this->updateTrunks($data['username'],$data['phonenum'],$settings);
+		$settings = $this->updateRoutes($data['username'],$data['phonenum'],$settings);
 		$sth->execute(array(
 			":authmode" => $data['authmode'],
 			":phonenum" => $data['phonenum'],
 			":username" => $data['username'],
 			":password" => $data['password'],
-			":settings" => $settings,
+			":settings" => serialize($settings),
 			":statusmessage" => $data['statusmessage'],
 			":priority" => $data['priority'],
 			":refresh_token" => $data['refresh_token'],
@@ -257,22 +271,32 @@ class Motif implements \BMO {
 	}
 
 	public function updateAccount($id, $data) {
+		$account = $this->getAccountByID($id);
+
 		$sql = "UPDATE `motif` SET `authmode` = :authmode, `phonenum` = :phonenum, `username` = :username, `password` = :password, `settings` = :settings, `statusmessage` = :statusmessage, `priority` = :priority, `refresh_token` = :refresh_token, `oauth_secret` = :oauth_secret, `oauth_clientid` = :oauth_clientid WHERE `id` = :id";
 		$sth = $this->db->prepare($sql);
-		$settings = serialize(array(
+		$settings = array(
 			"trunk" => $data['trunk'] == 'yes' ? true : false,
 			"ibroute" => false,
 			"obroute" => $data['obroute'] == 'yes' ? true : false,
 			"gvm" => $data['gvm'] == 'yes' ? true : false,
-			"greeting" => $data['greeting'] == 'yes' ? true : false,
-		));
+			"greeting" => $data['greeting'] == 'yes' ? true : false
+		);
+		if(isset($account['settings']['trunk_number'])) {
+			$settings['trunk_number'] = $account['settings']['trunk_number'];
+		}
+		if(isset($account['settings']['obroute_number'])) {
+			$settings['obroute_number'] = $account['settings']['obroute_number'];
+		}
+		$settings = $this->updateTrunks($data['username'],$data['phonenum'],$settings);
+		$settings = $this->updateRoutes($data['username'],$data['phonenum'],$settings);
 		$sth->execute(array(
 			":id" => $id,
 			":authmode" => $data['authmode'],
 			":phonenum" => $data['phonenum'],
 			":username" => $data['username'],
 			":password" => $data['password'],
-			":settings" => $settings,
+			":settings" => serialize($settings),
 			":statusmessage" => $data['statusmessage'],
 			":priority" => $data['priority'],
 			":refresh_token" => $data['refresh_token'],
@@ -280,6 +304,63 @@ class Motif implements \BMO {
 			":oauth_clientid" => $data['oauth_clientid']
 		));
 		needreload();
+	}
+
+	public function updateTrunks($username,$number,$settings) {
+		$this->freepbx->Modules->loadFunctionsInc('core');
+		$dialstring = 'Motif/g'.str_replace(array('@','.'),'',$username).'/$OUTNUM$@voice.google.com';
+		if($settings['trunk']) {
+			if(isset($settings['trunk_number']) && $this->freepbx->Core->getTrunkTech($settings['trunk_number'])) {
+				core_trunks_edit($settings['trunk_number'], $dialstring, '', '', $number, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $number, '', 'off', 'r');
+			} else {
+				$trunknum = core_trunks_add('custom', $dialstring, '', '', $number, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $number, '', 'off', 'r');
+				$settings['trunk_number'] = $trunknum;
+			}
+		} else {
+			if(isset($settings['trunk_number']) && $this->freepbx->Core->getTrunkTech($settings['trunk_number'])) {
+				$this->freepbx->Core->deleteTrunk($s['trunk_number']);
+			}
+			unset($settings['trunk_number']);
+		}
+		return $settings;
+	}
+
+	public function updateRoutes($username,$number,$settings) {
+		$this->freepbx->Modules->loadFunctionsInc('core');
+		$dialpattern = array(
+			array(
+				'prepend_digits' => '1',
+				'match_pattern_prefix' => '',
+				'match_pattern_pass' => 'NXXNXXXXXX',
+				'match_cid' => ''
+			),
+			array(
+				'prepend_digits' => '',
+				'match_pattern_prefix' => '',
+				'match_pattern_pass' => '1NXXNXXXXXX',
+				'match_cid' => ''
+			)
+		);
+
+		//Replace all non-standard characters for route names.
+		$routename = 'GVM-'.str_replace(array('@','.'),'',$username);
+		if($settings['obroute']) {
+			if(isset($settings['trunk_number'])) {
+				if(isset($settings['obroute_number']) && $this->freepbx->Core->getRouteByID($settings['obroute_number'])) {
+					core_routing_editbyid($settings['obroute_number'], $routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
+				} else {
+					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
+					$settings['obroute_number'] = $routenum;
+				}
+			} else {
+				//no trunk but they wanted to create routes??? what?
+			}
+		} else {
+			if(isset($settings['obroute_number']) && $this->freepbx->Core->getRouteByID($settings['obroute_number'])) {
+				core_routing_delbyid($settings['obroute_number']);
+			}
+		}
+		return $settings;
 	}
 
 	public function getAllAccounts() {
