@@ -133,7 +133,16 @@ class motif_conf {
 				$output .= "context=im-".$context."\n";
 				$output .= "disallow=all\n";
 				$output .= "allow=ulaw\n";
+				$output .= "username=".$list['username']."\n";
+				if($list['authmode'] == 'plaintext') {
+					$output .= "secret=".$list['password']."\n";
+				} else {
+					$output .= "refresh_token=".$list['refresh_token']."\n";
+					$output .= "oauth_clientid=".$list['oauth_clientid']."\n";
+					$output .= "oauth_secret=".$list['oauth_secret']."\n";
+				}
 				$output .= "connection=g".$context."\n\n";
+
 			}
 			$output .= "#include motif_custom.conf\n";
 			return $output;
