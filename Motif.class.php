@@ -347,9 +347,9 @@ class Motif implements \BMO {
 		if($settings['obroute']) {
 			if(isset($settings['trunk_number'])) {
 				if(isset($settings['obroute_number']) && $this->freepbx->Core->getRouteByID($settings['obroute_number'])) {
-					core_routing_editbyid($settings['obroute_number'], $routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
+					core_routing_editbyid($settings['obroute_number'], $routename, '', '', '', '', '', 'default', NULL, $dialpattern, array($settings['trunk_number']));
 				} else {
-					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
+					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', NULL, $dialpattern, array($settings['trunk_number']));
 					$settings['obroute_number'] = $routenum;
 				}
 			} else {
