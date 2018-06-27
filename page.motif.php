@@ -163,7 +163,6 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 	if($action == 'edit') {
 		$sql = 'SELECT * FROM `motif` WHERE `id` = '.$db->escapeSimple($_REQUEST['id']);
 		$account = sql($sql, 'getRow', DB_FETCHMODE_ASSOC);
-		//print_r($account);
 		$form_password = $account['password'];
 		$form_username = $account['username'];
 		$form_number = $account['phonenum'];
@@ -187,17 +186,6 @@ if($astman && $astman->connected() && $astman->mod_loaded('motif') && $astman->m
 			$status['connected'] = true;
 		};
 
-		//$r = $astman->command("xmpp show buddies");
-		//preg_match_all('/Client: g'.$context.'\n(?:.|\n)*/i',$r['data'],$client);
-		/*
-		preg_match_all('/Buddy:(.*)/i',$client[0][0],$matches);
-		$buddies = array();
-		foreach($matches[1] as $data) {
-			if(!preg_match('/@public.talk.google.com/i',$data)) {
-				$buddies[] = $data;
-			}
-		}
-		*/
 		$buddies = array('Removed for Debugging Purposes');
 
 	}

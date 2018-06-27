@@ -1,95 +1,13 @@
 <?php
 namespace FreePBX\modules;
-class Motif implements \BMO {
+use BMO;
+use FreePBX_Helpers;
+use PDO;
+class Motif extends FreePBX_Helpers implements BMO {
 
-	public function __construct($freepbx = null) {
-		$this->freepbx = $freepbx;
-		$this->db = $freepbx->Database;
-	}
-
-	public function install() {
-		$table = $this->db->migrate("motif");
-		$cols = array (
-			'id' =>
-			array (
-				'type' => 'integer',
-				'autoincrement' => true,
-				'primaryKey' => true,
-			),
-			'phonenum' =>
-			array (
-				'type' => 'string',
-				'length' => 12,
-			),
-			'username' =>
-			array (
-				'type' => 'string',
-				'length' => 100,
-			),
-			'password' =>
-			array (
-				'type' => 'string',
-				'length' => 150,
-			),
-			'refresh_token' =>
-			array (
-				'type' => 'string',
-				'length' => 150,
-			),
-			'oauth_secret' =>
-			array (
-				'type' => 'string',
-				'length' => 150,
-			),
-			'oauth_clientid' =>
-			array (
-				'type' => 'string',
-				'length' => 150,
-			),
-			'type' =>
-			array (
-				'type' => 'string',
-				'length' => 50,
-				'default' => 'googlevoice',
-			),
-			'settings' =>
-			array (
-				'type' => 'blob',
-			),
-			'statusmessage' =>
-			array (
-				'type' => 'string',
-				'length' => 50,
-			),
-			'priority' =>
-			array (
-				'type' => 'integer',
-				'default' => '127',
-			),
-			'authmode' =>
-			array (
-				'type' => 'string',
-				'length' => 50,
-				'default' => 'plaintext'
-			),
-		);
-
-
-		$indexes = array (
-		);
-		$out = $table->modify($cols, $indexes);
-		unset($table);
-	}
+	public function install() {}
 
 	public function uninstall() {
-
-	}
-
-	public function backup() {
-
-	}
-
-	public function restore($backup) {
 
 	}
 
@@ -223,20 +141,20 @@ class Motif implements \BMO {
 	}
 
 	public function deleteAccount($id) {
-		$this->freepbx->Modules->loadFunctionsInc('core');
+		$this->FreePBX->Modules->loadFunctionsInc('core');
 		$account = $this->getAccountByID($id);
 
-		if(isset($account['settings']['trunk_number']) && $this->freepbx->Core->getTrunkTech($account['settings']['trunk_number'])) {
-			$this->freepbx->Core->deleteTrunk($account['settings']['trunk_number']);
+		if(isset($account['settings']['trunk_number']) && $this->FreePBX->Core->getTrunkTech($account['settings']['trunk_number'])) {
+			$this->FreePBX->Core->deleteTrunk($account['settings']['trunk_number']);
 		}
 
 		//If we created a route then delete it
-		if(isset($account['settings']['obroute_number']) && $this->freepbx->Core->getRouteByID($account['settings']['obroute_number'])) {
+		if(isset($account['settings']['obroute_number']) && $this->FreePBX->Core->getRouteByID($account['settings']['obroute_number'])) {
 			core_routing_delbyid($account['settings']['obroute_number']);
 		}
 
 		$sql = "DELETE FROM motif WHERE `id` = :id";
-		$sth = $this->db->prepare($sql);
+		$sth = $this->FreePBX->Database->prepare($sql);
 		$sth->execute(array(
 			":id" => $id
 		));
@@ -245,7 +163,7 @@ class Motif implements \BMO {
 
 	public function saveAccount($data) {
 		$sql = "INSERT INTO `motif` (`authmode`,`phonenum`, `username`, `password`, `settings`, `statusmessage`, `priority`, `refresh_token`, `oauth_secret`, `oauth_clientid`) VALUES (:authmode, :phonenum, :username, :password, :settings, :statusmessage, :priority, :refresh_token, :oauth_secret, :oauth_clientid)";
-		$sth = $this->db->prepare($sql);
+		$sth = $this->FreePBX->Database->prepare($sql);
 		$settings = array(
 			"trunk" => $data['trunk'] == 'yes' ? true : false,
 			"ibroute" => false,
@@ -274,7 +192,7 @@ class Motif implements \BMO {
 		$account = $this->getAccountByID($id);
 
 		$sql = "UPDATE `motif` SET `authmode` = :authmode, `phonenum` = :phonenum, `username` = :username, `password` = :password, `settings` = :settings, `statusmessage` = :statusmessage, `priority` = :priority, `refresh_token` = :refresh_token, `oauth_secret` = :oauth_secret, `oauth_clientid` = :oauth_clientid WHERE `id` = :id";
-		$sth = $this->db->prepare($sql);
+		$sth = $this->FreePBX->Database->prepare($sql);
 		$settings = array(
 			"trunk" => $data['trunk'] == 'yes' ? true : false,
 			"ibroute" => false,
@@ -307,26 +225,41 @@ class Motif implements \BMO {
 	}
 
 	public function updateTrunks($username,$number,$settings) {
-		$this->freepbx->Modules->loadFunctionsInc('core');
+		$this->FreePBX->Modules->loadFunctionsInc('core');
 		$dialstring = 'Motif/g'.str_replace(array('@','.'),'',$username).'/$OUTNUM$@voice.google.com';
 		if($settings['trunk']) {
-			if(isset($settings['trunk_number']) && $this->freepbx->Core->getTrunkTech($settings['trunk_number'])) {
+			if(isset($settings['trunk_number']) && $this->FreePBX->Core->getTrunkTech($settings['trunk_number'])) {
 				core_trunks_edit($settings['trunk_number'], $dialstring, '', '', $number, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $number, '', 'off', 'r');
 			} else {
 				$trunknum = core_trunks_add('custom', $dialstring, '', '', $number, '', 'notneeded', '', '', 'off', '', 'off', 'GVM_' . $number, '', 'off', 'r');
 				$settings['trunk_number'] = $trunknum;
 			}
 		} else {
-			if(isset($settings['trunk_number']) && $this->freepbx->Core->getTrunkTech($settings['trunk_number'])) {
-				$this->freepbx->Core->deleteTrunk($s['trunk_number']);
+			if(isset($settings['trunk_number']) && $this->FreePBX->Core->getTrunkTech($settings['trunk_number'])) {
+				$this->FreePBX->Core->deleteTrunk($s['trunk_number']);
 			}
 			unset($settings['trunk_number']);
 		}
 		return $settings;
 	}
 
+    public function upsert($id, $phonenum, $username, $password, $settings, $statusmessage, $priority){
+        $sql = "REPLACE INTO motif (id, phone, phonenum, username, password, settings, statusmessage, priority) VALUES (:id, :phone, :phonenum, :username, :password, :settings, :statusmessage, :priority)";
+        $this->FreePBX->Database->prepare($sql)
+            ->execute([
+                ':id' => $id, 
+                ':phone' => $phone, 
+                ':phonenum' => $phonenum, 
+                ':username' => $username , ':password' => $password, 
+                ':settings' => $settings, 
+                ':statusmessage' => $statusmessage, 
+                ':priority' => $priority, 
+            ]);
+        return $this;
+    }
+
 	public function updateRoutes($username,$number,$settings) {
-		$this->freepbx->Modules->loadFunctionsInc('core');
+		$this->FreePBX->Modules->loadFunctionsInc('core');
 		$dialpattern = array(
 			array(
 				'prepend_digits' => '1',
@@ -346,7 +279,7 @@ class Motif implements \BMO {
 		$routename = 'GVM-'.str_replace(array('@','.'),'',$username);
 		if($settings['obroute']) {
 			if(isset($settings['trunk_number'])) {
-				if(isset($settings['obroute_number']) && $this->freepbx->Core->getRouteByID($settings['obroute_number'])) {
+				if(isset($settings['obroute_number']) && $this->FreePBX->Core->getRouteByID($settings['obroute_number'])) {
 					core_routing_editbyid($settings['obroute_number'], $routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
 				} else {
 					$routenum = core_routing_addbyid($routename, '', '', '', '', '', 'default', '', $dialpattern, array($settings['trunk_number']));
@@ -356,7 +289,7 @@ class Motif implements \BMO {
 				//no trunk but they wanted to create routes??? what?
 			}
 		} else {
-			if(isset($settings['obroute_number']) && $this->freepbx->Core->getRouteByID($settings['obroute_number'])) {
+			if(isset($settings['obroute_number']) && $this->FreePBX->Core->getRouteByID($settings['obroute_number'])) {
 				core_routing_delbyid($settings['obroute_number']);
 			}
 		}
@@ -365,8 +298,8 @@ class Motif implements \BMO {
 
 	public function getAllAccounts() {
 		$sql = "SELECT * FROM `motif`";
-		$sth = $this->db->query($sql);
-		$out = $sth->fetchAll(\PDO::FETCH_ASSOC);
+		$sth = $this->FreePBX->Database->query($sql);
+		$out = $sth->fetchAll(PDO::FETCH_ASSOC);
 		if(empty($out)) {
 			return array();
 		}
@@ -378,11 +311,11 @@ class Motif implements \BMO {
 	}
 
 	public function getAccountByID($id) {
-		$astman = $this->freepbx->astman;
+		$astman = $this->FreePBX->astman;
 		$sql = "SELECT * FROM `motif` WHERE `id` = :id";
-		$sth = $this->db->prepare($sql);
+		$sth = $this->FreePBX->Database->prepare($sql);
 		$sth->execute(array(":id" => $id));
-		$out = $sth->fetch(\PDO::FETCH_ASSOC);
+		$out = $sth->fetch(PDO::FETCH_ASSOC);
 		if(empty($out)) {
 			return array();
 		}

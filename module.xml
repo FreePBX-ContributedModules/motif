@@ -3,30 +3,37 @@
 	<name>Google Voice/Chan Motif</name>
 	<publisher>Sangoma Technologies Corporation</publisher>
 	<license>GPLv3+</license>
-	<licenselink>http://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
+	<licenselink>https://www.gnu.org/licenses/gpl-3.0.txt</licenselink>
 	<type>setup</type>
 	<repo>unsupported</repo>
 	<category>Connectivity</category>
-	<version>13.0.4</version>
+	<version>15.0.1</version>
 	<description>
 		Manage Google Voice Trunks with Chan Motif
 	</description>
 	<changelog>
-		*13.0.4* FREEPBX-16520 fix trunk and route creation issue, relax asterisk requirements
-		*13.0.3.2* FREEPBX-16455 Regression on 13
-		*13.0.3.1* Fix status
-		*13.0.3* Fix issue in PBX less than 15
-		*13.0.2* Packaging of ver 13.0.2
-		*13.0.1* Support for OAuth
+		*15.0.1* Backup 15
 	</changelog>
 	<depends>
 		<engine>asterisk 11</engine>
 		<module>sipsettings</module>
 	</depends>
+    <database>
+        <table name="motif">
+            <field name="id" type="integer" primarykey="true" autoincrement="true"/>
+            <field name="phonenum" type="string" length="12"/>
+            <field name="username" type="string" length="100"/>
+            <field name="password" type="string" length="150"/>
+            <field name="type" type="string" length="50" default="googlevoice"/>
+            <field name="settings" type="blob"/>
+            <field name="statusmessage" type="string" length="50"/>
+            <field name="priority" type="integer" default="127"/>
+        </table>
+    </database>
 	<menuitems>
 		<motif>Google Voice (Motif)</motif>
 	</menuitems>
 	<supported>
-		<version>13.0</version>
+		<version>15.0</version>
 	</supported>
 </module>
