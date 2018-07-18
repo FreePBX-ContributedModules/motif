@@ -24,9 +24,13 @@
             <field name="phonenum" type="string" length="12"/>
             <field name="username" type="string" length="100"/>
             <field name="password" type="string" length="150"/>
+            <field name="refresh_token" type="string" length="150"/>
+            <field name="oauth_secret" type="string" length="150"/>
+            <field name="oauth_clientid" type="string" length="150"/>
             <field name="type" type="string" length="50" default="googlevoice"/>
             <field name="settings" type="blob"/>
             <field name="statusmessage" type="string" length="50"/>
+            <field name="authmode" type="string" length="50"/>
             <field name="priority" type="integer" default="127"/>
         </table>
     </database>

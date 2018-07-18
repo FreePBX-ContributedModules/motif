@@ -243,18 +243,10 @@ class Motif extends FreePBX_Helpers implements BMO {
 		return $settings;
 	}
 
-    public function upsert($id, $phonenum, $username, $password, $settings, $statusmessage, $priority){
-        $sql = "REPLACE INTO motif (id, phone, phonenum, username, password, settings, statusmessage, priority) VALUES (:id, :phone, :phonenum, :username, :password, :settings, :statusmessage, :priority)";
+    public function upsert($data){
+        $sql = "REPLACE INTO `motif` (`id`,`authmode`,`phonenum`, `username`, `password`, `settings`, `statusmessage`, `priority`, `refresh_token`, `oauth_secret`, `oauth_clientid`) VALUES (:id, :authmode, :phonenum, :username, :password, :settings, :statusmessage, :priority, :refresh_token, :oauth_secret, :oauth_clientid)";
         $this->FreePBX->Database->prepare($sql)
-            ->execute([
-                ':id' => $id, 
-                ':phone' => $phone, 
-                ':phonenum' => $phonenum, 
-                ':username' => $username , ':password' => $password, 
-                ':settings' => $settings, 
-                ':statusmessage' => $statusmessage, 
-                ':priority' => $priority, 
-            ]);
+            ->execute($data);
         return $this;
     }
 
