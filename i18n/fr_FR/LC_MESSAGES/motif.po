@@ -9,7 +9,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-29 14:07-0400\n"
+"POT-Creation-Date: 2018-08-20 12:50-0400\n"
 "PO-Revision-Date: 2016-01-17 00:31+0200\n"
 "Last-Translator: Nicolas <forums@riendeau.org>\n"
 "Language-Team: French <http://weblate.freepbx.org/projects/freepbx/motif/"
@@ -77,7 +77,7 @@ msgstr ""
 msgid "DID"
 msgstr ""
 
-#: Motif.class.php:175 views/grid.php:6
+#: Motif.class.php:93 views/grid.php:6
 msgid "Delete"
 msgstr ""
 
@@ -142,7 +142,7 @@ msgstr ""
 msgid "Plain Text"
 msgstr ""
 
-#: Motif.class.php:181
+#: Motif.class.php:99
 msgid "Reset"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr "Statut"
 msgid "Status of your account"
 msgstr ""
 
-#: Motif.class.php:170
+#: Motif.class.php:88
 msgid "Submit"
 msgstr ""
 

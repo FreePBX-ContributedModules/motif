@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-12-19 13:37-0500\n"
+"POT-Creation-Date: 2018-08-20 12:50-0400\n"
 "PO-Revision-Date: 2018-07-18 19:10+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/motif/bg/>\n"
@@ -87,7 +87,7 @@ msgstr "Свързване"
 msgid "DID"
 msgstr "DID"
 
-#: Motif.class.php:175 views/grid.php:6
+#: Motif.class.php:93 views/grid.php:6
 msgid "Delete"
 msgstr "Изтрий"
 
@@ -152,7 +152,7 @@ msgstr ""
 msgid "Plain Text"
 msgstr ""
 
-#: Motif.class.php:181
+#: Motif.class.php:99
 msgid "Reset"
 msgstr ""
 
@@ -171,7 +171,7 @@ msgstr ""
 msgid "Status of your account"
 msgstr ""
 
-#: Motif.class.php:170
+#: Motif.class.php:88
 msgid "Submit"
 msgstr ""
 
