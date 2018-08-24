@@ -10,7 +10,7 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-19 13:37-0500\n"
-"PO-Revision-Date: 2018-07-18 19:13+0000\n"
+"PO-Revision-Date: 2018-08-25 15:00+0000\n"
 "Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
 "Language-Team: German <http://*/projects/freepbx/motif/de/>\n"
 "Language: de_DE\n"
@@ -18,15 +18,15 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.19.1\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: views/grid.php:15 views/rnav.php:12
 msgid "Action"
-msgstr ""
+msgstr "Aktion"
 
 #: views/grid.php:3 views/rnav.php:3
 msgid "Add"
-msgstr ""
+msgstr "Hinzufügen"
 
 #: views/account.php:263
 msgid ""
@@ -165,7 +165,7 @@ msgstr "Status Ihres Kontos"
 
 #: Motif.class.php:170
 msgid "Submit"
-msgstr "Bestätigen"
+msgstr "Absenden"
 
 #: views/account.php:307
 msgid ""
