@@ -20,25 +20,24 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-29 14:07-0400\n"
-"PO-Revision-Date: 2014-07-22 15:48+0200\n"
-"Last-Translator: Chavdar <chavdar_75@yahoo.com>\n"
-"Language-Team: Bulgarian <http://git.freepbx.org/projects/freepbx/motif/bg/"
-">\n"
-"Language: bg\n"
+"POT-Creation-Date: 2017-12-19 13:37-0500\n"
+"PO-Revision-Date: 2018-07-18 19:10+0000\n"
+"Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
+"Language-Team: Bulgarian <http://*/projects/freepbx/motif/bg/>\n"
+"Language: bg_BG\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 1.10-dev\n"
+"X-Generator: Weblate 2.19.1\n"
 
 #: views/grid.php:15 views/rnav.php:12
 msgid "Action"
-msgstr ""
+msgstr "Действие"
 
 #: views/grid.php:3 views/rnav.php:3
 msgid "Add"
-msgstr ""
+msgstr "Добави"
 
 #: views/account.php:263
 msgid ""
@@ -86,11 +85,11 @@ msgstr "Свързване"
 
 #: views/grid.php:13 views/rnav.php:10
 msgid "DID"
-msgstr ""
+msgstr "DID"
 
 #: Motif.class.php:175 views/grid.php:6
 msgid "Delete"
-msgstr ""
+msgstr "Изтрий"
 
 #: views/account.php:323
 msgid "Disconnected"

@@ -10,24 +10,23 @@ msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-12-19 13:37-0500\n"
-"PO-Revision-Date: 2018-02-16 18:06+0200\n"
-"Last-Translator: Nils <Nils@heckenkamp.info>\n"
-"Language-Team: German "
-"<http://weblate.freepbx.org/projects/freepbx/motif/de_DE/>\n"
+"PO-Revision-Date: 2018-08-25 15:00+0000\n"
+"Last-Translator: Bastian Mertgen <b.mertgen@bastian-mertgen.de>\n"
+"Language-Team: German <http://*/projects/freepbx/motif/de/>\n"
 "Language: de_DE\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Weblate 2.4\n"
+"X-Generator: Weblate 3.0.1\n"
 
 #: views/grid.php:15 views/rnav.php:12
 msgid "Action"
-msgstr ""
+msgstr "Aktion"
 
 #: views/grid.php:3 views/rnav.php:3
 msgid "Add"
-msgstr ""
+msgstr "Hinzufügen"
 
 #: views/account.php:263
 msgid ""
@@ -132,7 +131,7 @@ msgstr ""
 #: views/account.php:180 views/account.php:205 views/account.php:230
 #: views/account.php:255
 msgid "No"
-msgstr ""
+msgstr "Nein"
 
 #: views/account.php:67
 msgid "OAuth 2"
@@ -166,7 +165,7 @@ msgstr "Status Ihres Kontos"
 
 #: Motif.class.php:170
 msgid "Submit"
-msgstr "Bestätigen"
+msgstr "Absenden"
 
 #: views/account.php:307
 msgid ""
@@ -213,11 +212,11 @@ msgstr ""
 
 #: views/grid.php:14 views/rnav.php:11
 msgid "Username"
-msgstr ""
+msgstr "Benutzername"
 
 #: views/account.php:295
 msgid "XMPP Priority"
-msgstr ""
+msgstr "XMPP-Priorität"
 
 #: views/account.php:178 views/account.php:203 views/account.php:228
 #: views/account.php:253
