@@ -20,7 +20,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-08-20 12:50-0400\n"
+"POT-Creation-Date: 2018-08-31 19:16-0400\n"
 "PO-Revision-Date: 2018-07-18 19:10+0000\n"
 "Last-Translator: Chavdar Shtiliyanov <chavdar_75@yahoo.com>\n"
 "Language-Team: Bulgarian <http://*/projects/freepbx/motif/bg/>\n"
@@ -103,6 +103,10 @@ msgstr "Google Voice (Motif)"
 msgid "Google Voice Account"
 msgstr ""
 
+#: page.motif.php:3
+msgid "Google Voice Functionality"
+msgstr ""
+
 #: views/account.php:107
 msgid "Google Voice OAuth Client ID"
 msgstr ""
@@ -173,6 +177,13 @@ msgstr ""
 
 #: Motif.class.php:88
 msgid "Submit"
+msgstr ""
+
+#: page.motif.php:4
+msgid ""
+"The google voice functionality is no longer functional as it requires "
+"unsupported patches to Asterisk to accomidate functional changes to the GV "
+"service"
 msgstr ""
 
 #: views/account.php:307

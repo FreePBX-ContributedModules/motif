@@ -7,11 +7,12 @@
 	<type>setup</type>
 	<repo>unsupported</repo>
 	<category>Connectivity</category>
-	<version>15.0.2</version>
+	<version>15.0.3</version>
 	<description>
 		Manage Google Voice Trunks with Chan Motif
 	</description>
 	<changelog>
+		*15.0.3* Packaging of ver 15.0.3
 		*15.0.2* Packaging of ver 15.0.2
 		*15.0.1* Backup 15
 	</changelog>
