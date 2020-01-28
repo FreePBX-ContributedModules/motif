@@ -7,14 +7,12 @@
 	<type>setup</type>
 	<repo>unsupported</repo>
 	<category>Connectivity</category>
-	<version>15.0.3</version>
+	<version>16.0.1</version>
 	<description>
 		Manage Google Voice Trunks with Chan Motif
 	</description>
 	<changelog>
-		*15.0.3* Packaging of ver 15.0.3
-		*15.0.2* Packaging of ver 15.0.2
-		*15.0.1* Backup 15
+		*16.0.1alpha* 16.0.1 alpha release
 	</changelog>
 	<depends>
 		<engine>asterisk 11</engine>
@@ -40,6 +38,6 @@
 		<motif>Google Voice (Motif)</motif>
 	</menuitems>
 	<supported>
-		<version>15.0</version>
+		<version>16.0</version>
 	</supported>
 </module>
